@@ -1,0 +1,13 @@
+########################## Bridge for Git ###################################
+# Please do not remove this file.
+#For more information check the documentation how to use .gitattributes file
+# https://git-scm.com/docs/gitattributes
+
+# Set the default behavior, in case core.autocrlf set is not set locally.
+* text=auto
+
+# Files that have LF line endings on checkout.
+/scripts/*.sh text eol=lf
+/scripts/resources/pre-push text eol=lf
+
+#############################################################################

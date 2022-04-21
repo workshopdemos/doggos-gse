@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+echo "CA Endevor Bridge for Git - Pre-push hook"
+
+GB_URL=$(grep -oP -m 1 '(?<="url" : ")[^"]*' .ebg/mapping.json)
+if [ -z "$GB_URL" ]; then
+  echo -e "Cannot find '.ebg/mapping.json' file.\nCheck if you are pushing a mapped branch."
+  echo -e "Please check the documentation:"
+  echo -e "http://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-mainframe-software/devops/ca-endevor-integrations-for-enterprise-devops/1-0/ca-endevor-bridge-for-git/use-the-ca-enterprise-git-bridge/set-up-hooks.html"
+  exit 1
+fi
+DEBUG=false
+$DEBUG && echo "DEBUG: Server URL = $GB_URL"
+#verify BridgeForGit is running and if not exit
+curl -s -k "$GB_URL"/rest/evcs/v1/hooks/script/local >.git/scriptFile ||
+  {
+    echo -e "Couldn't connect to server. Verify BridgeForGit is running and try again."
+    rm .git/scriptfile
+    exit 1
+  }
+curl -s -k "$GB_URL"/rest/evcs/v1/hooks/script/local >.git/scriptFile
+bash .git/scriptFile $DEBUG "$GB_URL"
+rtn_code=$?
+rm .git/scriptFile
+exit $rtn_code
