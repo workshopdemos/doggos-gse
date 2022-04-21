@@ -2,7 +2,12 @@
 ### Overview 
 
 This repository was initialized using [CA Endevor Bridge for Git](http://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-mainframe-software/devops/ca-endevor-integrations-for-enterprise-devops/1-0/ca-endevor-bridge-for-git.html).
+Following branches are synchronized with CA Endevor:
 
+* main  
+
+**[Endevor inventory details](./docs/inventory.md)**  
+**[Types and processor groups list](./docs/types.md)**
 
 To know more about CA Endevor Bridge for Git and how to use it, check the page [Use the CA Endevor Bridge for Git](https://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-mainframe-software/devops/ca-endevor-integrations-for-enterprise-devops/1-0/ca-endevor-bridge-for-git/use-the-ca-enterprise-git-bridge.html).
 
