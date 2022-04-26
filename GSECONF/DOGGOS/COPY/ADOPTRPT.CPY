@@ -1,5 +1,5 @@
+      * THE DATA STRUCTURE OF THE RECORD IN THE DOGGOS REPORT                   
        01  ADOPTED-REPORT-REC.                                                  
-      * some comment                                                            
            05 FILLER                 PIC X(6)                                   
                     VALUE "BREED ".                                             
            05 OUT-DOG-BREED              PIC X(30).                             
