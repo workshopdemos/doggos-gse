@@ -33,7 +33,7 @@
       * OUTPUT REPORT FILE STATUS                                               
        01  ADOPT-REPORT-FS PIC 9(2).                                            
        COPY DATETIME.                                                           
-      * INTERNAL ACCUMULATOR                                                    
+      * INTERNAL ACCUMULATOR FOR EACH BREED                                     
        01 BREED-INDEXES.                                                        
            05 SHIBA-INDEX.                                                      
                10 SHIBA-INDEX-VALUE  PIC 9(1) VALUE 1.                          
@@ -62,8 +62,12 @@
            05 OTHER-INDEX.                                                      
                10 OTHER-INDEX-VALUE  PIC 9(1) VALUE 9.                          
                10 OTHER-BREED-NAME PIC X(5) VALUE 'OTHER'.                      
+      * INTERNAL DATA STRUCTURE TO KEEP                                         
+      * THE AMOUNT OF ADOPTIONS PER BREED                                       
        01 ACCUMULATOR.                                                          
            05 BREED-ADOPTIONS PIC 9(3) OCCURS 9 TIMES VALUE 000.                
+      * FINAL DATA STRUCTURE TO FLUSH THE ADOPTIONS IN THE PARTICULAR           
+      * BREED INTO THE REPORT                                                   
        01  ADOPTED-RESULT.                                                      
            05 FILLER                 PIC X(6) VALUE "BREED ".                   
            05 DOG-BREED              PIC X(30).                                 
@@ -80,6 +84,7 @@
            PERFORM PRINT-WELCOME.                                               
            PERFORM OPEN-INPUT.                                                  
            PERFORM OPEN-OUTPUT.                                                 
+      * READ THE INPUT UNTIL THE END AND UPDATE INTERNAL DATA STRUCTURE         
            PERFORM READ-ADOPTION.                                               
            PERFORM UNTIL END-OF-INPUT IS EQUAL TO END-OF-FILE                   
                 PERFORM UPDATE-ACCUMULATOR                                      
@@ -89,11 +94,7 @@
            MOVE 'DAY' TO PERIOD-NAME.                                           
            MOVE 1 TO REPORT-TIME.                                               
                                                                                 
-           MOVE OTHER-BREED-NAME TO DOG-BREED.                                  
-           MOVE BREED-ADOPTIONS(OTHER-INDEX-VALUE) TO ADOPTED-AMOUNT.           
-           MOVE ADOPTED-RESULT TO ADOPTED-REPORT-REC.                           
-           PERFORM WRITE-ADOPTION-BREED-REPORT.                                 
-                                                                                
+      * WRITE EACH BREED RESULTS INTO THE FINAL REPORT                          
            MOVE SHIBA-BREED-NAME TO DOG-BREED.                                  
            MOVE BREED-ADOPTIONS(SHIBA-INDEX-VALUE) TO ADOPTED-AMOUNT.           
            MOVE ADOPTED-RESULT TO ADOPTED-REPORT-REC.                           
@@ -178,6 +179,7 @@
            END-IF.                                                              
                                                                                 
        UPDATE-ACCUMULATOR.                                                      
+      * WHEN PARTICULAR DOG BREED COMES - UPDATE THE ACCUMULATOR FOR IT         
            EVALUATE INP-DOG-BREED                                               
                 WHEN SHIBA-BREED-NAME                                           
                 ADD INP-ADOPTED-AMOUNT                                          
