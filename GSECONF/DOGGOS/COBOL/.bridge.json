@@ -12,9 +12,6 @@
     "name" : "CLENBL",
     "description" : "COBOL/LE COMPILE AND LINK, LISTING IS STORED"
   }, {
-    "name" : "CIINBL",
-    "description" : "COBOL II COMPILE AND LINK, LISTING IS STORED"
-  }, {
     "name" : "*NOPROC*",
     "description" : "NO PROCESSORS ASSIGNED"
   } ],
