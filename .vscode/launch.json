@@ -1,5 +1,5 @@
 {
-    // !! Replace XX with UserID number (03-07) !!
+    // ! Replace XX with UserID number !
     "version": "0.2.0",
     "configurations": [        
         {
