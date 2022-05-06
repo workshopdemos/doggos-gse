@@ -18,7 +18,7 @@ Once you have met the prerequisites,
 2. Navigate to the test4z package using the command below:
 
         cd tests
-3. Run the following command to install the node dependencies. Test4z configuration will be started following the 
+3. Run the following command to install the node dependencies. Test4z configuration and file deployment will be started following the 
 dependency installation, enter your username when command prompt asks.
 
         npm install
