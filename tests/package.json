@@ -7,7 +7,7 @@
     "test": "jest",
     "setup": "sh .scripts/setup.sh",
     "postinstall": "npm run setup && npm run uploadFiles",
-    "uploadFiles": "cd .scripts && sh upload.sh"
+    "uploadFile": "cd .scripts && sh upload.sh"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
