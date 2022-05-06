@@ -45,7 +45,7 @@ the command prompt asks:
 
         npm run test
         
-4. Observe the failed test cases, update them according to your changes in the DOGGOS.INPUT file (frim the 1st step). 
+4. Observe the failed test cases, update them according to your changes in the DOGGOS.INPUT file (from the 1st step). 
 If you added a new breed, create a test suite for it by following the existing breed test cases.
 5. Run the test suite again, and verify all the test cases are passing.
 
