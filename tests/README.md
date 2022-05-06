@@ -15,7 +15,7 @@ Before you attempt to install the Doggos Regression Test Suite project, ensure y
 Once you have met the prerequisites,
 
 1. Open a new terminal
-2. Navigate to the test4z directory using the command below:
+2. Navigate to the test4z package using the command below:
 
         cd tests
 3. Run the following command to install the node dependencies. Test4z configuration will be started following the 
