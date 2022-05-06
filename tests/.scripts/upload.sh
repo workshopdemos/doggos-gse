@@ -11,7 +11,6 @@ DOGGOS_INPUT="DOGGOS.INPUT";
 DOGGOS_INPUT_NEW="DOGGOS.INPUT.NEW";
 DOGGOS_RUNAPP="DOGGOS.RUNAPP"
 storageClass="CAEDS6";
-createDirectory "$tempDirectoryName";
 upload "$DOGGOS_INPUT" files/DOGGOS.INPUT DS N
 printf "Datasets successfully deployed to the Z/OS system\n\n";
 printf "\n###########################################################"
