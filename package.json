@@ -5,9 +5,8 @@
   "author": "Broadcom",
   "scripts": {
     "test": "jest",
-    "setup": "sh scripts/test-setup.sh",
-    "postinstall": "npm run setup && npm run uploadFile",
-    "uploadFile": "cd scripts && sh upload.sh"
+    "configure": "cd scripts && sh configure.sh",
+    "uploadFile": "cd scripts && sh upload-file.sh"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",

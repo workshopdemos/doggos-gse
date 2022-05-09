@@ -48,7 +48,13 @@ Once you have met the prerequisites,
 
 ### Running The Test Case
 
-1.  Navigate to the **test4z/test/doggos/doggos.test.ts** file and check the regression test codes.
+
+1. Run the following command to configure Test4z and deploy the input file to the mainframe, enter your username when
+    the command prompt asks:
+        
+        npm run configure
+
+1.  Navigate to the **test/doggos/doggos.test.ts** file and check the regression test codes.
 2.  Run the test suite using the following command:
 
         npm run test
@@ -57,18 +63,18 @@ Once you have met the prerequisites,
 
 ### Extending the test suite
 
-1.  Navigate to the **test4z/scripts/files/DOGGOS.INPUT** file. Add a new breed with a number of adoptions, or change
+1.  Navigate to the **scripts/files/DOGGOS.INPUT** file. Add a new breed with a number of adoptions, or change
     the number of adoptions for an existing breed.
 2.  Upload the new input dataset to the mainframe using the following command, enter your username when
     the command prompt asks:
 
-            npm run uploadFile
+        npm run uploadFile
 
-3.  Navigate to the **test4z/test/doggos/doggos.test.ts** file back, and run it using the following command:
+3.  Navigate to the **test/doggos/doggos.test.ts** file back, and run it using the following command:
 
         npm run test
 
-4.  Observe the failed test cases, update them according to your changes in the DOGGOS.INPUT file (from the 1st step).
+4.  Observe the failed test cases, update the test assertions according to your changes in the 1st step for the INPUT file.
     If you added a new breed, create a test suite for it by following the existing breed test cases.
 5.  Run the test suite again, and verify all the test cases are passing.
 

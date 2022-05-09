@@ -37,7 +37,7 @@
        01 BREED-INDEXES.                                                        
            05 SHIBA-INDEX.                                                      
                10 SHIBA-INDEX-VALUE  PIC 9(1) VALUE 1.                          
-               10 SHIBA-BREED-NAME PIC X(5) VALUE 'SHIBA'.                      
+               10 SHIBA-BREED-NAME PIC X(5) VALUE 'SHIBA'.                    
            05 SHNAUTZER-INDEX.                                                  
                10 SHNAUTZER-INDEX-VALUE  PIC 9(1) VALUE 2.                      
                10 SHNAUTZER-BREED-NAME PIC X(9) VALUE 'SHNAUTZER'.              
@@ -183,7 +183,7 @@
            EVALUATE INP-DOG-BREED                                               
                 WHEN SHIBA-BREED-NAME                                           
                 ADD INP-ADOPTED-AMOUNT                                          
-                    TO BREED-ADOPTIONS(SHIBA-INDEX-VALUE)                       
+                    TO BREED-ADOPTIONS(SHIBA-INDEX-VALUE)                      
                 WHEN SHNAUTZER-BREED-NAME                                       
                 ADD INP-ADOPTED-AMOUNT                                          
                     TO BREED-ADOPTIONS(SHNAUTZER-INDEX-VALUE)                   
