@@ -49,7 +49,7 @@ Please, use the Endevor Bridge for Git Zowe CLI plugin for this purpose. It will
 - Run the verification Zowe CLI command: `zowe plugins list`.
 - Create an Endevor service profile: `zowe profiles create endevor-profile sample --host 172.29.11.9 --port 40050 --user USERID --password PASS --prot http --base-path EndevorService/api/v2 --reject-unauthorized true` with changing the USERID and PASS with your credential details.
   - It will help you to connect to the backend environment, where the source code is stored.
-- Build the source code: `zowe endevor-bridge-for-git build execute --endevor-profile sample --endevor-instance ENDEVOR --endevor-subsystem DOGGOS --endevor-environment SMPLTEST --endevor-system DOGGOS`.
+- Build the source code: `zowe endevor-bridge-for-git build execute --endevor-profile sample --endevor-instance ENDEVOR --endevor-subsystem DOGGOS --endevor-environment SMPLTEST --endevor-system GSECONF`.
 - Review the command output and the listings in the output directory.
 
 ### Run the program manually
