@@ -37,10 +37,7 @@
        01 BREED-INDEXES.                                                        
            05 SHIBA-INDEX.                                                      
                10 SHIBA-INDEX-VALUE  PIC 9(1) VALUE 1.                          
-               10 SHIBA-BREED-NAME PIC X(5) VALUE 'SHIBA'.   
-           05 BOXER-INDEX.                                                      
-               10 BOXER-INDEX-VALUE  PIC 9(1) VALUE 1.                          
-               10 BOXER-BREED-NAME PIC X(5) VALUE 'BOXER'.                  
+               10 SHIBA-BREED-NAME PIC X(5) VALUE 'SHIBA'.                    
            05 SHNAUTZER-INDEX.                                                  
                10 SHNAUTZER-INDEX-VALUE  PIC 9(1) VALUE 2.                      
                10 SHNAUTZER-BREED-NAME PIC X(9) VALUE 'SHNAUTZER'.              
@@ -100,11 +97,6 @@
       * WRITE EACH BREED RESULTS INTO THE FINAL REPORT                          
            MOVE SHIBA-BREED-NAME TO DOG-BREED.                                  
            MOVE BREED-ADOPTIONS(SHIBA-INDEX-VALUE) TO ADOPTED-AMOUNT.           
-           MOVE ADOPTED-RESULT TO ADOPTED-REPORT-REC.                           
-           PERFORM WRITE-ADOPTION-BREED-REPORT.  
-
-           MOVE BOXER-BREED-NAME TO DOG-BREED.                                  
-           MOVE BREED-ADOPTIONS(BOXER-INDEX-VALUE) TO ADOPTED-AMOUNT.           
            MOVE ADOPTED-RESULT TO ADOPTED-REPORT-REC.                           
            PERFORM WRITE-ADOPTION-BREED-REPORT.                                 
                                                                                 
@@ -191,10 +183,7 @@
            EVALUATE INP-DOG-BREED                                               
                 WHEN SHIBA-BREED-NAME                                           
                 ADD INP-ADOPTED-AMOUNT                                          
-                    TO BREED-ADOPTIONS(SHIBA-INDEX-VALUE)    
-                WHEN BOXER-BREED-NAME                                           
-                ADD INP-ADOPTED-AMOUNT                                          
-                    TO BREED-ADOPTIONS(BOXER-INDEX-VALUE)                    
+                    TO BREED-ADOPTIONS(SHIBA-INDEX-VALUE)                      
                 WHEN SHNAUTZER-BREED-NAME                                       
                 ADD INP-ADOPTED-AMOUNT                                          
                     TO BREED-ADOPTIONS(SHNAUTZER-INDEX-VALUE)                   
