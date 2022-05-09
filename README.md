@@ -23,3 +23,8 @@ If you do not have the server pre-receive hook enabled, you need to use the loca
 
 To update information about the Work Areas for this repository, consult the provided [work-areas.json](.ebg/work-areas.json) 
 template in the [official documentation](http://techdocs.broadcom.com/content/broadcom/techdocs/us/en/ca-mainframe-software/devops/ca-endevor-integrations-for-enterprise-devops/1-0/ca-endevor-bridge-for-git/set-up-and-run-the-ca-endevor-bridge-for-git/optional-configure-and-commit-workareas-file.html).
+
+### Testing
+
+Doggos application, can be tested using Test4z. Follow **[this](/tests/README.md)** readme file to run&configure the test case.
+
