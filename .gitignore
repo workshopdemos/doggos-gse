@@ -1,2 +1,6 @@
 .endevor
 .c4z
+build
+node_modules
+.idea
+package-lock.json
