@@ -52,6 +52,8 @@ Please, use the Endevor Bridge for Git Zowe CLI plugin for this purpose. It will
 - Build the source code: `zowe endevor-bridge-for-git build execute --endevor-profile sample --endevor-instance ENDEVOR --endevor-subsystem DOGGOS --endevor-environment SMPLTEST --endevor-system GSECONF`.
 - Review the command output and the listings in the output directory.
 
+**Note: the building process may end up with no generation. It means that there were no changes in the source code, in that case, try to add some comment into it and rebuild it, just to trigger the build.**
+
 ### Run the program manually
 
 Please, use Zowe Explorer VSCode extension for this purpose.
