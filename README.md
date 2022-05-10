@@ -21,10 +21,10 @@ The application is a simple batch program. It reads the sequential dataset (inpu
    - You can follow this [guide](https://gist.github.com/douglarek/bbda8cc23a562cb5d5798717d57bc9e9) to install Java on your machine in case of Mac.
    - You can follow this [guide](https://stackoverflow.com/questions/52511778/how-to-install-openjdk-11-on-windows) to install Java on your machine in case of Windows.
 3. You have to have Zowe CLI v1 installed locally with a list of required CLI plugins:
-   - [Zowe CLI](https://docs.zowe.org/v1.27.x/user-guide/cli-installcli#installing-zowe-cli-from-an-online-registry): `npm install -g @zowe/cli@zowe-v1-lts`.
-   - [Zowe CLI Secure Credential Store Plugin](https://www.npmjs.com/package/@zowe/secure-credential-store-for-zowe-cli): `zowe plugins install @zowe/secure-credential-store-for-zowe-cli@zowe-v1-lts`
-   - [Zowe Endevor CLI Plugin](https://www.npmjs.com/package/@broadcom/endevor-for-zowe-cli): `zowe plugins install @broadcom/endevor-for-zowe-cli@zowe-v1-lts`.
-   - [Zowe Bridge for Git CLI Plugin](https://www.npmjs.com/package/@broadcom/endevor-bridge-for-git-for-zowe-cli): `zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli@zowe-v1-lts`.
+   - [Zowe CLI](https://docs.zowe.org/v1.27.x/user-guide/cli-installcli#installing-zowe-cli-from-an-online-registry): `npm install -g @zowe/cli@6.40.2`.
+   - [Zowe CLI Secure Credential Store Plugin](https://www.npmjs.com/package/@zowe/secure-credential-store-for-zowe-cli): `zowe plugins install @zowe/secure-credential-store-for-zowe-cli@4.1.9`
+   - [Zowe Endevor CLI Plugin](https://www.npmjs.com/package/@broadcom/endevor-for-zowe-cli): `zowe plugins install @broadcom/endevor-for-zowe-cli@6.5.0`.
+   - [Zowe Bridge for Git CLI Plugin](https://www.npmjs.com/package/@broadcom/endevor-bridge-for-git-for-zowe-cli): `zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli@2.4.1`.
      **Note: we need Zowe CLI with the plugins to be able to communicate with the mainframe and build the source code.**
 4. You have to have a [VSCode IDE](https://code.visualstudio.com/) installed locally or it's alternative in the browser.
    **Note: you can have some other IDE instead, but the Broadcom can offer you the full development experience in the VSCode only for now.**
