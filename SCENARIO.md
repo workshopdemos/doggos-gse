@@ -6,13 +6,13 @@
 
 ### Technical criterias
 
-- The application can be generated successfully using Endevor COBOL type processor with the required dependencies.
+- The application can be generated successfully using Endevor COBOL type processor with the required dependencies, according to the [guide](./README.md#building-generating-or-compiling-the-program).
 - (Optional) The new dog breed XXX processing is covered by the automated regression tests.
-- (Optional) The updated INPUT dataset example is provided in the repository.
+- (Optional) The updated [INPUT dataset example](/scripts/files/DOGGOS.INPUT) is provided in the repository.
 - (Optional) The Git Pull Request is opened with the proposed change.
 
 ### Step by step guide
 
-**Note:** you already have this repository opened and **installed** correctly, according to the [guide](./README.md).
+**Note:** you already have this repository opened and **installed** correctly, according to the [guide](./README.md#installing).
 
 -
