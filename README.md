@@ -62,7 +62,7 @@ Please, use Zowe Explorer VSCode extension for this purpose.
 
 - Build the program source code successfully using the guide above.
 - Configure the local test environment (only once during the initial setup) with this terminal command: `npm run configure`.
-  - Enter your mainframe USERID and password details.
+  - Enter your mainframe USERID.
 - Open Zowe VSCode extension interface: reveal the left column of the VSCode interface and find the big and bold letter Z in there.
 - Search for the datasets in the lpar1.zosmf Data Sets profile folder.
   - Navigate to the lpar1.zosmf node and click into it.
