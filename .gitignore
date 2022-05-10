@@ -4,5 +4,3 @@ build
 node_modules
 .idea
 package-lock.json
-zowe.config.json
-zowe.schema.json
