@@ -22,7 +22,6 @@ The application is a simple batch program. It reads the sequential dataset (inpu
    - You can follow this [guide](https://stackoverflow.com/questions/52511778/how-to-install-openjdk-11-on-windows) to install Java on your machine in case of Windows.
 3. You have to have Zowe CLI v1 installed locally with a list of required CLI plugins:
    - [Zowe CLI](https://docs.zowe.org/v1.27.x/user-guide/cli-installcli#installing-zowe-cli-from-an-online-registry): `npm install -g @zowe/cli@6.40.2`.
-   - [Zowe CLI Secure Credential Store Plugin](https://www.npmjs.com/package/@zowe/secure-credential-store-for-zowe-cli): `zowe plugins install @zowe/secure-credential-store-for-zowe-cli@4.1.9`
    - [Zowe Endevor CLI Plugin](https://www.npmjs.com/package/@broadcom/endevor-for-zowe-cli): `zowe plugins install @broadcom/endevor-for-zowe-cli@6.5.0`.
    - [Zowe Bridge for Git CLI Plugin](https://www.npmjs.com/package/@broadcom/endevor-bridge-for-git-for-zowe-cli): `zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli@2.4.1`.
      **Note: we need Zowe CLI with the plugins to be able to communicate with the mainframe and build the source code.**
@@ -35,9 +34,9 @@ The application is a simple batch program. It reads the sequential dataset (inpu
 
 - Please, use this repository and the `main` branch for the latest source code: `git clone git@github.gwd.broadcom.net:ni892489/doggos-gse.git`.
 
-**Note** Make sure, that you have a [Git](https://git-scm.com/downloads) installed and you have a public SSH key [defined](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) in your GH account.
+**Note: Make sure, that you have a [Git](https://git-scm.com/downloads) installed.**
 
-- Once you have the repository cloned to your system, please, execute `npm install` in it. It is required to get the local project dependencies to be fetched. It may take 1-2 minutes to complete, so please, be patient :)
+- Once you have the repository cloned to your system, please, execute `npm install --silent` in it. It is required to get the local project dependencies to be fetched. It may take 1-2 minutes to complete, so please, be patient :)
 
 ### Building (generating or compiling) the program
 

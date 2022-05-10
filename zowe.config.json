@@ -13,11 +13,7 @@
                         "host": "172.29.11.9",
                         "protocol": "https",
                         "rejectUnauthorized": false
-                    },
-                    "secure": [
-                        "user",
-                        "password"
-                    ]
+                    }
                 },
                 "test4z": {
                     "type": "test4z",
@@ -30,11 +26,7 @@
                         "strictSSL": false,
                         "hlq": "",
                         "rejectUnauthorized": false
-                    },
-                    "secure": [
-                        "user",
-                        "password"
-                    ]
+                    }
                 }
             }
         }
