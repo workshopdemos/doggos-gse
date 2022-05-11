@@ -20,7 +20,7 @@ const REPORT_FILTER: InstanceType<typeof Filter>[] = [
     .Type(Types.CHARACTER)
     .build(),
 ];
-let BATCH_APPLICATION = ".DOGGOS.JCL(RUNDOGS)";
+let BATCH_APPLICATION = ".DOGGOS.JCL(RUNTEST)";
 let HLQ: any, report, records: { [x: string]: any }[];
 
 describe("Doggos Batch Application - Regression Test Suite", function () {
