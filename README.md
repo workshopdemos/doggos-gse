@@ -30,14 +30,21 @@ The application is a simple batch program. It reads the sequential dataset (inpu
    **Note: you can have some other IDE instead, but the Broadcom can offer you the full development experience in the VSCode only for now.**
 5. You have to have a [Code4z extensions pack](https://marketplace.visualstudio.com/items?itemName=broadcomMFD.code4z-extension-pack) installed in the VSCode.
    **Note: you can also install it in the VSCode interface using this [guide](https://code.visualstudio.com/learn/get-started/extensions).**
+   ![VSCode-extensions](images/vscode_extensions.png)
+   ![Code4z](images/code4z.png)
 
 ### Installing
 
-- Please, use this repository and the `main` branch for the latest source code: `git clone git@github.gwd.broadcom.net:ni892489/doggos-gse.git`.
+- Please, use this repository and the `main` branch for the latest source code.
 
 **Note: Make sure, that you have a [Git](https://git-scm.com/downloads) installed.**
 
 - Once you have the repository cloned to your system, please, execute `npm install --silent` in it. It is required to get the local project dependencies to be fetched. It may take 1-2 minutes to complete, so please, be patient :)
+
+### Repository structure
+
+- The source code lives in the [GSECONF/DOGGOS folder](./GSECONF/DOGGOS).
+- The tests live in the [test/doggos folder](./test/doggos/).
 
 ### Building (generating or compiling) the program
 
@@ -64,15 +71,18 @@ Please, use Zowe Explorer VSCode extension for this purpose.
 - Configure the local test environment (only once during the initial setup) with this terminal command: `npm run configure`.
   - Enter your mainframe USERID.
 - Open Zowe VSCode extension interface: reveal the left column of the VSCode interface and find the big and bold letter Z in there.
+- ![Zowe-Explorer](images/zowe-explorer.png)
 - Search for the datasets in the lpar1.zosmf Data Sets profile folder.
   - Navigate to the lpar1.zosmf node and click into it.
-  - Allow the VSCode to read the credentials from the secure credentials store.
-  - Please, use `USERID.DOGGOS.*` pattern to search for the datasets.
-- Open and modify the `USERID.DOGGOS.INPUT` dataset with the required changes, save the file, once you are done.
-- Expand the `USERID.DOGGOS.JCL` dataset and Right click on the `RUNDOGS` item.
+  - ![Zowe-Explorer-Search](images/zowe-explorer-search.png)
+  - Please, use `<USERID>.DOGGOS.*` pattern to search for the datasets.
+- Open and modify the `<USERID>.DOGGOS.INPUT` dataset with the required changes, save the file, once you are done.
+- Expand the `<USERID>.DOGGOS.JCL` dataset and Right click on the `RUNDOGS` item.
   - Select `Submit JCL` option.
+  - ![Zowe-Explorer-Submit](images/zowe-explorer-submit.png)
   - Click into the JobID item in the left bottom corner in the pop notification to see the job results.
     - You can click on the job item several times, until the job will be completed.
+    - ![Zowe-Explorer-Job-Submitted](images/zowe-explorer-job-submitted.png)
 
 **Note: If you want to run the updated source code, please, rebuild the program using the guide above and submit the JCL again.**
 
@@ -100,6 +110,7 @@ Please, use Debugger for Mainframe VSCode extension for this purpose.
 - Build the program source code successfully using the guide above.
 - Open the 'launch.json' file in the .vscode folder in this project.
 - Change the USERID with your username with CTRL/CMD+F VSCode shortcut.
+- ![Search-And-Replace](images/search-and-replace.png)
 - Press F5 to start the debugger session.
 - Enter the mainframe password for your username in the popup window.
 - Wait a bit for the debugger to be executed and follow the program flow using this [guide](https://marketplace.visualstudio.com/items?itemName=broadcomMFD.debugger-for-mainframe).
