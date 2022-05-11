@@ -52,12 +52,14 @@ Please, use the Endevor Bridge for Git Zowe CLI plugin for this purpose. It will
 
 **Note: There is already a backend setup for the build on the mainframe side.**
 
-- Once you are in the repository folder, please open the [terminal session](https://code.visualstudio.com/docs/editor/integrated-terminal) in the VSCode.
-- Run the verification Zowe CLI command: `zowe plugins list`.
-- Create an Endevor service profile: `zowe profiles create endevor-profile sample --host 172.29.11.9 --port 40050 --user USERID --password PASS --prot http --base-path EndevorService/api/v2 --reject-unauthorized true` with changing the USERID and PASS with your credential details.
-  - It will help you to connect to the backend environment, where the source code is stored.
-- Build the source code: `zowe endevor-bridge-for-git build execute --endevor-profile sample --endevor-instance ENDEVOR --endevor-subsystem DOGGOS --endevor-environment SMPLTEST --endevor-system GSECONF`.
-- Review the command output and the listings in the output directory.
+- Issue the CTRL+SHIFT+P/CMD+SHIFT+P to open a VSCode Command Palette.
+- Choose the `Tasks: Run task` option from the list.
+- Use the tasks starting with the `DOGGOS` prefix.
+  - You need to use the task: `DOGGOS: create endevor service profile` first, to create an Endevor service profile.
+    **Note: this profile helps us to connect to the Endevor backend environment.**
+    **Note: you only need to run this task once, the profile will be saved in the file system.**
+  - You can use the task `DOGGOS: build the source code` to build the source code.
+- Review the task output and the listings in the output directory.
 
 **Note: the building process may end up with no generation. It means that there were no changes in the source code, in that case, try to add some comment into it and rebuild it, just to trigger the build.**
 

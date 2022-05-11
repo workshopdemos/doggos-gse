@@ -1,0 +1,51 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "DOGGOS: create endevor service profile",
+            "type": "shell",
+            "command": [
+                "zowe",
+                "profiles create endevor-profile",
+                "sample-gse-profile",
+                "--host 172.29.11.9",
+                "--port 40050",
+                "--user ${input:user_name}",
+                "--password ${input:user_name}",
+                "--prot http",
+                "--base-path EndevorService/api/v2",
+                "--reject-unauthorized false",
+                "--overwrite"
+            ],
+            "problemMatcher": [
+                // it will not do anything, but save the participants from another quickpick :)
+                "$tsc"
+            ]
+        },
+        {
+            "label": "DOGGOS: build the source code",
+            "type": "shell",
+            "command": [
+                "zowe",
+                "endevor-bridge-for-git build execute",
+                "--endevor-profile sample-gse-profile",
+                "--endevor-instance ENDEVOR",
+                "--endevor-environment SMPLTEST",
+                "--endevor-system GSECONF",
+                "--endevor-subsystem DOGGOS"
+            ],
+            "problemMatcher": [
+                // it will not do anything, but save the participants from another quickpick :)
+                "$tsc"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+        "id": "user_name",
+        "description": "A participant USERID.",
+        "default": "CRLC##",
+        "type": "promptString"
+        }
+    ]
+}
