@@ -33,12 +33,6 @@ The application is a simple batch program. It reads the sequential dataset (inpu
    ![VSCode-extensions](images/vscode_extensions.png)
    ![Code4z](images/code4z.png)
 
-### How to execute VSCode tasks
-
-- Issue the CTRL+SHIFT+P/CMD+SHIFT+P to open a VSCode Command Palette.
-- Choose the `Tasks: Run task` option from the list.
-- Use the tasks starting with the `DOGGOS` prefix.
-
 ### Installing
 
 - Please, use this repository and the `main` branch for the latest source code.
@@ -46,6 +40,14 @@ The application is a simple batch program. It reads the sequential dataset (inpu
 **Note: Make sure, that you have a [Git](https://git-scm.com/downloads) installed.**
 
 - Once you have the repository cloned to your system, please, execute the [VSCode task](#how-to-execute-vscode-tasks) `DOGGOS: install` in it. It is required to get the local project dependencies to be fetched. It may take 1-2 minutes to complete, so please, be patient :)
+
+**Note: The project installation requires XCode to be installed on the MacOs as an additional prerequisite.**
+
+### How to execute VSCode tasks
+
+- Issue the CTRL+SHIFT+P/CMD+SHIFT+P to open a VSCode Command Palette.
+- Choose the `Tasks: Run task` option from the list.
+- Use the tasks starting with the `DOGGOS` prefix.
 
 ### Repository structure
 
