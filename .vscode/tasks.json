@@ -32,7 +32,7 @@
                 "--endevor-instance ENDEVOR",
                 "--endevor-environment SMPLTEST",
                 "--endevor-system GSECONF",
-                "--endevor-subsystem DOGGOS"
+                "--endevor-subsystem ${input:user_name}"
             ],
             "problemMatcher": [
                 // it will not do anything, but save the participants from another quickpick :)
