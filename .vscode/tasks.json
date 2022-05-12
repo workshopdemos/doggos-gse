@@ -38,6 +38,25 @@
                 // it will not do anything, but save the participants from another quickpick :)
                 "$tsc"
             ]
+        },
+        {
+            "label": "DOGGOS: run tests",
+            "type": "npm",
+            "script": "test",
+            "group": "test",
+            "problemMatcher": [
+                // it will not do anything, but save the participants from another quickpick :)
+                "$tsc"
+            ]
+        },
+        {
+            "label": "DOGGOS: install",
+            "type": "shell",
+            "command": "npm install --silent",
+            "problemMatcher": [
+                // it will not do anything, but save the participants from another quickpick :)
+                "$tsc"
+            ]
         }
     ],
     "inputs": [
@@ -45,7 +64,7 @@
         "id": "user_name",
         "description": "A participant USERID.",
         "default": "CRLC##",
-        "type": "promptString"
-        }
+        "type": "promptString",
+    }
     ]
 }

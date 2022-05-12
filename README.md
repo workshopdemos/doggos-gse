@@ -33,13 +33,19 @@ The application is a simple batch program. It reads the sequential dataset (inpu
    ![VSCode-extensions](images/vscode_extensions.png)
    ![Code4z](images/code4z.png)
 
+### How to execute VSCode tasks
+
+- Issue the CTRL+SHIFT+P/CMD+SHIFT+P to open a VSCode Command Palette.
+- Choose the `Tasks: Run task` option from the list.
+- Use the tasks starting with the `DOGGOS` prefix.
+
 ### Installing
 
 - Please, use this repository and the `main` branch for the latest source code.
 
 **Note: Make sure, that you have a [Git](https://git-scm.com/downloads) installed.**
 
-- Once you have the repository cloned to your system, please, execute `npm install --silent` in it. It is required to get the local project dependencies to be fetched. It may take 1-2 minutes to complete, so please, be patient :)
+- Once you have the repository cloned to your system, please, execute the [VSCode task](#how-to-execute-vscode-tasks) `DOGGOS: install` in it. It is required to get the local project dependencies to be fetched. It may take 1-2 minutes to complete, so please, be patient :)
 
 ### Repository structure
 
@@ -52,13 +58,8 @@ Please, use the Endevor Bridge for Git Zowe CLI plugin for this purpose. It will
 
 **Note: There is already a backend setup for the build on the mainframe side.**
 
-- Issue the CTRL+SHIFT+P/CMD+SHIFT+P to open a VSCode Command Palette.
-- Choose the `Tasks: Run task` option from the list.
-- Use the tasks starting with the `DOGGOS` prefix.
-  - You need to use the task: `DOGGOS: create endevor service profile` first, to create an Endevor service profile.
-    **Note: this profile helps us to connect to the Endevor backend environment.**
-    **Note: you only need to run this task once, the profile will be saved in the file system.**
-  - You can use the task `DOGGOS: build the source code` to build the source code.
+- You need to use the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: create endevor service profile` first, to create an Endevor service profile. **Note: this profile helps us to connect to the Endevor backend environment. You only need to run this task once, the profile will be saved in the file system.**
+- You can use the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: build the source code` to build the source code.
 - Review the task output and the listings in the output directory.
 
 **Note: the building process may end up with no generation. It means that there were no changes in the source code, in that case, try to add some comment into it and rebuild it, just to trigger the build.**
@@ -98,8 +99,8 @@ Please, use Jest VSCode extension for this purpose.
 - Open the [terminal session](https://code.visualstudio.com/docs/editor/integrated-terminal) in the VSCode.
 - Configure the local test environment (only once during the initial setup) with this terminal command: `npm run configure`.
   - Enter your mainframe USERID and password details.
-- Open the [test file](/test/doggos/doggos.test.ts) in the VSCode editor and review the test cases.
-- Run the test using this terminal command: `npm run test`.
+- Open the [test file](/test/doggos/doggos.test.ts) in the VSCode editor and review the test cases if needed.
+- Run the tests using the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: run tests`.
 
 **Note: If you want to modify the input file for the tests, please, modify [it](/scripts/files/DOGGOS.INPUT) and run the terminal command: `npm run uploadFile` to upload the newer version and test the source code with it. You don't need to rebuild the program source code for it.**
 
