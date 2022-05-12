@@ -19,6 +19,7 @@
     "prettier": "^2.6.2"
   },
   "dependencies": {
-    "@broadcom/test4z": "1.2.2"
+    "@broadcom/test4z": "1.2.2",
+    "@zowe/cli": "7.0.0-next.202203101634"
   }
 }
