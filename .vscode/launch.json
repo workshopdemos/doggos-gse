@@ -1,22 +1,18 @@
 {
-    // ! Replace XX with UserID number !
-    "version": "0.2.0",
-    "configurations": [        
-        {
-            "name": "DOGGOS BATCH DEBUG",
-            "type": "intertest-batch",
-            "request": "launch",
-            "programName": [
-                "DOGGOS"
-            ],
-            "protsym": [
-                "CRLCXX.DOGGOS.PROTSYM"
-            ],
-            "interTestHost": "172.29.11.9",
-            "interTestPort": 6015,
-            "interTestUserName": "crlcXX",
-            "interTestSecure": false,
-            "convertedJCL": "CRLCXX.DOGGOS.JCL(DOGGOSAP)"
-        }
-    ]
+  // ! Replace XX with UserID number !
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "DOGGOS BATCH DEBUG",
+      "type": "intertest-batch",
+      "request": "launch",
+      "programName": ["DOGGOS"],
+      "protsym": ["CRLCXX.DOGGOS.PROTSYM"],
+      "interTestHost": "172.29.11.9",
+      "interTestPort": 6015,
+      "interTestUserName": "crlcXX",
+      "interTestSecure": false,
+      "convertedJCL": "CRLCXX.DOGGOS.JCL(DOGGOSAP)"
+    }
+  ]
 }
