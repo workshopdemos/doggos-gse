@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "DOGGOS: replace user ID in debugger configuration",
+      "label": "DOGGOS: Update Debugger UserID",
       "type": "shell",
       "command": ["sed -i 's/CRLC##/${input:user_name}/g' .vscode/launch.json"],
       "problemMatcher": [
@@ -68,7 +68,6 @@
       ]
     }
   ],
-
   "inputs": [
     {
       "id": "user_name",
