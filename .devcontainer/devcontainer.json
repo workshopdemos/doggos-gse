@@ -12,5 +12,5 @@
 
 	// "oryx build" will automatically install your dependencies and attempt to build your project
 	"postCreateCommand": 
-		"oryx build -p virtualenv_name=.venv --log-file /tmp/oryx-build.log --manifest-dir /tmp || echo 'Could not auto-build. Skipping.'; npm install -g @zowe/cli@6.40.2; zowe config reset CredentialManager; zowe plugins install @broadcom/endevor-for-zowe-cli@6.5.0; zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli@2.4.1; sdk install java 8.0.302-open"
+		"bash ./.devcontainer/instal-deps"
 }

@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+#Install dependencies
+
+# oryx build -p virtualenv_name=.venv --log-file /tmp/oryx-build.log --manifest-dir /tmp || echo 'Could not auto-build. Skipping.'
+
+echo "Installing Zowe CLI"
+npm install -g @zowe/cli@6.40.2; zowe config reset CredentialManager
+echo "Installing Zowe CLI plugin @broadcom/endevor-for-zowe-cli@6.5.0"
+zowe plugins install @broadcom/endevor-for-zowe-cli@6.5.0
+echo "Installing Zowe CLI plugin @broadcom/endevor-bridge-for-git-for-zowe-cli@2.4.1"
+zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli@2.4.1
+
+# Java v8
+source /usr/local/sdkman/bin/sdkman-init.sh
+echo "Installing Java 8"
+sdk install java 8.0.302-open
+echo "Setting up Java 8"
+sdk use java 8.0.302-open
+
+# Project dependencies
+echo "Installing npm project dependencies"
+npm ci
