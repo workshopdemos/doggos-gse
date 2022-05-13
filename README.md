@@ -120,9 +120,7 @@ Please, use Debugger for Mainframe VSCode extension for this purpose.
 **Note: There is already a backend setup for the debug on the mainframe side.**
 
 - Build the program source code successfully using the guide above.
-- Open the 'launch.json' file in the .vscode folder in this project.
-- Change the USERID with your username with CTRL/CMD+F VSCode shortcut.
-- ![Search-And-Replace](images/search-and-replace.png)
+- Put your USERID into the Debugger using the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: Update Debugger UserID`.
 - Press F5 to start the debugger session.
 - Enter the mainframe password for your username in the popup window.
 - Wait a bit for the debugger to be executed and follow the program flow using this [guide](https://marketplace.visualstudio.com/items?itemName=broadcomMFD.debugger-for-mainframe).
