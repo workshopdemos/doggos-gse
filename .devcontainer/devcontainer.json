@@ -1,0 +1,16 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.233.0/containers/codespaces-linux
+{
+	"name": "GitHub Codespaces (Default)",
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"GitHub.vscode-pull-request-github",
+		"broadcommfd.code4z-extension-pack"
+	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// "oryx build" will automatically install your dependencies and attempt to build your project
+	"postCreateCommand": 
+		"oryx build -p virtualenv_name=.venv --log-file /tmp/oryx-build.log --manifest-dir /tmp || echo 'Could not auto-build. Skipping.'; npm install -g @zowe/cli@6.40.2; zowe config reset CredentialManager; zowe plugins install @broadcom/endevor-for-zowe-cli@6.5.0; zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli@2.4.1"
+}
