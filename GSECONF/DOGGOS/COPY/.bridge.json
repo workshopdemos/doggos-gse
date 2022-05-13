@@ -1,19 +1,21 @@
 {
-  "elements" : {
-    "ADOPTRPT" : {
-      "processorGroup" : "*NOPROC*"
+  "elements": {
+    "ADOPTRPT": {
+      "processorGroup": "*NOPROC*"
     },
-    "DATETIME" : {
-      "processorGroup" : "*NOPROC*"
+    "DATETIME": {
+      "processorGroup": "*NOPROC*"
     },
-    "DOGADOPT" : {
-      "processorGroup" : "*NOPROC*"
+    "DOGADOPT": {
+      "processorGroup": "*NOPROC*"
     }
   },
-  "defaultProcessorGroup" : "*NOPROC*",
-  "definedProcessorGroups" : [ {
-    "name" : "*NOPROC*",
-    "description" : "NO PROCESSORS ASSIGNED"
-  } ],
-  "fileExtension" : "CPY"
+  "defaultProcessorGroup": "*NOPROC*",
+  "definedProcessorGroups": [
+    {
+      "name": "*NOPROC*",
+      "description": "NO PROCESSORS ASSIGNED"
+    }
+  ],
+  "fileExtension": "CPY"
 }

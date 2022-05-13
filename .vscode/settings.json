@@ -1,6 +1,10 @@
 {
-    "cobol-lsp.cpy-manager.paths-local": [
-        "GSECONF/DOGGOS/COPY"
-    ],
-    "files.associations": {"**/*.CPY": "COBOL Copybook"}
+  "cobol-lsp.cpy-manager.paths-local": ["GSECONF/DOGGOS/COPY"],
+  "files.associations": { "**/*.CPY": "COBOL Copybook" },
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Git Bash"
 }

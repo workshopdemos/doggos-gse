@@ -41,7 +41,7 @@ describe("Doggos Batch Application - Regression Test Suite", function () {
     expect(report).not.toBeNull();
     expect(report.data).not.toBeNull();
     const data = report.data;
-    expect(data.Record.length).toBe(10);
+    expect(data.Record.length).toBe(9);
     records = TestHelper.getReportRecords(data);
   });
 

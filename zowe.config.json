@@ -1,39 +1,39 @@
 {
-    "$schema": "./zowe.schema.json",
-    "profiles": {
-        "lpar1": {
-            "properties": {
-                "host": ""
-            },
-            "profiles": {
-                "zosmf": {
-                    "type": "zosmf",
-                    "properties": {
-                        "port": 1443,
-                        "host": "172.29.11.9",
-                        "protocol": "https",
-                        "rejectUnauthorized": false
-                    }
-                },
-                "test4z": {
-                    "type": "test4z",
-                    "properties": {
-                        "host": "172.29.11.9",
-                        "protocol": "https",
-                        "type": "basic",
-                        "port": 6016,
-                        "basePath": "/api/v1/test4z",
-                        "strictSSL": false,
-                        "hlq": "",
-                        "rejectUnauthorized": false
-                    }
-                }
-            }
+  "$schema": "./zowe.schema.json",
+  "profiles": {
+    "lpar1": {
+      "properties": {
+        "host": ""
+      },
+      "profiles": {
+        "zosmf": {
+          "type": "zosmf",
+          "properties": {
+            "port": 1443,
+            "host": "172.29.11.9",
+            "protocol": "https",
+            "rejectUnauthorized": false
+          }
+        },
+        "test4z": {
+          "type": "test4z",
+          "properties": {
+            "host": "172.29.11.9",
+            "protocol": "https",
+            "type": "basic",
+            "port": 6016,
+            "basePath": "/api/v1/test4z",
+            "strictSSL": false,
+            "hlq": "",
+            "rejectUnauthorized": false
+          }
         }
-    },
-    "defaults": {
-        "zosmf": "lpar1.zosmf",
-        "test4z": "lpar1.test4z"
-    },
-    "plugins": []
+      }
+    }
+  },
+  "defaults": {
+    "zosmf": "lpar1.zosmf",
+    "test4z": "lpar1.test4z"
+  },
+  "plugins": []
 }

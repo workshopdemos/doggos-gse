@@ -1,32 +1,38 @@
 {
-  "version" : 3,
-  "url" : "http://lvnktest012258.bpc.broadcom.net:8080",
-  "git" : {
-    "context" : "ni892489",
-    "repository" : "doggos-gse",
-    "cloneUrl" : "https://github.gwd.broadcom.net/ni892489/doggos-gse",
-    "branch" : "main"
+  "version": 3,
+  "url": "http://lvnktest012258.bpc.broadcom.net:8080",
+  "git": {
+    "context": "ni892489",
+    "repository": "doggos-gse",
+    "cloneUrl": "https://github.gwd.broadcom.net/ni892489/doggos-gse",
+    "branch": "main"
   },
-  "endevor" : {
-    "connection" : "xe09-mini",
-    "baseUrl" : "http://172.29.11.9:40050/EndevorService/api/v2",
-    "configuration" : "ENDEVOR"
+  "endevor": {
+    "connection": "xe09-mini",
+    "baseUrl": "http://172.29.11.9:40050/EndevorService/api/v2",
+    "configuration": "ENDEVOR"
   },
-  "branches" : [ {
-    "name" : "main",
-    "environment" : "SMPLPROD",
-    "stageNumber" : 1,
-    "systems" : [ {
-      "name" : "GSECONF",
-      "alias" : null,
-      "subsystems" : [ {
-        "name" : "DOGGOS",
-        "alias" : null,
-        "filter" : null
-      } ],
-      "filter" : null
-    } ],
-    "workEnvironmentOnly" : false,
-    "readOnly" : false
-  } ]
+  "branches": [
+    {
+      "name": "main",
+      "environment": "SMPLPROD",
+      "stageNumber": 1,
+      "systems": [
+        {
+          "name": "GSECONF",
+          "alias": null,
+          "subsystems": [
+            {
+              "name": "DOGGOS",
+              "alias": null,
+              "filter": null
+            }
+          ],
+          "filter": null
+        }
+      ],
+      "workEnvironmentOnly": false,
+      "readOnly": false
+    }
+  ]
 }
