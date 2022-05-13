@@ -61,7 +61,7 @@
     {
       "label": "DOGGOS: install",
       "type": "shell",
-      "command": "npm install --silent --lockfile",
+      "command": "npm ci --silent",
       "problemMatcher": [
         // it will not do anything, but save the participants from another quickpick :)
         "$tsc"
