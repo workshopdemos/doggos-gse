@@ -18,7 +18,6 @@ The application is a simple batch program. It reads the sequential dataset (inpu
 - [SKYTAP04](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1862/35cf6f063bc0dc95817f5eb79f1e2e94a29eb164c42add3baa53889580e9f400)
 - [SKYTAP05](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1863/027f88c3c1a9119516b1437009fa71cad6301cb8acd0c75b9787dc5fcf044df2!)
 
-
 ### Dependencies
 
 **Note** You can run it in any OS (Mac, Windows or Linux).
@@ -122,9 +121,7 @@ Please, use Debugger for Mainframe VSCode extension for this purpose.
 **Note: There is already a backend setup for the debug on the mainframe side.**
 
 - Build the program source code successfully using the guide above.
-- Open the 'launch.json' file in the .vscode folder in this project.
-- Change the USERID with your username with CTRL/CMD+F VSCode shortcut.
-- ![Search-And-Replace](images/search-and-replace.png)
+- Put your USERID into the Debugger using the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: Update Debugger UserID`.
 - Press F5 to start the debugger session.
 - Enter the mainframe password for your username in the popup window.
 - Wait a bit for the debugger to be executed and follow the program flow using this [guide](https://marketplace.visualstudio.com/items?itemName=broadcomMFD.debugger-for-mainframe).

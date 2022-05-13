@@ -2,6 +2,15 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "DOGGOS: Update Debugger UserID",
+      "type": "shell",
+      "command": ["sed -i 's/CRLC##/${input:user_name}/g' .vscode/launch.json"],
+      "problemMatcher": [
+        // it will not do anything, but save the participants from another quickpick :)
+        "$tsc"
+      ]
+    },
+    {
       "label": "DOGGOS: create endevor service profile",
       "type": "shell",
       "command": [
