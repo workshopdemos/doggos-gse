@@ -17,6 +17,8 @@ The application is a simple batch program. It reads the sequential dataset (inpu
 - [SKYTAP03](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1861/01260d8f0d94fd06752d0ca333b272c2e2d110d26658d49eb1cd0ea7aab4316c)
 - [SKYTAP04](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1862/35cf6f063bc0dc95817f5eb79f1e2e94a29eb164c42add3baa53889580e9f400)
 - [SKYTAP05](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1863/027f88c3c1a9119516b1437009fa71cad6301cb8acd0c75b9787dc5fcf044df2!)
+- [SKYTAP06](https://cloud.skytap.com/vms/472366779bddee0a22bf0abe1809c683/desktops?view=html5&vm_id=28465303)
+- [SKYTAP07](https://cloud.skytap.com/vms/f9495999ca7fdeb97c9652817dddb87f/desktops?view=html5&vm_id=28465285)
 ### Dependencies
 
 **Note** You can run it in any OS (Mac, Windows or Linux).
