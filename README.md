@@ -19,6 +19,7 @@ The application is a simple batch program. It reads the sequential dataset (inpu
 - [SKYTAP05](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1863/027f88c3c1a9119516b1437009fa71cad6301cb8acd0c75b9787dc5fcf044df2!)
 - [SKYTAP06](https://cloud.skytap.com/vms/472366779bddee0a22bf0abe1809c683/desktops?view=html5&vm_id=28465303)
 - [SKYTAP07](https://cloud.skytap.com/vms/f9495999ca7fdeb97c9652817dddb87f/desktops?view=html5&vm_id=28465285)
+
 ### Dependencies
 
 **Note** You can run it in any OS (Mac, Windows or Linux).
@@ -49,6 +50,7 @@ The application is a simple batch program. It reads the sequential dataset (inpu
 **Note: Make sure, that you have a [Git](https://git-scm.com/downloads) installed.**
 
 - Once you have the repository cloned to your system, please, execute the [VSCode task](#how-to-execute-vscode-tasks) `DOGGOS: install` in it. It is required to get the local project dependencies to be fetched. It may take 1-2 minutes to complete, so please, be patient :)
+- Run the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: configure` to configure the test environment.
 
 **Note: The project installation requires XCode to be installed on the MacOs as an additional prerequisite.**
 
@@ -82,15 +84,12 @@ Please, use Zowe Explorer VSCode extension for this purpose.
 **Note: There is already a backend setup for the run on the mainframe side.**
 
 - Build the program source code successfully using the guide above.
-- Configure the local test environment (only once during the initial setup) with this terminal command: `npm run configure`.
-  - Enter your mainframe USERID.
 - Open Zowe VSCode extension interface: reveal the left column of the VSCode interface and find the big and bold letter Z in there.
 - ![Zowe-Explorer](images/zowe-explorer.png)
 - Search for the datasets in the lpar1.zosmf Data Sets profile folder.
   - Navigate to the lpar1.zosmf node and click into it.
   - ![Zowe-Explorer-Search](images/zowe-explorer-search.png)
   - Please, use `<USERID>.DOGGOS.*` pattern to search for the datasets.
-- Open and modify the `<USERID>.DOGGOS.INPUT` dataset with the required changes, save the file, once you are done.
 - Expand the `<USERID>.DOGGOS.JCL` dataset and Right click on the `RUNDOGS` item.
   - Select `Submit JCL` option.
   - ![Zowe-Explorer-Submit](images/zowe-explorer-submit.png)
@@ -107,13 +106,15 @@ Please, use Jest VSCode extension for this purpose.
 **Note: There is already a backend setup for the tests on the mainframe side.**
 
 - Build the program source code successfully using the guide above.
-- Open the [terminal session](https://code.visualstudio.com/docs/editor/integrated-terminal) in the VSCode.
-- Configure the local test environment (only once during the initial setup) with this terminal command: `npm run configure`.
-  - Enter your mainframe USERID and password details.
 - Open the [test file](/test/doggos/doggos.test.ts) in the VSCode editor and review the test cases if needed.
 - Run the tests using the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: run tests`.
 
-**Note: If you want to modify the input file for the tests, please, modify [it](/scripts/files/DOGGOS.INPUT) and run the terminal command: `npm run uploadFile` to upload the newer version and test the source code with it. You don't need to rebuild the program source code for it.**
+### Update the test input
+
+**Note: There is already a backend setup for the tests on the mainframe side.**
+
+- Modify [the test input file](/scripts/files/DOGGOS.INPUT).
+- Run the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: upload file` to upload the newer version and test the source code with it.
 
 ### Debugging the program
 
@@ -122,7 +123,7 @@ Please, use Debugger for Mainframe VSCode extension for this purpose.
 **Note: There is already a backend setup for the debug on the mainframe side.**
 
 - Build the program source code successfully using the guide above.
-- Put your USERID into the Debugger using the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: Update Debugger UserID`.
+- Run the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: Update Debugger UserID`.
 - Press F5 to start the debugger session.
 - Enter the mainframe password for your username in the popup window.
 - Wait a bit for the debugger to be executed and follow the program flow using this [guide](https://marketplace.visualstudio.com/items?itemName=broadcomMFD.debugger-for-mainframe).
