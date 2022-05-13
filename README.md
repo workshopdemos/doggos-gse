@@ -10,6 +10,15 @@ The application is a simple batch program. It reads the sequential dataset (inpu
 
 ## Getting started
 
+### Using Skytap cloud instance
+
+- [SKYTAP01](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1859/7296193a00faef48a0cd45e1239b0c7cfffa67e54def102ea05991d89e929292)
+- [SKYTAP02](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1860/4c446478c5dd89eff45ccc7ae005a8750d0be301fcf8c946983b940c994e35c1)
+- [SKYTAP03](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1861/01260d8f0d94fd06752d0ca333b272c2e2d110d26658d49eb1cd0ea7aab4316c)
+- [SKYTAP04](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1862/35cf6f063bc0dc95817f5eb79f1e2e94a29eb164c42add3baa53889580e9f400)
+- [SKYTAP05](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1863/027f88c3c1a9119516b1437009fa71cad6301cb8acd0c75b9787dc5fcf044df2!)
+
+
 ### Dependencies
 
 **Note** You can run it in any OS (Mac, Windows or Linux).
@@ -33,12 +42,6 @@ The application is a simple batch program. It reads the sequential dataset (inpu
    ![VSCode-extensions](images/vscode_extensions.png)
    ![Code4z](images/code4z.png)
 
-### How to execute VSCode tasks
-
-- Issue the CTRL+SHIFT+P/CMD+SHIFT+P to open a VSCode Command Palette.
-- Choose the `Tasks: Run task` option from the list.
-- Use the tasks starting with the `DOGGOS` prefix.
-
 ### Installing
 
 - Please, use this repository and the `main` branch for the latest source code.
@@ -46,6 +49,14 @@ The application is a simple batch program. It reads the sequential dataset (inpu
 **Note: Make sure, that you have a [Git](https://git-scm.com/downloads) installed.**
 
 - Once you have the repository cloned to your system, please, execute the [VSCode task](#how-to-execute-vscode-tasks) `DOGGOS: install` in it. It is required to get the local project dependencies to be fetched. It may take 1-2 minutes to complete, so please, be patient :)
+
+**Note: The project installation requires XCode to be installed on the MacOs as an additional prerequisite.**
+
+### How to execute VSCode tasks
+
+- Issue the CTRL+SHIFT+P/CMD+SHIFT+P to open a VSCode Command Palette.
+- Choose the `Tasks: Run task` option from the list.
+- Use the tasks starting with the `DOGGOS` prefix.
 
 ### Repository structure
 

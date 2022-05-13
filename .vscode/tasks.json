@@ -70,12 +70,13 @@
             ]
         }
     ],
-    "inputs": [
-        {
-        "id": "user_name",
-        "description": "A participant USERID.",
-        "default": "CRLC##",
-        "type": "promptString",
+
+  "inputs": [
+    {
+      "id": "user_name",
+      "description": "A participant USERID.",
+      "default": "CRLC##",
+      "type": "promptString"
     }
-    ]
+  ]
 }

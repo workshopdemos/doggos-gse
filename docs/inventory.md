@@ -1,5 +1,7 @@
 # **Endevor inventory details**
+
 ### Endevor map used for this repository
+
 ```
 
 Endevor Map
@@ -9,6 +11,7 @@ Endevor Map
 ```
 
 ### Map of synchronized subsystems
+
 ```
 
 Endevor Map

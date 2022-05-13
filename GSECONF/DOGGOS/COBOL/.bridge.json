@@ -1,19 +1,22 @@
 {
-  "elements" : {
-    "DOGGOS" : {
-      "processorGroup" : "CLENBL"
+  "elements": {
+    "DOGGOS": {
+      "processorGroup": "CLENBL"
     },
-    "TESTELM" : {
-      "processorGroup" : "CLENBL"
+    "TESTELM": {
+      "processorGroup": "CLENBL"
     }
   },
-  "defaultProcessorGroup" : "CLENBL",
-  "definedProcessorGroups" : [ {
-    "name" : "CLENBL",
-    "description" : "COBOL/LE COMPILE AND LINK, LISTING IS STORED"
-  }, {
-    "name" : "*NOPROC*",
-    "description" : "NO PROCESSORS ASSIGNED"
-  } ],
-  "fileExtension" : "CBL"
+  "defaultProcessorGroup": "CLENBL",
+  "definedProcessorGroups": [
+    {
+      "name": "CLENBL",
+      "description": "COBOL/LE COMPILE AND LINK, LISTING IS STORED"
+    },
+    {
+      "name": "*NOPROC*",
+      "description": "NO PROCESSORS ASSIGNED"
+    }
+  ],
+  "fileExtension": "CBL"
 }
