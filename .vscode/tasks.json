@@ -66,6 +66,24 @@
         // it will not do anything, but save the participants from another quickpick :)
         "$tsc"
       ]
+    },
+    {
+      "label": "DOGGOS: configure",
+      "type": "shell",
+      "command": "sh scripts/configure.sh ${input:user_name}",
+      "problemMatcher": [
+        // it will not do anything, but save the participants from another quickpick :)
+        "$tsc"
+      ]
+    },
+    {
+      "label": "DOGGOS: upload file",
+      "type": "shell",
+      "command": "sh scripts/upload-file.sh ${input:user_name}",
+      "problemMatcher": [
+        // it will not do anything, but save the participants from another quickpick :)
+        "$tsc"
+      ]
     }
   ],
   "inputs": [

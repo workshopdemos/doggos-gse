@@ -5,8 +5,6 @@
   "author": "Broadcom",
   "scripts": {
     "test": "jest",
-    "configure": "cd scripts && sh configure.sh",
-    "uploadFile": "cd scripts && sh upload-file.sh",
     "pretty": "prettier --write ."
   },
   "devDependencies": {

@@ -1,15 +1,13 @@
 #!/bin/bash
 set -e
-source ./basescript.sh
-printf "Enter username: "
-read hlq
+
+hostname=172.29.11.9
+protocol=https
+port=1443
+rejectUnauthorized=false
+
+username="$1"
+
 printf "\nDeploying the input file to the Mainframe\n\n"
-tempDirectoryName="FILES_TEMP";
-DOGGOS_INPUT="DOGGOS.INPUT";
-DOGGOS_INPUT_NEW="DOGGOS.INPUT.NEW";
-DOGGOS_RUNAPP="DOGGOS.RUNAPP"
-storageClass="CAEDS6";
-upload "$DOGGOS_INPUT" files/DOGGOS.INPUT DS N
-printf "\n###########################################################"
+zowe zos-files upload file-to-data-set scripts/files/DOGGOS.INPUT "$username".DOGGOS.INPUT --host "$hostname" --port "$port" --protocol "$protocol" --rejectUnauthorized "$rejectUnauthorized" --user "$username" --password "$username"
 printf "\n# Input dataset successfully deployed to the Z/OS system #"
-printf "\n###########################################################\n"
