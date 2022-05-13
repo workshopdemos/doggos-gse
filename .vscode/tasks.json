@@ -4,7 +4,7 @@
     {
       "label": "DOGGOS: Update Debugger UserID",
       "type": "shell",
-      "command": ["sed -i 's/CRLC##/${input:user_name}/g' .vscode/launch.json"],
+      "command": ["sed -i -e 's/CRLC##/${input:user_name}/g' .vscode/launch.json"],
       "problemMatcher": [
         // it will not do anything, but save the participants from another quickpick :)
         "$tsc"
@@ -61,7 +61,7 @@
     {
       "label": "DOGGOS: install",
       "type": "shell",
-      "command": "npm install --silent",
+      "command": "npm install --silent --lockfile",
       "problemMatcher": [
         // it will not do anything, but save the participants from another quickpick :)
         "$tsc"
