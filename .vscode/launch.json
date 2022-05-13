@@ -1,5 +1,5 @@
 {
-    // ! Replace XX with UserID number !
+    // ! Replace ## with UserID number !
     "version": "0.2.0",
     "configurations": [        
         {
@@ -10,13 +10,13 @@
                 "DOGGOS"
             ],
             "protsym": [
-                "CRLCXX.DOGGOS.PROTSYM"
+                "CRLC##.DOGGOS.PROTSYM"
             ],
             "interTestHost": "172.29.11.9",
             "interTestPort": 6015,
-            "interTestUserName": "crlcXX",
+            "interTestUserName": "CRLC##",
             "interTestSecure": false,
-            "convertedJCL": "CRLCXX.DOGGOS.JCL(DOGGOSAP)"
+            "convertedJCL": "CRLC##.DOGGOS.JCL(DOGGOSAP)"
         }
     ]
 }
