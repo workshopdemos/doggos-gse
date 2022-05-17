@@ -117,5 +117,3 @@ Please, use Debugger for Mainframe VSCode extension for this purpose.
 - Press F5 to start the debugger session.
 - Enter the mainframe password for your username in the popup window.
 - Wait a bit for the debugger to be executed and follow the program flow using this [guide](https://marketplace.visualstudio.com/items?itemName=broadcomMFD.debugger-for-mainframe).
-
-**Note: if you want to modify the input file for the debugger, please, use Zowe Explorer extension for this purpose in the guide above.**
