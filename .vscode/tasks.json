@@ -17,7 +17,7 @@
         "zowe",
         "profiles create endevor-profile",
         "sample-gse-profile",
-        "--host 172.29.11.9",
+        "--host 35.245.180.49",
         "--port 40050",
         "--user ${input:user_name}",
         "--password ${input:user_name}",

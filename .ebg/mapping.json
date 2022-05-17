@@ -9,7 +9,7 @@
   },
   "endevor": {
     "connection": "xe09-mini",
-    "baseUrl": "http://172.29.11.9:40050/EndevorService/api/v2",
+    "baseUrl": "http://35.245.180.49:40050/EndevorService/api/v2",
     "configuration": "ENDEVOR"
   },
   "branches": [

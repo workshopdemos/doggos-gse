@@ -10,7 +10,7 @@
           "type": "zosmf",
           "properties": {
             "port": 1443,
-            "host": "172.29.11.9",
+            "host": "35.245.180.49",
             "protocol": "https",
             "rejectUnauthorized": false
           }
@@ -18,7 +18,7 @@
         "test4z": {
           "type": "test4z",
           "properties": {
-            "host": "172.29.11.9",
+            "host": "35.245.180.49",
             "protocol": "https",
             "type": "basic",
             "port": 6016,

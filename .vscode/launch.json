@@ -7,7 +7,7 @@
       "request": "launch",
       "programName": ["DOGGOS"],
       "protsym": ["CRLC##.DOGGOS.PROTSYM"],
-      "interTestHost": "172.29.11.9",
+      "interTestHost": "35.245.180.49",
       "interTestPort": 6015,
       "interTestUserName": "CRLC##",
       "interTestSecure": false,

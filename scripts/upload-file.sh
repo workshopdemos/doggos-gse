@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-hostname=172.29.11.9
+hostname=35.245.180.49
 protocol=https
 port=1443
 rejectUnauthorized=false
