@@ -10,22 +10,6 @@ The application is a simple batch program. It reads the sequential dataset (inpu
 
 ## Getting started
 
-### Using Skytap cloud instance
-
-- [SKYTAP01](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1859/7296193a00faef48a0cd45e1239b0c7cfffa67e54def102ea05991d89e929292)
-- [SKYTAP02](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1860/4c446478c5dd89eff45ccc7ae005a8750d0be301fcf8c946983b940c994e35c1)
-- [SKYTAP03](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1861/01260d8f0d94fd06752d0ca333b272c2e2d110d26658d49eb1cd0ea7aab4316c)
-- [SKYTAP04](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1862/35cf6f063bc0dc95817f5eb79f1e2e94a29eb164c42add3baa53889580e9f400)
-- [SKYTAP05](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1863/027f88c3c1a9119516b1437009fa71cad6301cb8acd0c75b9787dc5fcf044df2!)
-- [Skytap06](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1864/96c9ee92e3376079e910b5073b91e46626c4e9ca36ae7288c07fee42bd73b699)
-- [Skytap07](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1865/75aa48c4ff1de801fc20eebc322ab6826f2e4bcdad4f6d323e8a3285484b1fb4)
-- [Skytap08](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1866/55cabcc2f56685285f9dd31f74fb2a03c695377c535c258e41e63b468828014c)
-- [Skytap09](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1867/56f24bcef7bd2c6e127aae4c63ecd9a24411e914b370fa51c977f7b391e14d30)
-- [Skytap10](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1868/044af2487813349ac3177b547d52e0be184285531cb2d7a9780023d2b9d8698a)
-- [Skytap11](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1869/79e3c9d0bda0b330bc2d2653c1da93234c95977a82d00b56b031598910749b81)
-- [Skytap12](https://broadcom-md.cmlabs.skytap.com/lab_access/event_participant/1870/9588ffb9f4390e75e184c44cc91900e76facd089b5ea8d8141798e2f19daf3db)
-
-
 ### Dependencies
 
 **Note** You can run it in any OS (Mac, Windows or Linux).
@@ -133,5 +117,3 @@ Please, use Debugger for Mainframe VSCode extension for this purpose.
 - Press F5 to start the debugger session.
 - Enter the mainframe password for your username in the popup window.
 - Wait a bit for the debugger to be executed and follow the program flow using this [guide](https://marketplace.visualstudio.com/items?itemName=broadcomMFD.debugger-for-mainframe).
-
-**Note: if you want to modify the input file for the debugger, please, use Zowe Explorer extension for this purpose in the guide above.**
