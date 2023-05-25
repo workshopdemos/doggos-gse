@@ -1,0 +1,25 @@
+################################################################################
+# "sync" entries - sync files from local project to z/OS 
+sync:
+
+  ##############################################################################
+  # sync everything from the local project to the remote directory specified 
+  - id: "all"
+
+    # the remote directory on z/OS USS (specified in your syncz_vars.yml)
+    remote: ((.remotedir))
+
+    # Ignore the following files and directories
+    ignore:
+      - "listings/"
+      - ".git/"
+      - ".gitignore"
+      - "*.md"
+      - "*.yml"
+
+################################################################
+# List of Back Sync entries
+backsync:
+  - id: jsdoc
+    local: node_modules/
+    remote: ((.remotedir))/node_modules/
