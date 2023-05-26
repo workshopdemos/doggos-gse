@@ -84,6 +84,24 @@
         // it will not do anything, but save the participants from another quickpick :)
         "$tsc"
       ]
+    },
+    {
+      "label": "DOGGOS: synchronize remote location",
+      "type": "shell",
+      "command": "syncz",
+      "problemMatcher": [
+        // it will not do anything, but save the participants from another quickpick :)
+        "$tsc"
+      ]
+    },
+    {
+      "label": "DOGGOS: sync and build",
+      "type": "shell",
+      "command": "syncz -c \"bldz\"",
+      "problemMatcher": [
+        // it will not do anything, but save the participants from another quickpick :)
+        "$tsc"
+      ]
     }
   ],
   "inputs": [
