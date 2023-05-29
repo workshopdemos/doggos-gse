@@ -2,11 +2,14 @@ var mvs = require("bldz/mvs");
 var fs = require("bldz/fs");
 // var ws = require("bldz/workspace");
 var dd = require("bldz/std/exp/utils/dd")
+var os = require("bldz/os")
 var process = require("bldz/process")
 process.setenv("_BPXK_JOBLOG", "STDERR");
 
 
 function buildScript(params){
+
+var dsn = `${os.user()}.PUBLIC.PROTSYM`;
 // dd.alloc("dd", {
 //     attributes: {
 //         dsntype: "LIBRARY",
@@ -27,8 +30,8 @@ console.log("- - - ---- - - -");
 // allocations
 // PROTSYM - point to the dataset
 //mvs.
-if (fs.dsExists("JANMI04.PUBLIC.PROTSYM"))
-        mvs.bpxwdyn("ALLOC FI(PROTSYM) DA(JANMI04.PUBLIC.PROTSYM) SHR MSG(1)");
+if (fs.dsExists(dsn))
+        mvs.bpxwdyn("ALLOC FI(PROTSYM) DA(" + dsn + ") SHR MSG(1)");
 // else allocate
 
 // INPUT - point to listing (try path first)

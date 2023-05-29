@@ -8,6 +8,7 @@ sync:
 
     # the remote directory on z/OS USS (specified in your syncz_vars.yml)
     remote: ((.remotedir))
+    # local: GSECONF\DOGGOS
 
     # Ignore the following files and directories
     ignore:
@@ -19,7 +20,7 @@ sync:
 
 ################################################################
 # List of Back Sync entries
-backsync:
-  - id: jsdoc
-    local: node_modules/
-    remote: ((.remotedir))/node_modules/
+# backsync:
+#   - id: jsdoc
+#     local: node_modules/
+#     remote: ((.remotedir))/node_modules/

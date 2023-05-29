@@ -8,19 +8,17 @@ function buildScript(params){
 
 var dsn = `${os.user()}.PUBLIC.PROTSYM`;
 console.log(dsn);
-
-// detele first?
 var pgm = "IDCAMS";
-
-//parametrize the ds names. 
 var sysinInput = [
-    " DELETE JANMI04.PUBLIC.PROTSYM CLUSTER PURGE"
-]
+    " DELETE protsymds CLUSTER PURGE"
+].join("\n");
+
+sysinInput = sysinInput.replace("protsymds", dsn);
 
 mvs.bpxwdyn("ALLOC FI(SYSIN) RECFM(F,B) LRECL(80) SPACE(5,1) CYL MSG(2)");
 mvs.bpxwdyn("ALLOC FI(SYSPRINT) LRECL(133) RECFM(F,B,A) SPACE(5,1)");
 
-fs.write("//DD:SYSIN", sysinInput.join("\n"));
+fs.write("//DD:SYSIN", sysinInput);
 
 var idcamsRC = mvs.attach(pgm);
 
@@ -34,7 +32,7 @@ mvs.bpxwdyn("FREE FI(SYSPRINT)");
 
 console.log("******* IDCAMS ******");
 console.log("*     VSAM ALLOC    *");
-//JANMI04.PUBLIC.PROTSYM
+
 var sysinInput = [
     " SET MAXCC=0",
         " DEFINE CLUSTER (NAME(protsymds)              -",
@@ -67,33 +65,3 @@ return {
 };
 
 }
-
-// function buildScript(params){
-//     // logs
-//     console.log("protsym executed");
-
-//     // construct listing path - copy listings from path to ds, but first try path reference
-
-//     // Allocate profile DS
-
-//     // Allocaate PROTSYM VSAM DS  /consider clean up
-
-
-//     //perform necessary allocations for INT25COB2
-//     // mvs.bpxwdyn("ALLOC FI");
-//     //call INT25COB2
-//     // var symbRc = mvs.attach("IN25COB2", {parm: TEST});
-//     //validate protsym call INT25UTIL
-
-
-
-//     return {
-//         rc: 0, //symbRc,
-//         output: [
-//             {
-//                 name: "sample protsym script",
-//                 content: "this is output for protsym script"
-//             }
-//         ]
-//     }
-// }
