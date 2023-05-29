@@ -1,15 +1,14 @@
 var mvs = require("bldz/mvs");
 var fs = require("bldz/fs");
+var os = require("bldz/os");
 // var ws = require("bldz/workspace");
 var dd = require("bldz/std/exp/utils/dd")
-var os = require("bldz/os")
 var process = require("bldz/process")
+var path = require("bldz/path");
 process.setenv("_BPXK_JOBLOG", "STDERR");
 
 
 function buildScript(params){
-
-var dsn = `${os.user()}.PUBLIC.PROTSYM`;
 // dd.alloc("dd", {
 //     attributes: {
 //         dsntype: "LIBRARY",
@@ -22,42 +21,44 @@ var dsn = `${os.user()}.PUBLIC.PROTSYM`;
 //     return path.changeExt(list, "list");
 // })
 
-var pgm = "IN25UTIL";
+var pgm = "IN25COB2";
 
-console.log("--- IN25UTIL ---");
+console.log("--- IN25COB2 ---");
 console.log("- - - ---- - - -");
 
 // allocations
 // PROTSYM - point to the dataset
-//mvs.
-if (fs.dsExists(dsn))
-        mvs.bpxwdyn("ALLOC FI(PROTSYM) DA(" + dsn + ") SHR MSG(1)");
-// else allocate
+var protsymdsn = `${os.user()}.PUBLIC.PROTSYM`;
+console.log("PROTSYM = " + protsymdsn); 
+
+// if (fs.dsExists("JANMI04.PUBLIC.PROTSYM"))  //TODO parametrize ds name
+//         mvs.bpxwdyn("ALLOC FI(PROTSYM) DA(JANMI04.PUBLIC.PROTSYM) SHR MSG(1)");
+if (fs.dsExists(protsymdsn))  //TODO parametrize ds name
+        mvs.bpxwdyn("ALLOC FI(PROTSYM) DA(" + protsymdsn + ") SHR MSG(1)");
+// else allocate and initialize
 
 // INPUT - point to listing (try path first)
+var outpath = path.absolute("build-out/COBOL/DOGGOS.CBL.list");
+console.log("output path: " + outpath);
 
-// dd.alloc("INPUT", {
-//     attributes: {
-//         pathdisp: "KEEP",
-//         pathopts: "ORDONLY",
-//         recfm: "FBA",
-//         lrecl: 133,
-//         path: "/a/janmi04/vega/doggos/GSECONF/DOGGOS/build-out/COBOL/DOGGOS.CBL.list",
-//         filedata: "TEXT",
-//     }
-// });
+//TODO parametrize listings
+dd.alloc("INPUT", {
+    attributes: {
+        pathdisp: "KEEP",
+        pathopts: "ORDONLY",
+        recfm: "FBA",
+        lrecl: 133,
+        // path: "/a/janmi04/vega/doggos/DOGGOS/build-out/COBOL/DOGGOS.CBL.list",
+        // path: "DOGGOS/build-out/COBOL/DOGGOS.CBL.list",
+        path: outpath,
+        filedata: "TEXT",
+    }
+});
 
 // CARDS - parameters
-// var cardInput = [
-//     "PASSWORD=12345678",                          
-//     "INITIALIZE,MAXPGMVER=1",                     
-//     "REPORT"        
-// ]
-
+// parametrize member
 var cardInput = [
-    "PASSWORD=12345678",                          
-    "INITIALIZE,MAXPGMVER=1",                     
-    "REPORT"        
+    "DOGGOS,LISTER=ALL,CUTPRINT=ALL"
 ]
 
 mvs.bpxwdyn("ALLOC FI(CARDS) RECFM(F,B) LRECL(80) SPACE(5,1) CYL MSG(2)");
@@ -68,28 +69,28 @@ mvs.bpxwdyn("ALLOC FI(OUTPUT) LRECL(133) RECFM(F,B,A) BLKSIZE(3990) SPACE(5,1)")
 // mvs.bpxwdyn("ALLOC FI(OUTPUT) SYSOUT LRECL(133) RECFM(F,B,A) BLKSIZE(3990)");
 
 // MESSAGE - SYSOUT
-mvs.bpxwdyn("ALLOC FI(MESSAGE) SYSOUT");
-
+ mvs.bpxwdyn("ALLOC FI(MESSAGE) SYSOUT");
 // dd.alloc("MESSAGE", {
 //     type: "stderr" 
 // })
 // mvs.bpxwdyn("ALLOC FI(MESSAGE) LRECL(133) RECFM(F,B) BLKSIZE(3990) SPACE(5,1)");
 
-var in25utilRC = mvs.attach(pgm);
+var in25cob2RC = mvs.attach(pgm);
 
 // console.log(fs.read("//DD:OUTPUT"));
 // console.log("------------------  MESSAGE -----------------");
 // console.log(fs.read("//DD:MESSAGE"));
 
-// console.log("**** IN25UTIL end **** RC = " + in25cob2RC);
+console.log("**** IN25COB2 end **** RC = " + in25cob2RC);
 
 return {
-    rc: in25utilRC,
+    rc: in25cob2RC,
     output: [
         {
-            name: "IN25UTIL init/report",
+            name: "IN25COB2 symbol processing",
             content: fs.read("//DD:OUTPUT")
         }
     ]
 };
+
 }
