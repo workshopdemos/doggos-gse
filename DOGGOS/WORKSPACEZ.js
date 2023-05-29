@@ -1,6 +1,7 @@
 var files = require("bldz/std/exp/rules/files");
 var os = require("bldz/os");
 var fs = require("bldz/fs");
+
 var properties = JSON.parse(fs.read("properties.json"));
 var copybookDSN = `${os.user()}.DOGGOS.COPYBOOK`;
 var profileDSN = `${os.user()}.PUBLIC.PROFLIB`;
@@ -50,3 +51,17 @@ var allocretur = files.ds.alloc([
 
 
 
+//Allocate VSAM for PROTSYM adsfa
+genrule_script({
+    name: "PROTSYM_Alloc",
+    script_file: "scripts/protsym.js"
+});
+
+//initialize PROTSYM
+genrule_script({
+    name: "initPROTSYM",
+    script_file: "scripts/report.js",
+    deps: [
+        "PROTSYM_Alloc"
+    ]
+})
