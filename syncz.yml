@@ -8,7 +8,7 @@ sync:
 
     # the remote directory on z/OS USS (specified in your syncz_vars.yml)
     remote: ((.remotedir))
-    # local: GSECONF\DOGGOS
+    local: DOGGOS
 
     # Ignore the following files and directories
     ignore:

@@ -16,13 +16,13 @@ genrule_usscmd({
 //Allocate VSAM for PROTSYM adsfa
 genrule_script({
     name: "PROTSYM_Alloc",
-    script_file: "../../scripts/tb/protsym.js"
+    script_file: "scripts/protsym.js"
 });
 
 //initialize PROTSYM
 genrule_script({
     name: "initPROTSYM",
-    script_file: "../../scripts/tb/report.js",
+    script_file: "scripts/report.js",
     deps: [
         "PROTSYM_Alloc"
     ]
@@ -31,7 +31,7 @@ genrule_script({
 // preprare PROTSYM
 genrule_script({
     name: "in25cob2",
-    script_file: "../../scripts/tb/in25cob2.js",
+    script_file: "scripts/in25cob2.js",
     deps: [
         "initPROTSYM"
     ]
