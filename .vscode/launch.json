@@ -6,12 +6,12 @@
       "type": "intertest-batch",
       "request": "launch",
       "programName": ["DOGGOS"],
-      "protsym": ["CRLC##.DOGGOS.PROTSYM"],
-      "interTestHost": "35.245.180.49",
+      "protsym": ["CUST###.PUBLIC.PROTSYM"],
+      "interTestHost": "10.1.2.73",
       "interTestPort": 6015,
-      "interTestUserName": "CRLC##",
+      "interTestUserName": "CUST###",
       "interTestSecure": false,
-      "convertedJCL": "CRLC##.DOGGOS.JCL(DOGGOSAP)"
+      "convertedJCL": "CUST###.PUBLIC.JCL(DBGDOG)"
     }
   ]
 }
