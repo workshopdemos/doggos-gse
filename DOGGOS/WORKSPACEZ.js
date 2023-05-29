@@ -36,11 +36,15 @@ files.ds.copy({
 var allocretur = files.ds.alloc([
     {
         attributes : {
+            space_units: "CYL",
             dsn: profileDSN,
             lrecl: 6144,
             recfm: "F",
+            dsorg: "PO",
             blksize: 6144,
-            // space: 
+            space: [6, 2],
+            dir: 3
+
         },
         opts: {
             delete: true
