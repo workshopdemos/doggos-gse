@@ -10,6 +10,7 @@ genrule_usscmd({
     deps: [
         // "//COBOL:all",
         "//COBOL:copyLoad",
+        "//COBOL:in25cob2"
         // "in25cob2"
     ]
 });

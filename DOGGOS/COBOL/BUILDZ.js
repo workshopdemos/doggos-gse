@@ -30,6 +30,7 @@ var dataset_rules = files.ds.alloc([
 
 // general COBOL compile rules - create a compile rule per *.cbl file found
 var generated = compile.cobol({
+    name: "cobcompile",
     // the location to search for COPYBOOKs
     srcs: "*.CBL",
     copyPaths: [`//'${os.user()}.DOGGOS.COPYBOOK'`],
@@ -41,18 +42,22 @@ var generated = compile.cobol({
     
 });
 
-// preprare PROTSYM
-genrule_script({
-    name: "in25cob2",
-    script_file: "scripts/in25cob2.js",
-    deps: generated.rules,
-});
 // Bind the objects into an executable
 
 var binderGenerated = binder.bind({
     outs: "doggos",
     syslibs: ["//CEE.SCEELKED"],
     deps: generated.rules
+});
+
+// preprare PROTSYM
+var symbol = genrule_script({
+    name: "in25cob2",
+    script_file: "../scripts/in25cob2.js",
+    deps: generated.rules
+    // deps: [
+    //     "cobcompile"
+    // ]
 });
 
 // group.outputs({
