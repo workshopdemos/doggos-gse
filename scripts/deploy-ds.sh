@@ -23,15 +23,17 @@ sed "s|<RUNDOG>|$RUNDOG|g" "$LOCAL_DIR/jcl/RUNDOG.jcl" > "$LOCAL_DIR/tmp/RUNDOG.
 zowe files delete data-set "$USERN.PUBLIC.JCL" -f
 zowe files delete data-set "$USERN.PUBLIC.INPUT" -f
 
+# # Remove artifacts
+# zowe files delete data-set "$USERN.DOGGOS.COPYBOOK" -f
+# zowe files delete data-set "$USERN.PUBLIC.LOADLIB" -f
+# zowe files delete data-set "$USERN.PUBLIC.PROFLIB" -f
+
+# zowe files delete data-set "$USERN.PUBLIC.PROTSYM" -f
+# zowe files delete data-set "$USERN.PUBLIC.PROTSYM.DATA" -f
+
 zowe files cre pds "$USERN.PUBLIC.JCL"
 zowe files ul dtp "$LOCAL_DIR/tmp" "$USERN.PUBLIC.JCL"
 zowe files cre data-set-sequential "$USERN.PUBLIC.INPUT"
 zowe files ul ftds "$LOCAL_DIR/DOGGOS.INPUT" $USERN.PUBLIC.INPUT
 
 rm -r "$LOCAL_DIR/tmp"
-
-# Remove artifacts
-# zowe files delete data-set "$USERN.PUBLIC.LOADLIB" -f
-# zowe files delete data-set "$USERN.PUBLIC.PROFLIB" -f
-# zowe files delete data-set "$USERN.PUBLIC.PROTSYM" -f
-# zowe files delete data-set "$USERN.PUBLIC.PROTSYM.DATA" -f
