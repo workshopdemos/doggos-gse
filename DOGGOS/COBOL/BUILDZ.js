@@ -35,8 +35,16 @@ var generated = compile.cobol({
     srcs: "*.CBL",
     copyPaths: [`//'${os.user()}.DOGGOS.COPYBOOK'`],
     opts : [
-        "OFFSET",
-        "MAP(HEX)"
+        // "OFFSET",
+        // "MAP(HEX)",
+        "APOST",
+        "LIST",
+        "RENT",
+        "MAP",
+        "NONUMBER",
+        "XREF",
+        "NOSTGOPT",
+        "OPT(0)"
     ]
         
     
