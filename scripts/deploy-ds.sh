@@ -29,3 +29,9 @@ zowe files cre data-set-sequential "$USERN.PUBLIC.INPUT"
 zowe files ul ftds "$LOCAL_DIR/DOGGOS.INPUT" $USERN.PUBLIC.INPUT
 
 rm -r "$LOCAL_DIR/tmp"
+
+# Remove artifacts
+# zowe files delete data-set "$USERN.PUBLIC.LOADLIB" -f
+# zowe files delete data-set "$USERN.PUBLIC.PROFLIB" -f
+# zowe files delete data-set "$USERN.PUBLIC.PROTSYM" -f
+# zowe files delete data-set "$USERN.PUBLIC.PROTSYM.DATA" -f
