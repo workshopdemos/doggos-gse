@@ -27,3 +27,5 @@ zowe files cre pds "$USERN.PUBLIC.JCL"
 zowe files ul dtp "$LOCAL_DIR/tmp" "$USERN.PUBLIC.JCL"
 zowe files cre data-set-sequential "$USERN.PUBLIC.INPUT"
 zowe files ul ftds "$LOCAL_DIR/DOGGOS.INPUT" $USERN.PUBLIC.INPUT
+
+rm -r "$LOCAL_DIR/tmp"
