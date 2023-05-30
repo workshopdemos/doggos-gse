@@ -8,7 +8,7 @@
       "programName": ["DOGGOS"],
       "protsym": ["CUST###.PUBLIC.PROTSYM"],
       "interTestHost": "10.1.2.73",
-      "interTestPort": 6015,
+      "interTestPort": 6023,
       "interTestUserName": "CUST###",
       "interTestSecure": false,
       "convertedJCL": "CUST###.PUBLIC.JCL(DBGDOG)"
