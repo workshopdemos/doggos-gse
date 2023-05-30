@@ -44,7 +44,8 @@ var generated = compile.cobol({
         "NONUMBER",
         "XREF",
         "NOSTGOPT",
-        "OPT(0)"
+        "OPT(0)",
+        "LINECOUNT(60)"
     ]
         
     
