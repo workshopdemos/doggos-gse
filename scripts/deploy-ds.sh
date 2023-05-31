@@ -7,7 +7,7 @@ value="${user#mfwsuser}"
 formatted_value=$(printf "%02d" $value)
 
 USERN="CUST0$formatted_value"
-USERL="cust$formatted_value"
+USERL="cust0$formatted_value"
 LSTPRF="LSTPRF$formatted_value"
 RUNDOG="RUNDOG$formatted_value"
 DBGDOG="DBGDOG$formatted_value"
