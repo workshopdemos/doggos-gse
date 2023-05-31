@@ -30,13 +30,9 @@ var dataset_rules = files.ds.alloc([
 
 // general COBOL compile rules - create a compile rule per *.cbl file found
 var generated = compile.cobol({
-    name: "cobcompile",
-    // the location to search for COPYBOOKs
     srcs: "*.CBL",
     copyPaths: [`//'${os.user()}.DOGGOS.COPYBOOK'`],
     opts : [
-        // "OFFSET",
-        // "MAP(HEX)",
         "APOST",
         "LIST",
         "RENT",
