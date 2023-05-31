@@ -5,22 +5,22 @@
 
 1. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
 2. Install Code4z VSCode extension pack:
-- Go to VS Code marketplace by clicking this icon ![Marketplace](images/image1.png) 
-- Search for Code4z and install ![Code4z](images/image2.png)
-- Return to your local files by clicking on the Explorer icon ![Explorer](images/image3.png)
+- Go to VS Code marketplace by clicking this icon ![Marketplace](images/image01.png) 
+- Search for Code4z and install ![Code4z](images/image02.png)
+- Return to your local files by clicking on the Explorer icon ![Explorer](images/image03.png)
 
 ## Edit the DOGGOS application
 Open the DOGGOS > COBOL > DOGGOS.CBL file
 Add a new dog breed.
 1. Copy block of code (lines 59-61)
 2. Paste it after line 61
-![Paste](images/image4.png)
+![Paste](images/image04.png)
 3. Change JINGO to another dog breed name (e. g. HUSKY) in the whole pasted block of code
 4. For HUSKY-INDEX-VALUE change VALUE to 9
 5. For OTHER-INDEX-VALUE change VALUE to 10
 6. Change PIC 9(1) to PIC 9(2) for OTHER-INDEX-VALUE
 7. Change OCCURS value in line 71 to 10
-![Change](images/image5.png)
+![Change](images/image05.png)
 8. Copy block of code (lines 208-210)
 9. Paste it after line 210
 10. Change JINGO to the dog breed name you picked in step 3 (e. g.HUSKY) within the pasted block of code
@@ -45,7 +45,7 @@ Add a new dog breed.
 3. Click on the CUST00X.PUBLIC.INPUT data set  to edit it
 4. Add the following lines with the name of the dog breed you chose in the code change
 
-![Change](images/image6.png)
+![Change](images/image06.png)
 
 5. Expand the CUST00X.PUBLIC.JCL data set and right click on the RUNDOG
 6. Select “Submit JCL” menu item
@@ -59,12 +59,12 @@ The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY
 1. Let’s introduce a bug in the program data 🙂 Go to the input file and change the breed from “JINGO” to “JINGA”.
 2. Rerun the application repeating the steps in the previous section (“From point 22 “Submit JCL””)
 3. Open the output file and see that report is wrong, it now contains 0 for JINGO and 5 for the OTHER
-![Output](images/image7.png)
+![Output](images/image07.png)
 4. Let’s debug the program
 5. Go to debugger extension by clicking the play icon with a bug
-![Debugger](images/image8.png) 
+![Debugger](images/image08.png) 
 6. We already have the debugging session preconfigured for DOGGOS app, so you can click Run and Debug at the top left corner of your screen straight away:
-![Profile](images/image9.png)
+![Profile](images/image09.png)
 7. You will be asked for your Mainframe password. It is the same as your  mainframe userID. Now the debugger will fetch the extended source and start the session.
 8. Now where to put a breakpoint?
 9. The report for JINGO breed was wrong, so let’s put a breakpoint where the value is updated. Let’s find the first place in the code by searching for JINGO with Ctrl+F (CMD+F on Mac).
