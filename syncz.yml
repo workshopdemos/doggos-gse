@@ -20,10 +20,10 @@ sync:
 
 ################################################################
 # List of Back Sync entries
-backsync:
-  - id: list
-    local: listings/
-    remote: ((.remotedir))/build-out/COBOL
-    ignore:
-      - "*"
-      - "!*.list"
+# backsync:
+#   - id: list
+#     local: listings/
+#     remote: ((.remotedir))/build-out/COBOL
+#     ignore:
+#       - "*"
+#       - "!*.list"
