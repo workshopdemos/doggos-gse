@@ -1,48 +1,12 @@
-# Doggos application
+# Getting Started
 
-The application purpose is to count the number of adopted dogs in the particular dog shelter within a working day.
 
-## Description
+1. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
+2. Install Code4z VSCode extension pack:
+- Go to VS Code marketplace by clicking this icon images/image1.png 
+- Search for Code4z and install images/image2.png
+- Return to your local files by clicking on the Explorer icon images/image3.png
 
-The application takes the number of the dog adoptions provided to it and generate the report, which can be used later to review the dog shelter activities within the last 24 hours. The report says how many dogs were adopted in the dog shelter per the dog breed.
-
-The application is a simple batch program. It reads the sequential dataset (input) and produces the output sequential dataset (report) as a result. The application written in the plain COBOL language.
-
-## Getting started
-
-### Dependencies
-
-**Note** You can run it in any OS (Mac, Windows or Linux).
-
-1. You have to have [Npm and NodeJs](https://nodejs.org/en/download/) installed.
-   - You can use `node -v` to verify the NodeJs installation in the system.
-   - You can use `npm -v` to verify the Npm installation in the system.
-2. You have to have [Java](https://jdk.java.net/java-se-ri/11) installed locally.
-   - You can follow this [guide](https://gist.github.com/douglarek/bbda8cc23a562cb5d5798717d57bc9e9) to install Java on your machine in case of Mac.
-   - You can follow this [guide](https://stackoverflow.com/questions/52511778/how-to-install-openjdk-11-on-windows) to install Java on your machine in case of Windows.
-3. You have to have Zowe CLI v1 installed locally with a list of required CLI plugins:
-   - [Zowe CLI](https://docs.zowe.org/v1.27.x/user-guide/cli-installcli#installing-zowe-cli-from-an-online-registry): `npm install -g @zowe/cli@6.40.2`.
-   - You have to disable to Secure Credential Store in the Zowe CLI: `zowe config reset CredentialManager`(just for the simplicity of the use case).
-   - [Zowe Endevor CLI Plugin](https://www.npmjs.com/package/@broadcom/endevor-for-zowe-cli): `zowe plugins install @broadcom/endevor-for-zowe-cli@6.5.0`.
-   - [Zowe Bridge for Git CLI Plugin](https://www.npmjs.com/package/@broadcom/endevor-bridge-for-git-for-zowe-cli): `zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli@2.4.1`.
-     **Note: we need Zowe CLI with the plugins to be able to communicate with the mainframe and build the source code.**
-4. You have to have a [VSCode IDE](https://code.visualstudio.com/) installed locally or it's alternative in the browser.
-   **Note: you can have some other IDE instead, but the Broadcom can offer you the full development experience in the VSCode only for now.**
-5. You have to have a [Code4z extensions pack](https://marketplace.visualstudio.com/items?itemName=broadcomMFD.code4z-extension-pack) installed in the VSCode.
-   **Note: you can also install it in the VSCode interface using this [guide](https://code.visualstudio.com/learn/get-started/extensions).**
-   ![VSCode-extensions](images/vscode_extensions.png)
-   ![Code4z](images/code4z.png)
-
-### Installing
-
-- Please, use this repository and the `main` branch for the latest source code.
-
-**Note: Make sure, that you have a [Git](https://git-scm.com/downloads) installed.**
-
-- Once you have the repository cloned to your system, please, execute the [VSCode task](#how-to-execute-vscode-tasks) `DOGGOS: install` in it. It is required to get the local project dependencies to be fetched. It may take 1-2 minutes to complete, so please, be patient :)
-- Run the [VSCode task](#how-to-execute-vscode-tasks): `DOGGOS: configure` to configure the test environment.
-
-**Note: The project installation requires XCode to be installed on the MacOs as an additional prerequisite.**
 
 ### How to execute VSCode tasks
 
