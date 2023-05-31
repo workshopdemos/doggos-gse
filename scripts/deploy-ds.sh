@@ -24,9 +24,10 @@ zowe files delete data-set "$USERN.PUBLIC.JCL" -f
 zowe files delete data-set "$USERN.PUBLIC.INPUT" -f
 
 # # Remove artifacts
-# zowe files delete data-set "$USERN.DOGGOS.COPYBOOK" -f
-# zowe files delete data-set "$USERN.PUBLIC.LOADLIB" -f
-# zowe files delete data-set "$USERN.PUBLIC.PROFLIB" -f
+ssh cust004@10.1.2.73 -p 2022 "rm -r doggos"
+zowe files delete data-set "$USERN.DOGGOS.COPYBOOK" -f
+zowe files delete data-set "$USERN.PUBLIC.LOADLIB" -f
+zowe files delete data-set "$USERN.PUBLIC.PROFLIB" -f
 
 # zowe files delete data-set "$USERN.PUBLIC.PROTSYM" -f
 # zowe files delete data-set "$USERN.PUBLIC.PROTSYM.DATA" -f
