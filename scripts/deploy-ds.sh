@@ -7,6 +7,7 @@ value="${user#mfwsuser}"
 formatted_value=$(printf "%02d" $value)
 
 USERN="CUST0$formatted_value"
+USERL="cust$formatted_value"
 LSTPRF="LSTPRF$formatted_value"
 RUNDOG="RUNDOG$formatted_value"
 DBGDOG="DBGDOG$formatted_value"
@@ -25,7 +26,7 @@ zowe files delete data-set "$USERN.PUBLIC.INPUT" -f
 
 # # Remove artifacts
 # ssh cust004@10.1.2.73 -p 2022 "rm -r doggos"
-zowe uss iss ssh "rm -r /u/users/$USERN/doggos"
+zowe uss iss ssh "rm -r /u/users/$USERL/doggos"
 zowe files delete data-set "$USERN.DOGGOS.COPYBOOK" -f
 zowe files delete data-set "$USERN.PUBLIC.LOADLIB" -f
 zowe files delete data-set "$USERN.PUBLIC.PROFLIB" -f
