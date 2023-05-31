@@ -1,6 +1,6 @@
-host: ca11
-port: 23
-user: gotvi01
+host: <host>
+port: 2022
+user: <mfuser>
 remotedir: doggos
 
 
