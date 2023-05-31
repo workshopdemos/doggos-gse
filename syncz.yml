@@ -20,7 +20,10 @@ sync:
 
 ################################################################
 # List of Back Sync entries
-# backsync:
-#   - id: jsdoc
-#     local: node_modules/
-#     remote: ((.remotedir))/node_modules/
+backsync:
+  - id: list
+    local: listings/
+    remote: ((.remotedir))/build-out/COBOL
+    ignore:
+      - "*"
+      - "!*.list"
