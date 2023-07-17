@@ -1,4 +1,4 @@
-# Code/Build/Debug Challenge x
+# Code/Build/Debug Challenge
 
 # Main Scenario
 
