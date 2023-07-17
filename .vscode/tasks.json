@@ -95,13 +95,15 @@
       ]
     },
     {
-      "label": "DOGGOS: sync and build",
-      "type": "shell",
-      "command": "syncz -c \"bldz\"",
-      "problemMatcher": [
-        // it will not do anything, but save the participants from another quickpick :)
-        "$tsc"
-      ]
+      "label": "DOGGOS: Sync and Build",
+      "type": "process",
+      "command": "/home/developer/sandbox-env/syncz_v1.11.0/bin/linux_amd64/syncz",
+      "args": ["-c", "bldz"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ],
   "inputs": [
