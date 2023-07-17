@@ -1,4 +1,4 @@
-# Code/Build/Debug Challenge for GSE Netherlands 2023
+# Code/Build/Debug Challenge
 
 # Main Scenario
 
