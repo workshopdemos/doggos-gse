@@ -1,6 +1,6 @@
 # Code/Build/Debug Challenge
 
-# Main Scenario
+# Main Scenario.
 
 ## Getting Started
 
