@@ -20,6 +20,15 @@
 
 3. After starting the build task, the terminal window will open and after the synchronisation and building of the application on the mainframe you will get a success message.
 
+## Run the DOGGOS application
+1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
+1. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon
+1. Fill in data set: CUST0xy.PUBLIC to add all data sets with this prefix to Zowe Explorer (Use your user id number instead CUST00xy) 
+1. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
+1. Select “Submit JCL” menu item
+1. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
+1. Expand the “RUNDOG(JOBxxxxx)” and click on the RUNPGM:OUTREP item to browse the program output
+
 ## Edit the DOGGOS application
 Open the DOGGOS > COBOL > DOGGOS.CBL file
 Add a new dog breed.
