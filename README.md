@@ -40,7 +40,7 @@ Add a new dog breed.
 
 ## Build the DOGGOS application
 
-*(Build the application can be done by either following the initial build steps just like following Hamburger Menu > Terminal > Run Build Task OR by following the Command Line Instructions below):*
+*(Building the application can be done by either following the initial build steps above just like following ```Hamburger Menu > Terminal > Run Build Task``` OR by following the Command Line Instructions below):*
 
 1. Click on the hamburger menu (three lines) icon at the top of the sidebar
 2. Select Terminal → New Terminal
