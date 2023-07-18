@@ -18,6 +18,8 @@
 
 ![Paste](images/image19.png)
 
+3. After starting the build task, the terminal window will open and after the synchronisation and building of the application on the mainframe you will get a success message.
+
 ## Edit the DOGGOS application
 Open the DOGGOS > COBOL > DOGGOS.CBL file
 Add a new dog breed.
