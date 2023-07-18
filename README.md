@@ -11,6 +11,11 @@
 - Search for Code4z and install ![Code4z](images/image02.png)
 - Return to your local files by clicking on the Explorer icon ![Explorer](images/image03.png)
 
+## Build the DOGGOS application
+
+1. Click on the hamburger menu (three lines) icon at the top of the sidebar
+2. Select Terminal > Run Build Task 
+
 ## Edit the DOGGOS application
 Open the DOGGOS > COBOL > DOGGOS.CBL file
 Add a new dog breed.
