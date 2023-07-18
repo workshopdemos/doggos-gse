@@ -11,6 +11,15 @@
 - Search for Code4z and install ![Code4z](images/image02.png)
 - Return to your local files by clicking on the Explorer icon ![Explorer](images/image03.png)
 
+## Build the DOGGOS application
+
+1. Click on the hamburger menu (three lines) icon at the top of the sidebar
+2. Select Terminal > Run Build Task 
+
+![Paste](images/image19.png)
+
+3. After starting the build task, the terminal window will open and after the synchronisation and building of the application on the mainframe you will get a success message.
+
 ## Edit the DOGGOS application
 Open the DOGGOS > COBOL > DOGGOS.CBL file
 Add a new dog breed.
@@ -32,6 +41,8 @@ Add a new dog breed.
 14. Remove extra spaces at the end of lines. See the code minimap to quickly find the locations.
 
 ## Build the DOGGOS application
+
+*(Building the application can be done by either following the initial build steps above just like following ```Hamburger Menu > Terminal > Run Build Task``` OR by following the Command Line Instructions below):*
 
 1. Click on the hamburger menu (three lines) icon at the top of the sidebar
 2. Select Terminal → New Terminal
