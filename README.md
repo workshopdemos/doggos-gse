@@ -15,6 +15,7 @@
 
 1. Click on the hamburger menu (three lines) icon at the top of the sidebar
 2. Select Terminal > Run Build Task 
+
 ![Paste](images/image19.png)
 
 ## Edit the DOGGOS application
