@@ -9,8 +9,6 @@
 ## Getting Started
 
 
-
-
 1. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
 2. Install Code4z VSCode extension pack:
 - Go to VS Code marketplace by clicking this icon ![Marketplace](images/image01.png) 
