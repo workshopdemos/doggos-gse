@@ -79,19 +79,18 @@ The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY
 ## Debug
 
 1. Let’s introduce a bug in the program data 🙂 Go to the input file and change the breed from “JINGO” to “JINGA”.
-2. Rerun the application repeating the steps in the previous section (“From point 22 “Submit JCL””)
-3. Open the output file and see that report is wrong, it now contains 0 for JINGO and 5 for the OTHER
+2. Rerun the application repeating the steps in the previous section (from 6th step) 
+3. Open the output file and see that report is wrong, it now contains 0 for JINGO and 6 for the OTHER
 ![Output](images/image07.png)
 4. Let’s debug the program
 5. Go to debugger extension by clicking the play icon with a bug
 ![Debugger](images/image08.png) 
 6. We already have the debugging session preconfigured for DOGGOS app, so you can click Run and Debug at the top left corner of your screen straight away:
-![Profile](images/image09.png)
+![Variables](images/image10.png)
 7. You will be asked for your Mainframe password. It is the same as your  mainframe userID. Now the debugger will fetch the extended source and start the session.
 8. Now where to put a breakpoint?
 9. The report for JINGO breed was wrong, so let’s put a breakpoint where the value is updated. Let’s find the first place in the code by searching for JINGO with Ctrl+F (CMD+F on Mac).
-10. We can see that processing for JINGO breed is handled by these variables:
-![Variables](images/image10.png)
+10. We can see that processing for JINGO breed is handled by these variables.
 11. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 238 in extended source:
 ![Peek](images/image11.png)
 12. Double click on the 238 line in the editor window to move there.
@@ -111,9 +110,12 @@ That would be on line 245
 ![Check](images/image17.png)
 19. Do the same for the INP-DOG-BREED variable on line 216 to understand which breed we are analyzing
 20. You can see in your watch section the value of the variables (BTW, a quick way is just to hover over a variable name in your extended source and the value will pop up)
+
 ![Value](images/image18.png)
 21. As you can see we have encountered a wrong breed name “JINGA”, which means that our input file is corrupted! We also never entered a section for the JINGO breed, which means we never actually encountered this breed while parsing.
 22. Now we found our problem - wrong breed in the input file :)
+23. Stop the debug session by clicking the stop icon from the debugging toolbar.
+![Value](images/image18.png)
 
 # Side Scenarios
 
