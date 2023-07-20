@@ -110,12 +110,11 @@ That would be on line 245
 ![Check](images/image17.png)
 19. Do the same for the INP-DOG-BREED variable on line 216 to understand which breed we are analyzing
 20. You can see in your watch section the value of the variables (BTW, a quick way is just to hover over a variable name in your extended source and the value will pop up)
-
 ![Value](images/image18.png)
 21. As you can see we have encountered a wrong breed name “JINGA”, which means that our input file is corrupted! We also never entered a section for the JINGO breed, which means we never actually encountered this breed while parsing.
 22. Now we found our problem - wrong breed in the input file :)
 23. Stop the debug session by clicking the stop icon from the debugging toolbar.
-![Value](images/image18.png)
+![Value](images/image20.png)
 
 # Side Scenarios
 
