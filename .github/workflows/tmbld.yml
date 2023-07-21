@@ -23,7 +23,7 @@ jobs:
           zdnt-port: ${{ vars.DMZ_ZDNT_PORT }}
           zdnt-user: ${{ secrets.DMZ_ZDNT_USER }}
           zdnt-ssh-key: ${{ secrets.DMZ_ZDNT_SSH_KEY }}
-          known-hosts: ${{ vars.SSH_KNOWN_HOSTS }}
+          known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
 
       - name: Get syncz
         run: |
