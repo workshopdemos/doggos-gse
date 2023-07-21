@@ -3,58 +3,43 @@ description: 'Start ssh agent with keys for accessing a ZD&T in DMZ. After this 
 inputs:
   bastion-hostname:
     description: 'Hostname of the DMZ bastion proxy'
+    type: string
     required: true
   bastion-user:
     description: 'Username for DMZ bastion proxy'
+    type: string
     required: true
   bastion-ssh-key:
     description: 'SSH key to the DMZ bastion proxy'
+    type: string
     required: true
   zdnt-hostname:
     description: 'Hostname of the ZD&T machine from the DMZ proxy point of view'
+    type: string
     required: true
   zdnt-user:
     description: 'Username for the ZD&T'
+    type: string
     required: true
   zdnt-port:
     description: 'z/OS UNIX SSH Server Port on the ZD&T'
+    type: string
     required: true
   zdnt-ssh-key:
     description: 'SSH key to the ZD&T in DMZ.'
+    type: string
     required: true
   known-hosts:
     description: 'SSH fingerprints of the bastion proxy and ZD&T itself'
+    type: string
     required: true
 runs:
   using: "composite"
   steps:
-    - name: Verify non-empty inputs
+    - name: Validate inputs
       run: |
-        echo "Non-empty check for: inputs.bastion-hostname"
-        if [ -z "${{ inputs.bastion-hostname }}" ]; then
-          exit -1
-        fi
+        [ -n "${{ bastion-hostname }}" ] || { echo "bastion-hostname input is empty"; exit 1; }
 
-        echo "Non-empty check for: inputs.bastion-user"
-        test -n "${{ inputs.bastion-user }}"
-
-        echo "Non-empty check for: bastion-ssh-key"
-        test -n "${{ bastion-ssh-key }}"
-
-        echo "Non-empty check for: zdnt-hostname"
-        test -n "${{ zdnt-hostname }}"
-
-        echo "Non-empty check for: zdnt-user"
-        test -n "${{ zdnt-user }}"
-
-        echo "Non-empty check for: zdnt-port"
-        test -n "${{ zdnt-port }}"
-
-        echo "Non-empty check for: zdnt-ssh-key"
-        test -n "${{ zdnt-ssh-key }}"
-
-        echo "Non-empty check for: known-hosts"
-        test -n "${{ known-hosts }}"
     - name: Create .ssh folder
       shell: bash
       run: |
