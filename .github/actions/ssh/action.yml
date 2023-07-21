@@ -39,7 +39,7 @@ runs:
     - name: Validate inputs
       shell: bash
       run: |
-        echo {bastion-hostname input is empty" ; exit 1
+        echo "bastion-hostname input is empty" ; exit 1
 
     - name: Create .ssh folder
       shell: bash
