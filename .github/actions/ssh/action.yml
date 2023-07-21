@@ -41,6 +41,7 @@ runs:
       run: |
         [ -n "${{ inputs.bastion-hostname }}" ] || { echo "bastion-hostname input is empty" ; exit 1; }
         [ -n "${{ inputs.bastion-user }}" ] || { echo "bastion-user input is empty" ; exit 1; }
+        [ -n "${{ inputs.bastion-user }}" ] || { echo "bastion-user input is empty" ; exit 1; }
 
     - name: Create .ssh folder
       shell: bash
