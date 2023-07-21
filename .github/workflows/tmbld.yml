@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up ssh
+        uses: ./.github/actions/ssh
+        with:
+          bastion-hostname: ${{ vars.DMZ_BASTION_HOSTNAME }}
+          bastion-user: ${{ secrets.DMZ_BASTION_USER }}
+          bastion-ssh-key: ${{ secrets.DMZ_BASTION_SSH_KEY }}
+          zdnt-hostname: ${{ vars.DMZ_ZDNT_HOSTNAME }}
+          zdnt-port: ${{ vars.DMZ_ZDNT_PORT }}
+          zdnt-user: ${{ secrets.DMZ_ZDNT_USER }}
+          zdnt-ssh-key: ${{ secrets.DMZ_ZDNT_SSH_KEY }}
+          known-hosts: ${{ vars.SSH_KNOWN_HOSTS }}
+
+      - name: Get syncz
+        run: |
+          scp zdnt:/u/users/tools/endevor/linux_amd64/syncz syncz
+
+      - name: Build
+        run: |
+          ./syncz --force --remove -c bldz
+
