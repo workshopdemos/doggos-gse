@@ -31,7 +31,9 @@ runs:
     - name: Verify non-empty inputs
       run: |
         echo "Non-empty check for: inputs.bastion-hostname"
-        test -n "${{ inputs.bastion-hostname }}"
+        if [ -z "${{ inputs.bastion-hostname }}" ]; then
+          exit -1
+        fi
 
         echo "Non-empty check for: inputs.bastion-user"
         test -n "${{ inputs.bastion-user }}"
