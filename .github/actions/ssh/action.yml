@@ -37,6 +37,7 @@ runs:
   using: "composite"
   steps:
     - name: Validate inputs
+      shell: bash
       run: |
         exit 1
 
