@@ -28,6 +28,31 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Verify non-empty inputs
+      run: |
+        echo "Non-empty check for: inputs.bastion-hostname"
+        test -n "${{ inputs.bastion-hostname }}"
+
+        echo "Non-empty check for: inputs.bastion-user"
+        test -n "${{ inputs.bastion-user }}"
+
+        echo "Non-empty check for: bastion-ssh-key"
+        test -n "${{ bastion-ssh-key }}"
+
+        echo "Non-empty check for: zdnt-hostname"
+        test -n "${{ zdnt-hostname }}"
+
+        echo "Non-empty check for: zdnt-user"
+        test -n "${{ zdnt-user }}"
+
+        echo "Non-empty check for: zdnt-port"
+        test -n "${{ zdnt-port }}"
+
+        echo "Non-empty check for: zdnt-ssh-key"
+        test -n "${{ zdnt-ssh-key }}"
+
+        echo "Non-empty check for: known-hosts"
+        test -n "${{ known-hosts }}"
     - name: Create .ssh folder
       shell: bash
       run: |
