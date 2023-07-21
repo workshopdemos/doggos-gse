@@ -46,6 +46,7 @@ runs:
         [ -n "${{ inputs.zdnt-user }}" ] || { echo "ERROR zdnt-user input is empty" ; exit 1; }
         [ -n "${{ inputs.zdnt-port }}" ] || { echo "ERROR zdnt-port input is empty" ; exit 1; }
         [ -n "${{ inputs.zdnt-ssh-key }}" ] || { echo "ERROR zdnt-ssh-key input is empty" ; exit 1; }
+        [ -n "${{ inputs.known-hosts }}" ] || { echo "ERROR known-hosts input is empty" ; exit 1; }
 
     - name: Create .ssh folder
       shell: bash
