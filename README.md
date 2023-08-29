@@ -48,7 +48,6 @@ Add a new dog breed.
 11. Copy block of code (lines 139-143)
 12. Paste it after line 143
 13. Change JINGO to the dog breed name you picked in step 3 (e.g. HUSKY) within the pasted block of code
-14. Remove extra spaces at the end of lines. See the code minimap to quickly find the locations.
 
 ## Build the DOGGOS application
 
