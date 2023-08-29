@@ -13,7 +13,7 @@
 
 ## Build the DOGGOS application
 
-1. Make sure the initial build process has successfully completed. (Success message in the acive terminal)
+1. Make sure the initial build process has successfully completed. (Success message in the active terminal)
 2. Click on the hamburger menu (three lines) icon at the top of the sidebar
 3. Select Terminal > Run Build Task 
 
