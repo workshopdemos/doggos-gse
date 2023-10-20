@@ -1,0 +1,69 @@
+{
+    "$schema": "./zowe.schema.json",
+    "profiles": {
+        "zosmf": {
+            "type": "zosmf",
+            "properties": {
+                "port": 10443
+            },
+            "secure": []
+        },
+        "tso": {
+            "type": "tso",
+            "properties": {
+                "account": "",
+                "codePage": "1047",
+                "logonProcedure": "IZUFPROC"
+            },
+            "secure": []
+        },
+        "ssh": {
+            "type": "ssh",
+            "properties": {
+                "port": 2022
+            },
+            "secure": []
+        },
+        "endevor": {
+            "type": "endevor",
+            "properties": {
+                "port": 1000,
+                "protocol": "http",
+                "basePath": ""
+            },
+            "secure": []
+        },
+        "endevor-location": {
+            "type": "endevor-location",
+            "properties": {
+                "instance": "",
+                "environment": "",
+                "system": "",
+                "subsystem": "",
+                "type": "",
+                "stageNumber": "1",
+                "maxrc": 8
+            },
+            "secure": []
+        },
+        "base": {
+            "type": "base",
+            "properties": {
+                "host": "",
+                "rejectUnauthorized": false,
+                "user": "",
+                "password": ""
+            },
+            "secure": []
+        }
+    },
+    "defaults": {
+        "zosmf": "zosmf",
+        "tso": "tso",
+        "ssh": "ssh",
+        "endevor": "endevor",
+        "endevor-location": "endevor-location",
+        "base": "base"
+    },
+    "autoStore": true
+}
