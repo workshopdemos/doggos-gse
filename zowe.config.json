@@ -41,7 +41,7 @@
                 "system": "",
                 "subsystem": "",
                 "type": "",
-                "stageNumber": "",
+                "stageNumber": "1",
                 "maxrc": 8
             },
             "secure": []
