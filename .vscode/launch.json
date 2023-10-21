@@ -22,9 +22,9 @@
         "protsym": ["CUST###.PUBLIC.PROTSYM"],
         "interTestHost": "10.1.2.73",
         "interTestPort": 6023,
-        "interTestUserName": "cust###",
+        "interTestUserName": "CUST###",
         "interTestSecure": false,
-        "convertedJCL": "cust###.PUBLIC.JCL(DBGDOGND)",
+        "convertedJCL": "CUST###.PUBLIC.JCL(DBGDOGND)",
         "variableOrder": "alphabetical"
       }
     ]
