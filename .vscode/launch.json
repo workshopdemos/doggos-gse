@@ -1,7 +1,7 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
+    "version": "0.2.0",
+    "configurations": [
+      {
         "name": "DOGGOS BATCH DEBUG",
         "type": "intertest-batch",
         "request": "launch",
@@ -13,19 +13,19 @@
         "interTestSecure": false,
         "convertedJCL": "CUST###.PUBLIC.JCL(DBGDOG)",
         "variableOrder": "alphabetical"
-    },
-    {
-      "name": "DOGGOS BATCH DEBUG - Endevor",
-      "type": "intertest-batch",
-      "request": "launch",
-      "programName": ["DOGGOS###"],
-      "protsym": ["CUST###.PUBLIC.PROTSYM"],
-      "interTestHost": "10.1.2.73",
-      "interTestPort": 6023,
-      "interTestUserName": "cust###",
-      "interTestSecure": false,
-      "convertedJCL": "cust###.PUBLIC.JCL(DBGDOGND)",
-      "variableOrder": "alphabetical"
-    }
-  ]
+      },
+      {
+        "name": "DOGGOS BATCH DEBUG - Endevor",
+        "type": "intertest-batch",
+        "request": "launch",
+        "programName": ["DOGGOS###"],
+        "protsym": ["CUST###.PUBLIC.PROTSYM"],
+        "interTestHost": "10.1.2.73",
+        "interTestPort": 6023,
+        "interTestUserName": "cust###",
+        "interTestSecure": false,
+        "convertedJCL": "cust###.PUBLIC.JCL(DBGDOGND)",
+        "variableOrder": "alphabetical"
+      }
+    ]
 }
