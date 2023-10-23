@@ -9,5 +9,6 @@
   "git.autofetch": false,
   "[cobol]": {
     "editor.formatOnSave": true
-  }
+  },
+  "files.autoSave": "off"
 }
