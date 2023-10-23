@@ -11,6 +11,7 @@ USERL="cust0$formatted_value"
 LSTPRF="LSTPRF$formatted_value"
 RUNDOG="RUNDOG$formatted_value"
 DBGDOG="DBGDOG$formatted_value"
+NDDBGDOG="DOGGOS$formatted_value"
 
 mkdir "$LOCAL_DIR/tmp"
 
@@ -20,6 +21,15 @@ sed -i "s|<DBGDOG>|$DBGDOG|g" "$LOCAL_DIR/tmp/DBGDOG.jcl"
 sed "s|<LSTPRF>|$LSTPRF|g" "$LOCAL_DIR/jcl/LSTPRF.jcl" > "$LOCAL_DIR/tmp/LSTPRF.jcl"
 
 sed "s|<RUNDOG>|$RUNDOG|g" "$LOCAL_DIR/jcl/RUNDOG.jcl" > "$LOCAL_DIR/tmp/RUNDOG.jcl"
+
+#Endevor files----
+sed "s|<USERN>|$USERN|g" "$LOCAL_DIR/jcl/NDDBGDOG.jcl" > "$LOCAL_DIR/tmp/NDDBGDOG.jcl"
+sed -i "s|<NDDBGDOG>|$NDDBGDOG|g" "$LOCAL_DIR/tmp/NDDBGDOG.jcl"
+sed -i "s|<DBGDOG>|$DBGDOG|g" "$LOCAL_DIR/tmp/NDDBGDOG.jcl"
+
+sed "s|<NDDBGDOG>|$NDDBGDOG|g" "$LOCAL_DIR/jcl/NDRUNDOG.jcl" > "$LOCAL_DIR/tmp/NDRUNDOG.jcl"
+sed -i "s|<RUNDOG>|$RUNDOG|g" "$LOCAL_DIR/tmp/NDRUNDOG.jcl"
+#Endevor files----
 
 zowe files delete data-set "$USERN.PUBLIC.JCL" -f
 zowe files delete data-set "$USERN.PUBLIC.INPUT" -f

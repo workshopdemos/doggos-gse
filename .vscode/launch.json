@@ -24,7 +24,7 @@
         "interTestPort": 6023,
         "interTestUserName": "CUST###",
         "interTestSecure": false,
-        "convertedJCL": "CUST###.PUBLIC.JCL(DBGDOGND)",
+        "convertedJCL": "CUST###.PUBLIC.JCL(NDDBGDOG)",
         "variableOrder": "alphabetical"
       }
     ]
