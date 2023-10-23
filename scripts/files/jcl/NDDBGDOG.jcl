@@ -2,7 +2,7 @@
 //RUNPGM   EXEC PGM=CAMRBL01                                            00020000
 //* --------- INTERTEST DATA DEFINITIONS                                00021004
 //INT1OPTS DD *                                                         00030000
-  EXEC=<NDDBGDOG>  ,PROFILE=<USERN>                                     00040000
+  EXEC=<NDDBGDOG>  ,PROFILE=<USERN>                                       00040000
 /*                                                                      00050000
 //INT1PARM DD DISP=SHR,DSN=PRODUCT.INTERTST.R11J.CAVHSAMP               00060000
 //INT1LOAD DD DISP=SHR,DSN=PRODUCT.INTERTST.LOADLIB                     00070000
