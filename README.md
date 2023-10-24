@@ -6,10 +6,6 @@
 
 
 1. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
-2. Install Code4z VSCode extension pack:
-- Go to VS Code marketplace by clicking this icon ![Marketplace](images/image01.png) 
-- Search for Code4z and install ![Code4z](images/image02.png)
-- Return to your local files by clicking on the Explorer icon ![Explorer](images/image03.png)
 
 ## Build the DOGGOS application
 
@@ -19,7 +15,7 @@
 
 ![Paste](images/image19.png)
 
-3. After starting the build task, the terminal window will open and after the synchronisation and building of the application on the mainframe you will get a success message.
+4. After starting the build task, the terminal window will open and after the synchronisation and building of the application on the mainframe you will get a success message.
 
 ## Run the DOGGOS application
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
@@ -48,6 +44,7 @@ Add a new dog breed.
 11. Copy block of code (lines 139-143)
 12. Paste it after line 143
 13. Change JINGO to the dog breed name you picked in step 3 (e.g. HUSKY) within the pasted block of code
+14. Use CTRL+S (or COMMAND+S) to save the changes
 
 ## Build the DOGGOS application
 
@@ -69,51 +66,80 @@ Add a new dog breed.
 
 ![Change](images/image06.png)
 
-5. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
-6. Select “Submit JCL” menu item
-7. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
-8. Expand the “RUNDOG(JOBxxxxx)” and click on the RUNPGM:OUTREP item to browse the program output
+5. Use CTRL+S (or COMMAND+S) to save the changes
+6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
+7. Select “Submit JCL” menu item
+8. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
+9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUNPGM:OUTREP item to browse the program output
 
 The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs.
 
 ## Debug
 
 1. Let’s introduce a bug in the program data 🙂 Go to the input file and change the breed from “JINGO” to “JINGA”.
-2. Rerun the application repeating the steps in the previous section (from 6th step) 
-3. Open the output file and see that report is wrong, it now contains 0 for JINGO and 6 for the OTHER
+2. Use CTRL+S (or COMMAND+S) to save the changes
+3. Rerun the application repeating the steps in the previous section (from 6th step) 
+4. Open the output file and see that report is wrong, it now contains 0 for JINGO and 6 for the OTHER
+
 ![Output](images/image07.png)
-4. Let’s debug the program
-5. Go to debugger extension by clicking the play icon with a bug
-![Debugger](images/image08.png) 
-6. We already have the debugging session preconfigured for DOGGOS app, so you can click Run and Debug at the top left corner of your screen straight away:
+
+5. Let’s debug the program
+6. Go to debugger extension by clicking the play icon with a bug
+
+![Debugger](images/endevor/end19.png) 
+
+7. We already have the debugging session preconfigured for DOGGOS app. Make sure you are using the first configuration (non-endevor)
+
+![Choose](images/image21.png)
+
+8. Click the play button to start the debugging
+
 ![Variables](images/image10.png)
-7. You will be asked for your Mainframe password. It is the same as your  mainframe userID. Now the debugger will fetch the extended source and start the session.
-8. Now where to put a breakpoint?
-9. The report for JINGO breed was wrong, so let’s put a breakpoint where the value is updated. Let’s find the first place in the code by searching for JINGO with Ctrl+F (CMD+F on Mac).
-10. We can see that processing for JINGO breed is handled by these variables.
-11. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 238 in extended source:
+
+9. You will be asked for your Mainframe password. It is the same as your  mainframe userID. Now the debugger will fetch the extended source and start the session.
+10. Now where to put a breakpoint?
+11. The report for JINGO breed was wrong, so let’s put a breakpoint where the value is updated. Let’s find the first place in the code by searching for JINGO with Ctrl+F (CMD+F on Mac).
+12. We can see that processing for JINGO breed is handled by these variables.
+13. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 238 in extended source:
+
 ![Peek](images/image11.png)
-12. Double click on the 238 line in the editor window to move there.
-13. Now let’s add a breakpoint after this condition to see if we get there.
+
+14. Double click on the 238 line in the editor window to move there.
+15. Now let’s add a breakpoint after this condition to see if we get there.
 Click on the left area on line 239. The red dot will appear
+
 ![Breakpoint1](images/image12.png)
-14. The value for OTHER breeds was wrong in the repo. Let’s put there a breakpoint as well
+
+16. The value for OTHER breeds was wrong in the repo. Let’s put there a breakpoint as well
 That would be on line 245
+
 ![Breakpoint2](images/image13.png)
-15. We now have 2 breakpoints (you can see them in breakpoints section in the bottom left corner):
+
+17. We now have 2 breakpoints (you can see them in breakpoints section in the bottom left corner):
+
 ![Breakpoints](images/image14.png)
-16. Now let’s continue the execution by clicking the play button on the left of the debug toolbar:
+
+18. Now let’s continue the execution by clicking the play button on the left of the debug toolbar:
+
 ![Buttons](images/image15.png)
-17. We can see that while looping through the breeds the debugger has skipped the breakpoint on line 239 and stopped at line 245
+
+19. We can see that while looping through the breeds the debugger has skipped the breakpoint on line 239 and stopped at line 245
+
 ![Watch](images/image16.png)
-18. Let’s check the variables. Click on the INP-ADOPTED-AMOUNT, right click and “Add to watch”
+
+20. Let’s check the variables. Click on the INP-ADOPTED-AMOUNT, right click and “Add to watch”
+
 ![Check](images/image17.png)
-19. Do the same for the INP-DOG-BREED variable on line 216 to understand which breed we are analyzing
-20. You can see in your watch section the value of the variables (BTW, a quick way is just to hover over a variable name in your extended source and the value will pop up)
+
+21. Do the same for the INP-DOG-BREED variable on line 216 to understand which breed we are analyzing
+22. You can see in your watch section the value of the variables (BTW, a quick way is just to hover over a variable name in your extended source and the value will pop up)
+
 ![Value](images/image18.png)
-21. As you can see we have encountered a wrong breed name “JINGA”, which means that our input file is corrupted! We also never entered a section for the JINGO breed, which means we never actually encountered this breed while parsing.
-22. Now we found our problem - wrong breed in the input file :)
-23. Stop the debug session by clicking the stop icon from the debugging toolbar.
+
+23. As you can see we have encountered a wrong breed name “JINGA”, which means that our input file is corrupted! We also never entered a section for the JINGO breed, which means we never actually encountered this breed while parsing.
+24. Now we found our problem - wrong breed in the input file :)
+25. Stop the debug session by clicking the stop icon from the debugging toolbar.
+
 ![Value](images/image20.png)
 
 # Side Scenarios
