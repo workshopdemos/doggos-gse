@@ -9,35 +9,40 @@
 
 ## Build the DOGGOS application
 
-1. Make sure the initial build process has successfully completed. (Success message in the active terminal)
+1. Make sure the initial build process has successfully completed. (**Startup script finished** message in the active terminal)
 2. Click on the hamburger menu (three lines) icon at the top of the sidebar
 3. Select Terminal > Run Build Task 
 
 ![Paste](images/image19.png)
 
-4. After starting the build task, the terminal window will open and after the synchronisation and building of the application on the mainframe you will get a success message.
+4. After starting the build task, the terminal window will open and after the synchronisation and building of the application on the mainframe you will get a success message (**exit code:0**).
 
 ## Run the DOGGOS application
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
 1. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon
 1. Fill in data set: CUST0xy.PUBLIC to add all data sets with this prefix to Zowe Explorer (Use your user id number instead CUST0xy) 
 1. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
-1. Select “Submit JCL” menu item
+1. Select “Submit Job” menu item
 1. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
-1. Expand the “RUNDOG(JOBxxxxx)” and click on the RUNPGM:OUTREP item to browse the program output
+1. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output
 
 ## Edit the DOGGOS application
+Navigate back to the Explorer Tab to see the local files
 Open the DOGGOS > COBOL > DOGGOS.CBL file
-Add a new dog breed.
-1. Copy block of code (lines 59-61)
+Add a new dog breed by following:
+1. Copy block of code (lines 59-61) (You can use CTRL+G to jump into the given line number)
 2. Paste it after line 61
+
 ![Paste](images/image04.png)
+
 3. Change JINGO to another dog breed name (e. g. HUSKY) in the whole pasted block of code
 4. For HUSKY-INDEX-VALUE change VALUE to 9
 5. For OTHER-INDEX-VALUE change VALUE to 10
 6. Change PIC 9(1) to PIC 9(2) for OTHER-INDEX-VALUE
 7. Change OCCURS value in line 71 to 10
+
 ![Change](images/image05.png)
+
 8. Copy block of code (lines 208-210)
 9. Paste it after line 210
 10. Change JINGO to the dog breed name you picked in step 3 (e. g.HUSKY) within the pasted block of code
@@ -68,9 +73,9 @@ Add a new dog breed.
 
 5. Use CTRL+S (or COMMAND+S) to save the changes
 6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
-7. Select “Submit JCL” menu item
-8. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
-9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUNPGM:OUTREP item to browse the program output
+7. Select “Submit Job” menu item
+8. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output (if notification disappears, you can hit the bell icon from the bottom-right corner to see)
+9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output
 
 The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs.
 

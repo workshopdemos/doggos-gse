@@ -7,22 +7,22 @@
 
 ## Prepare the DOGGOS application
 
-1. Make sure the initial build process has successfully completed. (Success message in the active terminal)
+1. Make sure the initial build process has successfully completed. (**Startup script finished** message in the active terminal)
 2. Click on the hamburger menu (three lines) icon at the top of the sidebar
 3. Select Terminal > Run Build Task 
 
 ![Paste](images/image19.png)
 
-4. After starting the build task, the terminal window will open and after the synchronisation of the files on the mainframe you will get a success message.
+4. After starting the build task, the terminal window will open and after the synchronisation of the files on the mainframe you will get a success message (**exit code:0**).
 
 ## Run the DOGGOS application - Getting used to the app
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
 2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon
 3. Fill in data set: CUST0xy.PUBLIC to add all data sets with this prefix to Zowe Explorer (Use your user id number instead CUST0xy) 
 4. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
-5. Select “Submit JCL” menu item
-6. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
-7. Expand the “RUNDOG(JOBxxxxx)” and click on the RUNPGM:OUTREP item to browse the program output
+5. Select “Submit Job” menu item
+6. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output (if notification disappears, you can hit the bell icon from the bottom-right corner to see)
+7. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output
 8. Now, your task is adding one more breed to the program, so we can print it in this report
 
 ## Get DOGGOS applicaiton from the PROD environment
@@ -46,7 +46,7 @@
 
 ![Paste](images/endevor/end10.png)
 
-7. Now you have all the the DOGGOS application in your local VS Code IDE.
+7. Now you have all of the DOGGOS application in your local VS Code IDE.
 
 8. Find the COBOL code for your user under the [MAP] by expanding as shown:
 
@@ -57,7 +57,7 @@
 ## Edit the DOGGOS application
 
 1. Copy block of code (lines 60-62)
-2. Paste it after line 62
+2. Paste it after line 62 (You can use CTRL+G to jump into the given line number)
 3. Change JINGO to another dog breed name (e. g. **HUSKY**) in the whole pasted block of code
 4. For HUSKY-INDEX-VALUE change VALUE to 9  (line 64)
 5. For OTHER-INDEX-VALUE change VALUE to 10 (line 67)
@@ -79,7 +79,7 @@
 
 ## Build and link the DOGGOS application
 
-1. Collaps the [MAP] to see your edited COBOL element
+1. Collapse the [MAP] to see your edited COBOL element
 
 ![Paste](images/endevor/end15.png)
 
@@ -91,7 +91,7 @@
 4. A prompt will ask for the Endevor path to upload the link element. Hit enter to approve the pre-filled value
 5. Add your mainframe username as CCID, and add a comment (e.g 'bring link element').
 6. Wait for upload&fetching elements
-7. Collaps the [LNK] to see your edited LINK element
+7. Collapse the [MAP] to see your edited LINK element
 8. At this step your Explorer for Endevor tab would look like the following:
 
 ![Paste](images/endevor/end17.png)
@@ -116,9 +116,9 @@
 
 5. Use CTRL+S (or COMMAND+S) to save the change
 6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the NDRUNDOG
-7. Select “Submit JCL” menu item
+7. Select “Submit Job” menu item
 8. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
-9. Expand the “NDRUNDOG(JOBxxxxx)” and click on the RUNPGM:OUTREP item to browse the program output
+9. Expand the “NDRUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output
 
 The new dog breed “HUSKY” is listed and the counter reports 99 adopted HUSKY dogs. 🎉
 
