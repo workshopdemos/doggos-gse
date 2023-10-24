@@ -25,7 +25,7 @@
 7. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output
 8. Now, your task is adding one more breed to the program, so we can print it in this report
 
-## Get DOGGOS applicaiton from the PROD environment
+## Get DOGGOS application from the PROD environment
 
 1. Go to Explorer for Endevor extension from the activity bar
 2. Wait the initializing process to be completed
