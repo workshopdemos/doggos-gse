@@ -49,6 +49,7 @@ zowe files ul ftds "$LOCAL_DIR/DOGGOS.INPUT" $USERN.PUBLIC.INPUT
 
 rm -r "$LOCAL_DIR/tmp"
 
+export PATH="$PATH:/home/developer/sandbox-env/syncz_v1.11.0/bin/linux_amd64/"
 syncz -c "bldz"
 zowe uss iss ssh "rm -r /u/users/$USERL/doggos"
 #zowe files delete data-set "$USERN.PUBLIC.LOADLIB(DOGGOS)" -f
