@@ -12,7 +12,7 @@
 1. Click on the hamburger menu (three lines) icon at the top of the sidebar
 2. Select Terminal > Run Build Task 
 
-![Paste](images/image19.png)
+<img src='images/image19.png' width='30%'>
 
 4. After starting the build task, the terminal window will open, after the synchronisation and building of the application on the mainframe, you will get a success message (**exit code:0**).
 5. Close the terminal from it's right top corner
@@ -34,16 +34,13 @@ Add a new dog breed by following:
 1. Copy block of code (lines 59-61) (You can use CTRL+G to jump into the given line number)
 2. Paste it after line 61
 
-![Paste](images/image04.png)
+<img src='images/image04.png' width='40%'>
 
 3. Change JINGO to another dog breed name (e. g. HUSKY) in the whole pasted block of code
 4. For HUSKY-INDEX-VALUE change VALUE to 9
 5. For OTHER-INDEX-VALUE change VALUE to 10
 6. Change PIC 9(1) to PIC 9(2) for OTHER-INDEX-VALUE
 7. Change OCCURS value in line 71 to 10
-
-![Change](images/image05.png)
-
 8. Copy block of code (lines 208-210)
 9. Paste it after line 210
 10. Change JINGO to the dog breed name you picked in step 3 (e. g.HUSKY) within the pasted block of code
@@ -86,21 +83,18 @@ The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY
 2. Use CTRL+S (or COMMAND+S) to save the changes
 3. Rerun the application repeating the steps in the previous section (from 6th step) 
 4. Open the output file and see that report is wrong, it now contains 0 for JINGO and 6 for the OTHER
-
-![Output](images/image07.png)
-
 5. Let’s debug the program
 6. Go to debugger extension by clicking the play icon with a bug
 
-![Debugger](images/endevor/end19.png) 
+<img src='images/endevor/end19.png' width='20%'>
 
 7. We already have the debugging session preconfigured for DOGGOS app. Make sure you are using the first configuration (non-endevor)
 
-![Choose](images/image21.png)
+<img src='images/image21.png' width='30%'>
 
 8. Click the play button to start the debugging
 
-![Variables](images/image10.png)
+<img src='images/image10.png' width='50%'>
 
 9. You will be asked for your Mainframe password. It is the same as your  mainframe userID. Now the debugger will fetch the extended source and start the session.
 10. Now where to put a breakpoint?
@@ -123,11 +117,11 @@ That would be on line 245
 
 17. We now have 2 breakpoints (you can see them in breakpoints section in the bottom left corner):
 
-![Breakpoints](images/image14.png)
+<img src='images/image14.png' width='40%'>
 
 18. Now let’s continue the execution by clicking the play button on the left of the debug toolbar:
 
-![Buttons](images/image15.png)
+<img src='images/endevor/end21.png' width='50%'>
 
 19. We can see that while looping through the breeds the debugger has skipped the breakpoint on line 239 and stopped at line 245
 
@@ -135,12 +129,12 @@ That would be on line 245
 
 20. Let’s check the variables. Click on the INP-ADOPTED-AMOUNT, right click and “Add to watch”
 
-![Check](images/image17.png)
+<img src='images/endevor/end24.png' width='40%'>
 
 21. Do the same for the INP-DOG-BREED variable on line 216 to understand which breed we are analyzing
 22. You can see in your watch section the value of the variables (BTW, a quick way is just to hover over a variable name in your extended source and the value will pop up)
 
-![Value](images/image18.png)
+<img src='images/image18.png' width='40%'>
 
 23. As you can see we have encountered a wrong breed name “JINGA”, which means that our input file is corrupted! We also never entered a section for the JINGO breed, which means we never actually encountered this breed while parsing.
 24. Now we found our problem - wrong breed in the input file :)
