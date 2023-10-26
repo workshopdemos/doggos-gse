@@ -22,11 +22,11 @@
 1. Go to Explorer for Endevor extension from the activity bar
 2. Wait the initializing process to be completed
 
-![Paste](images/endevor/end5.png)
+<img src='images/endevor/end5.png' width='30%'>
 
 3. Click the button and add an Endevor connection by choosing it from the preconfigured list
 
-![Paste](images/endevor/end6.png)
+<img src='images/endevor/end6.png' width='25%'>
 
 4. Following, select the preconfigured inventory location for your user
 
@@ -46,7 +46,7 @@
 
 10. Right click, select edit and start adding a new dog breed.
 
-![Paste](images/endevor/end11.png)
+<img src='images/endevor/end11.png' width='25%'>
 
 ## Edit the DOGGOS application
 
@@ -66,7 +66,7 @@
 14. Use CTRL+S (or COMMAND+S) to save the changes and bring the file to your sandbox
 15. A prompt will ask for the Endevor path to upload the cobol element. Hit enter to approve the pre-filled value
 
-![Paste](images/endevor/end14.png)
+<img src='images/endevor/end14.png' width='40%'>
 
 16. Add your mainframe username as CCID, and add a change comment (e.g 'new breed added').
 17. Wait for upload&fetch elements
@@ -79,7 +79,7 @@
 
 2. Expand LNK, find the element with your user id, right click and edit
 
-![Paste](images/endevor/end16.png)
+<img src='images/endevor/end16.png' width='30%'>
 
 3. Without any edit, use CTRL+S (or COMMAND+S) to bring the file to your sandbox
 4. A prompt will ask for the Endevor path to upload the link element. Hit enter to approve the pre-filled value
@@ -106,7 +106,7 @@
 3. Click on the CUST0xy.PUBLIC.INPUT data set  to edit it
 4. Add the following line with the name of the dog breed you chose in the code change (**HUSKY**)
 
-![Paste](images/endevor/end18.png)
+![Change](images/image06.png)
 
 5. Use CTRL+S (or COMMAND+S) to save the change
 6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the **NDRUNDOG**
@@ -114,7 +114,7 @@
 8. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
 9. Expand the “NDRUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat 8th step if you cannot expand the job output)
 
-The new dog breed “HUSKY” is listed and the counter reports 99 adopted HUSKY dogs. 🎉
+The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs. 🎉
 
 ## Debug
 
@@ -125,11 +125,11 @@ The new dog breed “HUSKY” is listed and the counter reports 99 adopted HUSKY
 5. Let’s debug the program
 6. Go to debugger extension by clicking the play icon with a bug
 
-![Paste](images/endevor/end19.png)
+<img src='images/endevor/end19.png' width='30%'>
 
 7. We already have the debugging session preconfigured for DOGGOS application, make sure you choose the one for Endevor from the dropdown
 
-![Paste](images/endevor/end20.png)
+<img src='images/endevor/end20.png' width='30%'>
 
 7. Hit the green play icon to start debugging.
 8. You will be asked for your Mainframe password. It is the same as your  mainframe userID. Now the debugger will fetch the extended source and start the session.
@@ -146,22 +146,21 @@ That would be on line 246
 
 16. Now let’s continue the execution by clicking the play button on the left of the debug toolbar:
 
-![Paste](images/endevor/end21.png)
+<img src='images/endevor/end21.png' width='30%'>
 
 17. We can see that while looping through the breeds the debugger has skipped the breakpoint on line 240 and stopped at line 246
 
-![Paste](images/endevor/end23.png)
-
+<img src='images/endevor/end23.png' width='40%'>
 
 18. Let’s check the variables. Click on the INP-DOG-BREED, right click and “Add to watch” (line 217)
 
-![Paste](images/endevor/end24.png)
+<img src='images/endevor/end24.png' width='30%'>
 
 19. Do the same for the INP-ADOPTED-AMOUNT variable on line 219 to understand which breed we are analyzing
 
 20. You can see in your watch section the value of the variables (BTW, a quick way is just to hover over a variable name in your extended source and the value will pop up)
 
-![Value](images/image18.png)
+<img src='images/image18.png' width='30%'>
 
 21. As you can see we have encountered a wrong breed name “JINGA”, which means that our input file is corrupted! We also never entered a section for the JINGO breed, which means we never actually encountered this breed while parsing.
 
