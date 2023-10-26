@@ -136,7 +136,7 @@ The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY
 8. Now where to put a breakpoint?
 9. The report for JINGO breed was wrong, so let’s put a breakpoint where the value is updated. Let’s find the first place in the code by searching for JINGO with Ctrl+F (CMD+F on Mac).
 10. We can see that processing for JINGO breed is handled by these variables.
-11. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 240 in extended source.
+11. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 240 in extended source. Put a break point here by clicking before the line number.
 12. Close the peek references pop-up.
 14. The value for OTHER breeds was wrong in the repo. Let’s put there a breakpoint as well
 That would be on line 246
