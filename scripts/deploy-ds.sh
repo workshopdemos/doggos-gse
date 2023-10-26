@@ -35,14 +35,12 @@ zowe files delete data-set "$USERN.PUBLIC.JCL" -f
 zowe files delete data-set "$USERN.PUBLIC.INPUT" -f
 
 # # Remove artifacts
-# ssh cust004@10.1.2.73 -p 2022 "rm -r doggos"
 zowe uss iss ssh "rm -r /u/users/$USERL/doggos"
 zowe files delete data-set "$USERN.DOGGOS.COPYBOOK" -f
 zowe files delete data-set "$USERN.PUBLIC.LOADLIB" -f
 zowe files delete data-set "$USERN.PUBLIC.PROFLIB" -f
 
 zowe files delete data-set-vsam "$USERN.PUBLIC.PROTSYM" -f
-# zowe files delete data-set "$USERN.PUBLIC.PROTSYM.DATA" -f
 
 zowe files cre pds "$USERN.PUBLIC.JCL"
 zowe files ul dtp "$LOCAL_DIR/tmp" "$USERN.PUBLIC.JCL"
@@ -50,3 +48,9 @@ zowe files cre data-set-sequential "$USERN.PUBLIC.INPUT"
 zowe files ul ftds "$LOCAL_DIR/DOGGOS.INPUT" $USERN.PUBLIC.INPUT
 
 rm -r "$LOCAL_DIR/tmp"
+
+export PATH="$PATH:/home/developer/sandbox-env/syncz_v1.11.0/bin/linux_amd64/"
+syncz -c "bldz"
+zowe uss iss ssh "rm -r /u/users/$USERL/doggos"
+#zowe files delete data-set "$USERN.PUBLIC.LOADLIB(DOGGOS)" -f
+
