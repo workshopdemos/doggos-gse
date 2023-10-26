@@ -1,17 +1,16 @@
 # Code/Build/Debug Challenge
-
 # Main Scenario
-
 ## Getting Started
 
-
-1. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
+1. Login the workshop system using the given URL, username and password
+2. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
+3. Make sure the initial build process has successfully completed. (**exit code: 0** message in the active terminal)
+4. Close the terminal from it's right top corner
 
 ## Build the DOGGOS application
 
-1. Make sure the initial build process has successfully completed. (**exit code: 0** message in the active terminal)
-2. Click on the hamburger menu (three lines) icon at the top of the sidebar
-3. Select Terminal > Run Build Task 
+1. Click on the hamburger menu (three lines) icon at the top of the sidebar
+2. Select Terminal > Run Build Task 
 
 ![Paste](images/image19.png)
 

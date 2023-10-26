@@ -2,10 +2,10 @@
 # Main Scenario
 ## Getting Started
 
-
-1. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
-2. Make sure the initial build process has successfully completed. (**exit code: 0** message in the active terminal)
-3. Close the terminal from it's right top corner
+1. Login the workshop system using the given URL, username and password
+2. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
+3. Make sure the initial build process has successfully completed. (**exit code: 0** message in the active terminal)
+4. Close the terminal from it's right top corner
 
 ## Run the DOGGOS application - Getting used to the app
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
