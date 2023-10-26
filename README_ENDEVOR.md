@@ -50,18 +50,18 @@
 
 ## Edit the DOGGOS application
 
-1. Copy block of code (lines 60-62)
-2. Paste it after line 62 (You can use CTRL+G to jump into the given line number)
+1. Copy block of code (lines 59-61)
+2. Paste it after line 61 (You can use CTRL+G to jump into the given line number)
 3. Change JINGO to another dog breed name (e. g. **HUSKY**) in the whole pasted block of code
-4. For HUSKY-INDEX-VALUE change VALUE to 9  (line 64)
-5. For OTHER-INDEX-VALUE change VALUE to 10 (line 67)
-6. Change PIC 9(1) to PIC 9(2) for OTHER-INDEX-VALUE (line 67)
-7. Change OCCURS value to 10 (line 72)
-8. Copy block of code (lines 209-211)
-9. Paste it after line 211
+4. For HUSKY-INDEX-VALUE change VALUE to 9  (line 63)
+5. For OTHER-INDEX-VALUE change VALUE to 10 (line 66)
+6. Change PIC 9(1) to PIC 9(2) for OTHER-INDEX-VALUE (line 66)
+7. Change OCCURS value to 10 (line 71)
+8. Copy block of code (lines 208-210)
+9. Paste it after line 210
 10. Change JINGO to the dog breed name you picked in step 3 (**HUSKY**) within the pasted block of code
-11. Copy block of code (lines 140-143)
-12. Paste it after line 143
+11. Copy block of code (lines 139-142)
+12. Paste it after line 142
 13. Change JINGO to the dog breed name you picked in step 3 (**HUSKY**) within the pasted block of code
 14. Use CTRL+S (or COMMAND+S) to save the changes and bring the file to your sandbox
 15. A prompt will ask for the Endevor path to upload the cobol element. Hit enter to approve the pre-filled value
@@ -136,10 +136,10 @@ The new dog breed “HUSKY” is listed and the counter reports 99 adopted HUSKY
 8. Now where to put a breakpoint?
 9. The report for JINGO breed was wrong, so let’s put a breakpoint where the value is updated. Let’s find the first place in the code by searching for JINGO with Ctrl+F (CMD+F on Mac).
 10. We can see that processing for JINGO breed is handled by these variables.
-11. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 241 in extended source.
+11. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 240 in extended source.
 12. Close the peek references pop-up.
 14. The value for OTHER breeds was wrong in the repo. Let’s put there a breakpoint as well
-That would be on line 247
+That would be on line 246
 15. We now have 2 breakpoints (you can see them in breakpoints section in the bottom left corner):
 
 ![Paste](images/endevor/end22.png)
@@ -148,17 +148,16 @@ That would be on line 247
 
 ![Paste](images/endevor/end21.png)
 
-
-17. We can see that while looping through the breeds the debugger has skipped the breakpoint on line 241 and stopped at line 247
+17. We can see that while looping through the breeds the debugger has skipped the breakpoint on line 240 and stopped at line 246
 
 ![Paste](images/endevor/end23.png)
 
 
-18. Let’s check the variables. Click on the INP-DOG-BREED, right click and “Add to watch” (line 218)
+18. Let’s check the variables. Click on the INP-DOG-BREED, right click and “Add to watch” (line 217)
 
 ![Paste](images/endevor/end24.png)
 
-19. Do the same for the INP-ADOPTED-AMOUNT variable on line 220 to understand which breed we are analyzing
+19. Do the same for the INP-ADOPTED-AMOUNT variable on line 219 to understand which breed we are analyzing
 
 20. You can see in your watch section the value of the variables (BTW, a quick way is just to hover over a variable name in your extended source and the value will pop up)
 
