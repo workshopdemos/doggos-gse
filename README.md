@@ -9,22 +9,24 @@
 
 ## Build the DOGGOS application
 
-1. Make sure the initial build process has successfully completed. (**Startup script finished** message in the active terminal)
+1. Make sure the initial build process has successfully completed. (**exit code: 0** message in the active terminal)
 2. Click on the hamburger menu (three lines) icon at the top of the sidebar
 3. Select Terminal > Run Build Task 
 
 ![Paste](images/image19.png)
 
-4. After starting the build task, the terminal window will open and after the synchronisation and building of the application on the mainframe you will get a success message (**exit code:0**).
+4. After starting the build task, the terminal window will open, after the synchronisation and building of the application on the mainframe, you will get a success message (**exit code:0**).
+5. Close the terminal from it's right top corner
 
 ## Run the DOGGOS application
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
 1. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon
 1. Fill in data set: CUST0xy.PUBLIC to add all data sets with this prefix to Zowe Explorer (Use your user id number instead CUST0xy) 
 1. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
-1. Select “Submit Job” menu item
-1. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
-1. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output
+1. Select “Submit Job” menu item, then click "Submit" from the pop-up window 
+1. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output (if notification disappears, you can hit the bell icon from the bottom-right corner to see)
+1. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat 6th step if you cannot expand the job output)
+1. Breeds those are not specified in the COBOL code, fall into the OTHER section in the execution report. Now, your task is adding one more breed to the program, so we can print it in this report
 
 ## Edit the DOGGOS application
 Navigate back to the Explorer Tab to see the local files
@@ -46,7 +48,7 @@ Add a new dog breed by following:
 8. Copy block of code (lines 208-210)
 9. Paste it after line 210
 10. Change JINGO to the dog breed name you picked in step 3 (e. g.HUSKY) within the pasted block of code
-11. Copy block of code (lines 139-143)
+11. Copy block of code (lines 139-142)
 12. Paste it after line 143
 13. Change JINGO to the dog breed name you picked in step 3 (e.g. HUSKY) within the pasted block of code
 14. Use CTRL+S (or COMMAND+S) to save the changes
@@ -58,8 +60,8 @@ Add a new dog breed by following:
 1. Click on the hamburger menu (three lines) icon at the top of the sidebar
 2. Select Terminal → New Terminal
 3. Make sure the command line starts with: ```developer@ws-<"a-long-number-here">:~/doggos-gse```
-4. Issue the following command to build and deploy the application to a data set: ```syncz -c "bldz"```
-	(Click “Allow” if you see the pop-up window asking about copying and pasting permissions)
+4. Issue the following command to build and deploy the application to a data set: ```syncz -c "bldz"``` and hit Enter key
+	(Click “Allow or Paste” if you see the pop-up window asking about copying and pasting permissions)
 
 
 ## Run the DOGGOS application AFTER the change is made and the the build is run
@@ -73,9 +75,9 @@ Add a new dog breed by following:
 
 5. Use CTRL+S (or COMMAND+S) to save the changes
 6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
-7. Select “Submit Job” menu item
+7. Select “Submit Job” menu item, then click "Submit" from the pop-up window
 8. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output (if notification disappears, you can hit the bell icon from the bottom-right corner to see)
-9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output
+9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat 6th step if you cannot expand the job output)
 
 The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs.
 
