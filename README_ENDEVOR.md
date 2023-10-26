@@ -4,26 +4,18 @@
 
 
 1. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
-
-## Prepare the DOGGOS application
-
-1. Make sure the initial build process has successfully completed. (**Startup script finished** message in the active terminal)
-2. Click on the hamburger menu (three lines) icon at the top of the sidebar
-3. Select Terminal > Run Build Task 
-
-![Paste](images/image19.png)
-
-4. After starting the build task, the terminal window will open and after the synchronisation of the files on the mainframe you will get a success message (**exit code:0**).
+2. Make sure the initial build process has successfully completed. (**exit code: 0** message in the active terminal)
+3. Close the terminal from it's right top corner
 
 ## Run the DOGGOS application - Getting used to the app
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
 2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon
 3. Fill in data set: CUST0xy.PUBLIC to add all data sets with this prefix to Zowe Explorer (Use your user id number instead CUST0xy) 
 4. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
-5. Select “Submit Job” menu item
+5. Select “Submit Job” menu item, then click "Submit" from the pop-up window
 6. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output (if notification disappears, you can hit the bell icon from the bottom-right corner to see)
-7. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output
-8. Now, your task is adding one more breed to the program, so we can print it in this report
+7. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat 6th step if you cannot expand the job output)
+8. Breeds those are not specified in the COBOL code, fall into the OTHER section in the execution report. Now, your task is adding one more breed to the program, so we can print it in this report
 
 ## Get DOGGOS application from the PROD environment
 
@@ -36,23 +28,25 @@
 
 ![Paste](images/endevor/end6.png)
 
-4. Following, select the pre configured inventory location for your user
+4. Following, select the preconfigured inventory location for your user
 
 ![Paste](images/endevor/end7.png)
 
-5. Fetching the elements will end up with a warning as your dev sandbox is empty
+5. Expand **endevor** and **endevor-location** 
 
-6. Map the changes from the prod environment using the up-arrow
+6. Fetching the elements will end up with a warning as your dev sandbox is empty
+
+7. Map the changes from the prod environment using the up-arrow
 
 ![Paste](images/endevor/end10.png)
 
-7. Now you have all of the DOGGOS application in your local VS Code IDE.
+8. Now you have all of the DOGGOS application in your cloud VS Code IDE.
 
-8. Find the COBOL code for your user under the [MAP] by expanding as shown:
+9. Find the COBOL code for your user under the [MAP] by expanding as shown below
+
+10. Right click, select edit and start adding a new dog breed.
 
 ![Paste](images/endevor/end11.png)
-
-9. Right click, select edit and start adding a new dog breed.
 
 ## Edit the DOGGOS application
 
@@ -87,7 +81,7 @@
 
 ![Paste](images/endevor/end16.png)
 
-3. Use CTRL+S (or COMMAND+S) to bring the file to your sandbox
+3. Without any edit, use CTRL+S (or COMMAND+S) to bring the file to your sandbox
 4. A prompt will ask for the Endevor path to upload the link element. Hit enter to approve the pre-filled value
 5. Add your mainframe username as CCID, and add a comment (e.g 'bring link element').
 6. Wait for upload&fetching elements
@@ -115,10 +109,10 @@
 ![Paste](images/endevor/end18.png)
 
 5. Use CTRL+S (or COMMAND+S) to save the change
-6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the NDRUNDOG
-7. Select “Submit Job” menu item
+6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the **NDRUNDOG**
+7. Select “Submit Job” menu item, then click "Submit" from the pop-up window
 8. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output
-9. Expand the “NDRUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output
+9. Expand the “NDRUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat 8th step if you cannot expand the job output)
 
 The new dog breed “HUSKY” is listed and the counter reports 99 adopted HUSKY dogs. 🎉
 
@@ -137,11 +131,13 @@ The new dog breed “HUSKY” is listed and the counter reports 99 adopted HUSKY
 
 ![Paste](images/endevor/end20.png)
 
-7. You will be asked for your Mainframe password. It is the same as your  mainframe userID. Now the debugger will fetch the extended source and start the session.
+7. Hit the green play icon to start debugging.
+8. You will be asked for your Mainframe password. It is the same as your  mainframe userID. Now the debugger will fetch the extended source and start the session.
 8. Now where to put a breakpoint?
 9. The report for JINGO breed was wrong, so let’s put a breakpoint where the value is updated. Let’s find the first place in the code by searching for JINGO with Ctrl+F (CMD+F on Mac).
 10. We can see that processing for JINGO breed is handled by these variables.
-11. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 241 in extended source:
+11. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 241 in extended source.
+12. Close the peek references pop-up.
 14. The value for OTHER breeds was wrong in the repo. Let’s put there a breakpoint as well
 That would be on line 247
 15. We now have 2 breakpoints (you can see them in breakpoints section in the bottom left corner):
