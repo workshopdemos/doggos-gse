@@ -73,7 +73,7 @@ Add a new dog breed by following:
 6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
 7. Select “Submit Job” menu item, then click "Submit" from the pop-up window
 8. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output (if notification disappears, you can hit the bell icon from the bottom-right corner to see)
-9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat 6th step if you cannot expand the job output)
+9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat 8th step if you cannot expand the job output)
 
 The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs.
 
