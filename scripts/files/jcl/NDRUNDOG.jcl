@@ -1,4 +1,4 @@
-//<RUNDOG>  JOB ACCT#,REGION=0M                                         00001010
+//<RUNDOG>  JOB ACCT#,REGION=0M,CLASS=A                                 00001010
 //RUN      EXEC PGM=<NDDBGDOG>                                            00010007
 //STEPLIB    DD DISP=SHR,DSN=&SYSUID..PUBLIC.LOADLIB                    00020009
 //ADOPTS     DD DISP=SHR,DSN=&SYSUID..PUBLIC.INPUT                      00031011
