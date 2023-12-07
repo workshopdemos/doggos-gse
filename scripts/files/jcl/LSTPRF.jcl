@@ -1,4 +1,4 @@
-//<LSTPRF> JOB ACCT#,REGION=0M                                          00010001
+//<LSTPRF> JOB ACCT#,REGION=0M,CLASS=A                                  00010001
 //RPT     EXEC PGM=IN25UTIL,REGION=2M                                   00020000
 //STEPLIB   DD DISP=SHR,DSN=PRODUCT.INTERTST.LOADLIB                    00130000
 //          DD DISP=SHR,DSN=PRODUCT.INTERTST.R11J.CAVHLOAD              00140000
