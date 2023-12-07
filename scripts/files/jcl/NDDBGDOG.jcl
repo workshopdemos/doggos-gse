@@ -1,4 +1,4 @@
-//<DBGDOG> JOB ACCT#,REGION=0M                                          00010000
+//<DBGDOG> JOB ACCT#,REGION=0M,CLASS=A                                  00010000
 //RUNPGM   EXEC PGM=CAMRBL01                                            00020000
 //* --------- INTERTEST DATA DEFINITIONS                                00021004
 //INT1OPTS DD *                                                         00030000
