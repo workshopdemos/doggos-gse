@@ -91,12 +91,16 @@
 ![Paste](images/endevor/end17.png)
 
 9. Right click on the DOGGOSXX element under COBOL, select generate in place. This will generate the object modules
-    1. Add your mainframe user name as CCID
-    2. Add a comment (e.g 'generate object modules')
+    1. <img src='images/endevor/end26.png' width='30%'>
+    2. Select "Do not override" from the processor group selection
+    3. Add your mainframe user name as CCID
+    4. Add a comment (e.g 'generate object modules')
 
 10. Right click on the DOGGOSXX element under LNK, select generate in place. This will generate the load modules
-    1. Add your mainframe user name as CCID
-    2. Add a comment (e.g 'generate load modules')
+    1. <img src='images/endevor/end27.png' width='30%'>
+    2. Select "Do not override" from the processor group selection
+    3. Add your mainframe user name as CCID
+    4. Add a comment (e.g 'generate load modules')
 
 
 ## Run the DOGGOS application AFTER the change is made
