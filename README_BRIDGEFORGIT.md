@@ -9,31 +9,32 @@
 
 ## BRIDGEFORGIT 
 
-In the Strong Network workspace, select the Burger icon on the top left, File -> Open Folder -> under /home/developer, select the doggos-cust0## repo where ## replaced by 09 or 10 etc. and Select Ok. Sharing a quick reference screenshot: 
+In the Strong Network workspace, select the Burger icon on the top left, File -> Open Folder -> under /home/developer, select the doggos-cust0## repo where ## replaced by 09 or 10 etc. and Select Ok. Sharing a reference screenshot: 
 
 <img src='images/bridge/bfg1.png' width='30%'>
 
-This will load the "doggos-cust0##" github repository contents in the Explorer. From command line, switch to the corresponding git repository folder contents. Sharing screen-shot reference: 
+This will load the "doggos-cust0##" github repository contents in the Explorer. From command line, switch to the corresponding git repository folder contents. Sharing a reference screenshot: 
 
 <img src='images/bridge/bfg2.png' width='30%'>
 
 
-Now Edit a file under the below structure:
+Edit a file under the below structure:
 DOGGOS-CUST0## -> DOGGOS -> CUST0## -> COBOL -> DOGGOS##.CBL
 Edit an existing comment by adding something like THE in front of it. 
 
 Then run the Git commands: 
-git add . 
-git commit -m "Adding a comment"
-git push
+git add .  
+git commit -m "Adding a comment to the line ##"  
+git push  
 
-Sharing a reference screenshot for above: 
+
+Sharing a reference screenshot: 
 
 <img src='images/bridge/bfg3.png' width='30%'>
 
 At this point, User edited a cobol file, pushed the changes to Github. With BridgeForGit Mapping that is already performed betweent this Github repo to the Endevor, the changes are synched with the Endevor. 
 
-To validate that the changes got synced to Endevor, Launch the "Explorer for Endevor" extension, This extension is already configured to Endevor instance and Inventory location. Select them. Sharing screenshots for reference: 
+To validate that the changes got synced to Endevor, Launch the "Explorer for Endevor" extension, This extension is already configured to Endevor instance and Inventory location. Select them. Sharing reference screenshots: 
 
 
 <img src='images/bridge/bfg4.png' width='30%'>
