@@ -22,9 +22,9 @@ Edit a file under the below structure:
 DOGGOS-CUST0## -> DOGGOS -> CUST0## -> COBOL -> DOGGOS##.CBL
 Edit an existing comment by adding something like THE in front of it. 
 
-Then run the Git commands: 
+Then run the Git commands:  
 git add .  
-git commit -m "Adding a comment to the line ##"  
+git commit -a "Addming a comment to the line ##"  
 git push  
 
 
@@ -32,9 +32,9 @@ Sharing a reference screenshot:
 
 <img src='images/bridge/bfg3.png' width='30%'>
 
-At this point, User edited a cobol file, pushed the changes to Github. With BridgeForGit Mapping that is already performed betweent this Github repo to the Endevor, the changes are synched with the Endevor. 
+At this point, User edited a cobol file, pushed the changes to Github. With BridgeForGit Mapping that is already performed between this Github repo to the Endevor, the changes are synched with the Endevor. 
 
-To validate that the changes got synced to Endevor, Launch the "Explorer for Endevor" extension, This extension is already configured to Endevor instance and Inventory location. Select them. Sharing reference screenshots: 
+To validate that the changes got synced to Endevor, Launch the "Explorer for Endevor" extension, This extension is already configured to Endevor instance and Inventory location. Select the configurations that get listed. Sharing reference screenshots: 
 
 
 <img src='images/bridge/bfg4.png' width='30%'>
