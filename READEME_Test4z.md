@@ -175,6 +175,7 @@ This shows the tested COBOL source code with "hit" statistics on each line of co
 <img src='images/test4z/image3.png' width='30%'>
 
 # Side Scenarios
+Start by opening a new Visual Studio Code workspace on the doggos-app folder (File > Open Folder... and select /home/developer/doggos-app/).
 
 ## Build COBOL source on your PC with just 4 lines of code!!
 
