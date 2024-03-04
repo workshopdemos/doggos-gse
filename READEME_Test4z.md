@@ -55,7 +55,7 @@ Add a new dog breed by following:
 
 1. Click on the hamburger menu (three lines) icon at the top of the sidebar
 2. Select Terminal → New Terminal
-3. Make sure the command line starts with: ```developer@ws-<"a-long-number-here">:~/doggos-gse```
+3. Make sure the command line starts with: ```developer@ws-<"a-long-number-here">:~/doggos-app```
 4. Issue the following command to build and deploy the application to a data set: ```syncz -c "bldz"``` and hit Enter key
 	(Click “Allow or Paste” if you see the pop-up window asking about copying and pasting permissions)
 
