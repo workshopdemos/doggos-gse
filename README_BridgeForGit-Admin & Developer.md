@@ -119,7 +119,9 @@ git clone git@github.com:theworkshopuser/doggos-cust16.git
 Cd into the cloned repo directory and switch to main branch. 
 
 Commands: 
-cd doggos-cust6/
+cd doggos-custXX/
+Replace XX with number in your User ID. 
+
 git checkout main
 
 <img src='images/bridge/b4g24.png' width='30%'>
