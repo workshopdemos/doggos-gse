@@ -57,8 +57,10 @@ Enter the Branch name as “main”. Keep the other fields as defaults.
 
 For Map Inventory details.
 - For Endevor System, Select “DOGGOS-DOGGOS”. 
-- For Endevor Sub System, Select “Cust00x-Cust00x”. Replace x with your User ID.
-- For Element Types, Select
+- For Endevor Sub System, Select “Cust0XX-Cust0XX”. 
+Note: Please select “Cust0XX-Cust0XX” by replacing XX with the number in your User ID.
+For instance, if youe User ID is mfwsuser16@demo.broadcom.com, replace XX by number 16 and select that option from drop down. 
+- For Element Types, Select COBCOPY, COBOL, LNK, LNKINC
 
 <img src='images/bridge/b4g12.png' width='30%'>
 
