@@ -128,13 +128,15 @@ Note: Replace XX with number in your User ID.
 
 git checkout main
 
-<img src='images/bridge/b4g24.png' width='30%'>
+<img src='images/bridge/b4g24.png' width='30%'>   
 
-Open the doggos-cust6 folder in the VSCode Explorer and select the file that corresponds to your User Id. 
+In the Explorer tab, Open the Cobol file from the below path:   
+doggos-cust0XX —> COBOL -> DOGGOSXX.CBL   
+Note: Replace XX with the number from your User ID   
 
 <img src='images/bridge/b4g25.png' width='30%'>
 
-Make a Quick change. Update one of the existing comments. 
+Make a Quick change - Update one of the existing comments. 
 Change line 20 from 
 
 <img src='images/bridge/b4g26.png' width='30%'>
@@ -147,9 +149,9 @@ Save the file.
 
 Track, commit and push the changes into the github repo. 
 
-git add . 
-git commit -m "updated a comment"
-git push
+git add .   
+git commit -m "updated a comment"   
+git push   
 
 <img src='images/bridge/b4g28.png' width='30%'>
 
@@ -168,7 +170,7 @@ Launch the "Explorer for Endevor" extension, This extension is already configure
 
 <img src='images/bridge/b4g32.png' width='30%'>
 
-Expand the folder structure in Explorer tab and select "show history"
+Expand the folder structure in Explorer tab and select "show history". See the below screenshot for reference.
 
 <img src='images/bridge/b4g33.png' width='30%'>
 
