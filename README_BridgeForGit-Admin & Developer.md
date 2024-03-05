@@ -104,10 +104,15 @@ Please wait for the startup script to be finished.
 
 Section 3: 
 
-From the Workspace, Clone the newly mapped github repo. 
-Command: git clone git@github.com:theworkshopuser/doggos-cust6.git
+Select the burger icon (three vertical lines), File -> Open Folder (Ensure the open folder is pointing to /home/developer and selct OK).
 
-Replace the doggos-cust6.git with user id number. For instance if you are user 16, then it will be doggos-cust16.git
+From the command line Terminal. Run the command: cd /home/developer
+
+Now Clone the newly mapped github repo. 
+Command: git clone git@github.com:theworkshopuser/doggos-custXX.git
+
+Replace XX with the number in your User ID. For instance if you are user 16, then the command will be 
+git clone git@github.com:theworkshopuser/doggos-cust16.git
 
 <img src='images/bridge/b4g23.png' width='30%'>
 
@@ -145,7 +150,7 @@ git push
 At this point, User edited a cobol file, pushed the changes to Github. With BridgeForGit Mapping that is already performed between this Github repo to the Endevor, the changes are synched with the Endevor.
 To validate that the changes got synced to Endevor, Perform the below steps. 
 
-Firstly switch to the DOGGOS_GSE folder in the Explorer tab. 
+Select the burger icon (three vertical lines), File -> Open Folder (Ensure the open folder is pointing to /home/developer/doggos-gse/ and selct OK).
 
 <img src='images/bridge/b4g29.png' width='30%'>
 
