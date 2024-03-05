@@ -37,7 +37,9 @@ Section 1:
 
 <img src='images/bridge/b4g8.png' width='30%'>
 
-Enter the Github url. The Url will be of the format https://github.com/theworkshopuser/doggos-custxx. Replace xx with your user id number. 
+Enter the Github url. 
+The Url will be of the format https://github.com/theworkshopuser/doggos-custxx. 
+Replace XX with the number in your User ID. 
 
 <img src='images/bridge/b4g9.png' width='30%'>
 
@@ -120,7 +122,7 @@ Cd into the cloned repo directory and switch to main branch.
 
 Commands: 
 cd doggos-custXX/
-Replace XX with number in your User ID. 
+Note: Replace XX with number in your User ID. 
 
 git checkout main
 
