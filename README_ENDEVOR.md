@@ -24,31 +24,23 @@
 
 <img src='images/endevor/end5.png' width='30%'>
 
-3. Click the button and add an Endevor connection by choosing it from the preconfigured list
+3. Expand **endevor** and **endevor-location** wait for fetching the elements (connection and location settings have already been pre-configured prior the workshop)
 
-<img src='images/endevor/end6.png' width='25%'>
+4. Fetching the elements will result in a warning due to your empty dev sandbox
 
-4. Following, select the preconfigured inventory location for your user
-
-![Paste](images/endevor/end7.png)
-
-5. Expand **endevor** and **endevor-location** 
-
-6. Fetching the elements will end up with a warning as your dev sandbox is empty
-
-7. Map the changes from the prod environment using the up-arrow
+5. Map the changes from the prod environment using the up-arrow
 
 ![Paste](images/endevor/end10.png)
 
-8. Now you have all of the DOGGOS application in your cloud VS Code IDE.
+6. Now you have all of the DOGGOS application in your cloud VS Code IDE.
 
-9. Find the COBOL code for your user under the [MAP] by expanding as shown below
+7. Find the COBOL code associated with your user under the [MAP] folder by expanding as shown below
 
-10. Right click, select edit and start adding a new dog breed.
+8. Right click, select edit and start coding to add a new dog breed.
 
 <img src='images/endevor/end11.png' width='25%'>
 
-## Edit the DOGGOS application
+## Edit&Build the DOGGOS application
 
 1. Copy block of code (lines 59-61)
 2. Paste it after line 61 (You can use CTRL+G to jump into the given line number)
@@ -66,42 +58,34 @@
 14. Use CTRL+S (or COMMAND+S) to save the changes and bring the file to your sandbox
 15. A prompt will ask for the Endevor path to upload the cobol element. Hit enter to approve the pre-filled value
 
-<img src='images/endevor/end14.png' width='40%'>
+<img src='images/endevor/end14.png' width='35%'>
 
 16. Add your mainframe username as CCID, and add a change comment (e.g 'new breed added').
-17. Wait for upload&fetch elements
 
-## Build and link the DOGGOS application
+17. Select **Yes** from the list to generate the object modules
 
-1. Collapse the [MAP] to see your edited COBOL element
+<img src='images/endevor/end14-2.png' width='40%'>
 
-![Paste](images/endevor/end15.png)
+18. Wait for upload&fetch elements
 
-2. Expand LNK, find the element with your user id, right click and edit
+## Link the DOGGOS application
 
-<img src='images/endevor/end16.png' width='30%'>
+1. Expand the LNK folder, find the element associated with your user under the [MAP] folder, right click and select edit
 
-3. Without any edit, use CTRL+S (or COMMAND+S) to bring the file to your sandbox
-4. A prompt will ask for the Endevor path to upload the link element. Hit enter to approve the pre-filled value
-5. Add your mainframe username as CCID, and add a comment (e.g 'bring link element').
+<img src='images/endevor/end16.png' width='25%'>
+
+2. Without any edit, use CTRL+S (or COMMAND+S) to bring the file to your sandbox
+3. A prompt will ask for the Endevor path to upload the link element. Hit enter to approve the pre-filled value
+4. Add your mainframe username as CCID, and add a comment (e.g 'bring link element').
+5. Select **Yes** from the list to generate the load modules
+
+<img src='images/endevor/end16-2.png' width='30%'>
+
 6. Wait for upload&fetching elements
-7. Collapse the [MAP] to see your edited LINK element
+7. Collapse the [MAP] folders to see your edited LINK element
 8. At this step your Explorer for Endevor tab would look like the following:
 
-![Paste](images/endevor/end17.png)
-
-9. Right click on the DOGGOSXX element under COBOL, select generate in place. This will generate the object modules
-    1. <img src='images/endevor/end26.png' width='30%'>
-    2. Select "Do not override" from the processor group selection
-    3. Add your mainframe user name as CCID
-    4. Add a comment (e.g 'generate object modules')
-
-10. Right click on the DOGGOSXX element under LNK, select generate in place. This will generate the load modules
-    1. <img src='images/endevor/end27.png' width='30%'>
-    2. Select "Do not override" from the processor group selection
-    3. Add your mainframe user name as CCID
-    4. Add a comment (e.g 'generate load modules')
-
+<img src='images/endevor/end17.png' width='30%'>
 
 ## Run the DOGGOS application AFTER the change is made
 
