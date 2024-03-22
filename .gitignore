@@ -3,3 +3,6 @@
 build
 node_modules
 .idea
+syncz_vars.yml
+zowe.config.json
+.vscode/launch.json
