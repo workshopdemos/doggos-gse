@@ -1,6 +1,6 @@
-host: 10.1.2.73
+host: <host>
 port: 2022
-user: CUST021
+user: <mfuser>
 remotedir: doggos
 
 
