@@ -6,25 +6,25 @@
         "type": "intertest-batch",
         "request": "launch",
         "programName": ["DOGGOS"],
-        "protsym": ["CUST021.PUBLIC.PROTSYM"],
+        "protsym": ["CUST###.PUBLIC.PROTSYM"],
         "interTestHost": "10.1.2.73",
         "interTestPort": 6023,
-        "interTestUserName": "CUST021",
+        "interTestUserName": "CUST###",
         "interTestSecure": false,
-        "convertedJCL": "CUST021.PUBLIC.JCL(DBGDOG)",
+        "convertedJCL": "CUST###.PUBLIC.JCL(DBGDOG)",
         "variableOrder": "alphabetical"
       },
       {
         "name": "DOGGOS BATCH DEBUG - Endevor",
         "type": "intertest-batch",
         "request": "launch",
-        "programName": ["DOGGOS21"],
-        "protsym": ["CUST021.PUBLIC.PROTSYM"],
+        "programName": ["DOGGOS###"],
+        "protsym": ["CUST###.PUBLIC.PROTSYM"],
         "interTestHost": "10.1.2.73",
         "interTestPort": 6023,
-        "interTestUserName": "CUST021",
+        "interTestUserName": "CUST###",
         "interTestSecure": false,
-        "convertedJCL": "CUST021.PUBLIC.JCL(NDDBGDOG)",
+        "convertedJCL": "CUST###.PUBLIC.JCL(NDDBGDOG)",
         "variableOrder": "alphabetical"
       }
     ]

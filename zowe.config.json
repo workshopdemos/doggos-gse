@@ -27,20 +27,20 @@
         "endevor": {
             "type": "endevor",
             "properties": {
-                "port": 6002,
+                "port": 1000,
                 "protocol": "http",
-                "basePath": "/EndevorService/rest"
+                "basePath": ""
             },
             "secure": []
         },
         "endevor-location": {
             "type": "endevor-location",
             "properties": {
-                "instance": "ENDEVOR",
-                "environment": "DEV",
-                "system": "DOGGOS",
-                "subsystem": "CUST021",
-                "type": "*",
+                "instance": "",
+                "environment": "",
+                "system": "",
+                "subsystem": "",
+                "type": "",
                 "stageNumber": "1",
                 "maxrc": 8
             },
@@ -49,10 +49,10 @@
         "base": {
             "type": "base",
             "properties": {
-                "host": "10.1.2.73",
+                "host": "",
                 "rejectUnauthorized": false,
-                "user": "CUST021",
-                "password": "CUST021"
+                "user": "",
+                "password": ""
             },
             "secure": []
         }
