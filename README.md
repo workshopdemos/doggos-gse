@@ -20,8 +20,8 @@
 
 <img src='images/image19.png' width='35%'>
 
-4. After starting the build task, the terminal window will open, after the synchronisation and building of the application on the mainframe, you will get a success message (**exit code:0**)
-5. Close the terminal from it's right top corner
+3. After starting the build task, the terminal window will open, after the synchronisation and building of the application on the mainframe, you will get a success message (**exit code:0**)
+4. Close the terminal from it's right top corner
 
 ## Run the DOGGOS application
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
@@ -60,9 +60,9 @@ Add a new dog breed by following:
 *(Building the application can be done by either following the initial build steps above just like following ```Hamburger Menu → Terminal → Run Build Task``` OR by following the Command Line Instructions below):*
 
 1. Click on the hamburger menu (three lines) icon at the top of the sidebar
-2. Select Terminal → New Terminal
-3. Make sure the command line starts with: ```developer@ws-<"a-long-number-here">:~/doggos-gse```
-4. Issue the following command to build and deploy the application to a data set: ```syncz -c "bldz"``` and hit Enter key
+1. Select Terminal → New Terminal
+1. Make sure the command line starts with: ```developer@ws-<"a-long-number-here">:~/doggos-gse```
+1. Issue the following command to build and deploy the application to a data set: ```syncz -c "bldz"``` and hit Enter key
 	(Click “Allow or Paste” if you see the pop-up window asking about copying and pasting permissions)
 
 
@@ -72,14 +72,14 @@ Add a new dog breed by following:
 2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon.
 3. Click on the CUST0xy.PUBLIC.INPUT data set  to edit it
 4. Add the following lines with the name of the dog breed you chose in the code change
-5. 
+   
 <img src='images/image006.png' width='55%'>
 
-6. Use CTRL+S (or COMMAND+S) to save the changes
-7. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
-8. Select the “Submit Job” menu item, then click "Submit" from the pop-up window
-9. Click on the JOB number in the pop-up message in the right bottom corner to see the JOB output (if the notification disappears, you can hit the bell icon from the bottom-right corner to see)
-10. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat the 8th step if you cannot expand the job output)
+5. Use CTRL+S (or COMMAND+S) to save the changes
+6. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
+7. Select the “Submit Job” menu item, then click "Submit" from the pop-up window
+8. Click on the JOB number in the pop-up message in the right bottom corner to see the JOB output (if the notification disappears, you can hit the bell icon from the bottom-right corner to see)
+9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat the 8th step if you cannot expand the job output)
 
 The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs.
 
@@ -151,13 +151,13 @@ That would be on line 245
 ## Build a COBOL source on your PC with just 4 lines of code!!
 
 1. Navigate to the following folder: …………
-2. Expand the src/ folder and you will see two COBOL source files, which we will build as a part of this scenario
-3. Locate the BUILDZ.js file in the /root and double-click to edit it
-4. Uncomment the first two lines, that initialize the compile and binder variables.
-5. Uncomment the third line to compile the source code in the /src folder which creates an object module (syncz.yml file automatically downloads the object modules to the /build-out folder
-6. Run the ```syncz -a “src::bldz``` command to run the compilation enabled by uncommenting the line in the previous step
-7. Uncomment the fourth line to bind the object modules created in the previous steps, which automatically creates a load module and downloads it to the /build-out folder
-8. Run the ```“syncz -a “src::bldz”``` command to run the bind enabled by uncommenting the line in the previous step
+1. Expand the src/ folder and you will see two COBOL source files, which we will build as a part of this scenario
+1. Locate the BUILDZ.js file in the /root and double-click to edit it
+1. Uncomment the first two lines, that initialize the compile and binder variables.
+1. Uncomment the third line to compile the source code in the /src folder which creates an object module (syncz.yml file automatically downloads the object modules to the /build-out folder
+1. Run the ```syncz -a “src::bldz``` command to run the compilation enabled by uncommenting the line in the previous step
+1. Uncomment the fourth line to bind the object modules created in the previous steps, which automatically creates a load module and downloads it to the /build-out folder
+1. Run the ```“syncz -a “src::bldz”``` command to run the bind enabled by uncommenting the line in the previous step
 
 ## Automation with Zowe
 
