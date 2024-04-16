@@ -85,13 +85,12 @@ The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY
 
 ## Debug
 
-1. Let’s introduce a bug in the program data 🙂 Go to the input file and change the breed from “JINGO” to “JINGA”.
+1. Let’s introduce a bug in the program data 🙂 Go to the input file and change the breed from “JINGO” to “JINGA”
 2. Use CTRL+S (or COMMAND+S) to save the changes
-3. Rerun the application by repeating the steps in the previous section (from the 6th step) 
+3. Rerun the application by repeating the steps in the previous section (from the 6th step)
 4. Open the output file and see that the report is wrong, it now contains 0 for JINGO and 6 for the OTHER
 5. Let’s debug the program
 6. Go to debugger extension by clicking the play icon with a bug <img src='images/image22.png' width='4%'> shortcut: CTRL+SHIFT+D (or COMMAND+SHIFT+D)
-
 7. We already have the debugging session preconfigured for DOGGOS app. Make sure you are using the first configuration (**non-endevor**)
 
 <img src='images/image21.png' width='35%'>
