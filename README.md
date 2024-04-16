@@ -90,9 +90,7 @@ The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY
 3. Rerun the application by repeating the steps in the previous section (from the 6th step) 
 4. Open the output file and see that the report is wrong, it now contains 0 for JINGO and 6 for the OTHER
 5. Let’s debug the program
-6. Go to debugger extension by clicking the play icon with a bug - CTRL+SHIFT+D (or COMMAND+SHIFT+D)
-
-<img src='images/endevor/image22.png' width='30%'>
+6. Go to debugger extension by clicking the play icon with a bug <img src='images/image22.png' width='4%'> shortcut: CTRL+SHIFT+D (or COMMAND+SHIFT+D)
 
 7. We already have the debugging session preconfigured for DOGGOS app. Make sure you are using the first configuration (**non-endevor**)
 
@@ -127,7 +125,7 @@ That would be on line 245
 
 18. Now let’s continue the execution by clicking the play button on the left of the debug toolbar (or F5):
 
-<img src='images/endevor/image23.png' width='30%'>
+<img src='images/image23.png' width='30%'>
 
 19. We can see that while looping through the breeds the debugger skipped the breakpoint on line 239 and stopped at line 245
 
