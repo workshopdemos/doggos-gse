@@ -2,39 +2,45 @@
 # Main Scenario
 ## Getting Started
 
-1. Login the workshop system using the given URL, username and password
+1. Login to the workshop system using the given URL, username, and password, and follow the steps your instructor provides
+
+<img src='images/cloudAccess.png' width='15%'> → <img src='images/workshopStage.png' width='50%'> → <img src='images/workspaceStart.png' width='25%'>
+
 2. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
-3. Make sure the initial build process has successfully completed. (**exit code: 0** message in the active terminal)
+3. Make sure the initial build process has been completed successfully (**exit code: 0** message in the active terminal)
 4. Close the terminal from it's right top corner
+
+## Get familiar with the VSCode Activity Bar
+<img src='images/activityBar.png' width='50%'>
 
 ## Build the DOGGOS application
 
 1. Click on the hamburger menu (three lines) icon at the top of the sidebar
-2. Select Terminal > Run Build Task 
+2. Select Terminal → Run Build Task 
 
-<img src='images/image19.png' width='30%'>
+<img src='images/image19.png' width='35%'>
 
-4. After starting the build task, the terminal window will open, after the synchronisation and building of the application on the mainframe, you will get a success message (**exit code:0**).
-5. Close the terminal from it's right top corner
+3. After starting the build task, the terminal window will open, after the synchronisation and building of the application on the mainframe, you will get a success message (**exit code:0**)
+4. Close the terminal from it's right top corner
 
 ## Run the DOGGOS application
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
 1. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon
-1. Fill in data set: CUST0xy.PUBLIC to add all data sets with this prefix to Zowe Explorer (Use your user id number instead CUST0xy) 
-1. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
+1. Fill in the data set: CUST0xy.PUBLIC to add all data sets with this prefix to Zowe Explorer (Use your userID number instead of CUST0xy) 
+1. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
 1. Select “Submit Job” menu item, then click "Submit" from the pop-up window 
-1. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output (if notification disappears, you can hit the bell icon from the bottom-right corner to see)
-1. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat 6th step if you cannot expand the job output)
-1. Breeds those are not specified in the COBOL code, fall into the OTHER section in the execution report. Now, your task is adding one more breed to the program, so we can print it in this report
+1. Click on the JOB number in the pop-up message in the right bottom corner to see the JOB output (if the notification disappears, you can hit the bell icon from the bottom-right corner to see)
+1. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat the 6th step if you cannot expand the job output)
+1. Breeds not specified in the COBOL code, fall into the OTHER section in the execution report. Now, your task is to add one more breed to the program to result in printing it in this report
 
 ## Edit the DOGGOS application
-Navigate back to the Explorer Tab to see the local files
-Open the DOGGOS > COBOL > DOGGOS.CBL file
+Navigate back to the File Explorer Tab to see the local files
+Open the DOGGOS → COBOL → DOGGOS.CBL file
 Add a new dog breed by following:
 1. Copy block of code (lines 59-61) (You can use CTRL+G to jump into the given line number)
 2. Paste it after line 61
 
-<img src='images/image04.png' width='40%'>
+<img src='images/image04.png' width='65%'>
 
 3. Change JINGO to another dog breed name (e. g. HUSKY) in the whole pasted block of code
 4. For HUSKY-INDEX-VALUE change VALUE to 9
@@ -51,46 +57,43 @@ Add a new dog breed by following:
 
 ## Build the DOGGOS application
 
-*(Building the application can be done by either following the initial build steps above just like following ```Hamburger Menu > Terminal > Run Build Task``` OR by following the Command Line Instructions below):*
+*(Building the application can be done by either following the initial build steps above just like following ```Hamburger Menu → Terminal → Run Build Task``` OR by following the Command Line Instructions below):*
 
 1. Click on the hamburger menu (three lines) icon at the top of the sidebar
-2. Select Terminal → New Terminal
-3. Make sure the command line starts with: ```developer@ws-<"a-long-number-here">:~/doggos-gse```
-4. Issue the following command to build and deploy the application to a data set: ```syncz -c "bldz"``` and hit Enter key
+1. Select Terminal → New Terminal
+1. Make sure the command line starts with: ```developer@ws-<"a-long-number-here">:~/doggos-gse```
+1. Issue the following command to build and deploy the application to a data set: ```syncz -c "bldz"``` and hit Enter key
 	(Click “Allow or Paste” if you see the pop-up window asking about copying and pasting permissions)
 
 
-## Run the DOGGOS application AFTER the change is made and the the build is run
+## Run the DOGGOS application AFTER the change is made and the build run
 
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
 2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon.
 3. Click on the CUST0xy.PUBLIC.INPUT data set  to edit it
 4. Add the following lines with the name of the dog breed you chose in the code change
-
+   
 ![Change](images/image06.png)
 
 5. Use CTRL+S (or COMMAND+S) to save the changes
-6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the RUNDOG
-7. Select “Submit Job” menu item, then click "Submit" from the pop-up window
-8. Click on the JOB number in the pop up message in the right bottom corner to see the JOB output (if notification disappears, you can hit the bell icon from the bottom-right corner to see)
-9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat 8th step if you cannot expand the job output)
+6. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
+7. Select the “Submit Job” menu item, then click "Submit" from the pop-up window
+8. Click on the JOB number in the pop-up message in the right bottom corner to see the JOB output (if the notification disappears, you can hit the bell icon from the bottom-right corner to see)
+9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat the 8th step if you cannot expand the job output)
 
 The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs.
 
 ## Debug
 
-1. Let’s introduce a bug in the program data 🙂 Go to the input file and change the breed from “JINGO” to “JINGA”.
+1. Let’s introduce a bug in the program data 🙂 Go to the input file and change the breed from “JINGO” to “JINGA”
 2. Use CTRL+S (or COMMAND+S) to save the changes
-3. Rerun the application repeating the steps in the previous section (from 6th step) 
-4. Open the output file and see that report is wrong, it now contains 0 for JINGO and 6 for the OTHER
+3. Rerun the application by repeating the steps in the previous section (from the 6th step)
+4. Open the output file and see that the report is wrong, it now contains 0 for JINGO and 6 for the OTHER
 5. Let’s debug the program
-6. Go to debugger extension by clicking the play icon with a bug
+6. Go to debugger extension by clicking the play icon with a bug <img src='images/image22.png' width='4%'> shortcut: CTRL+SHIFT+D (or COMMAND+SHIFT+D)
+7. We already have the debugging session preconfigured for DOGGOS app. Make sure you are using the first configuration (**non-endevor**)
 
-<img src='images/endevor/end19.png' width='20%'>
-
-7. We already have the debugging session preconfigured for DOGGOS app. Make sure you are using the first configuration (non-endevor)
-
-<img src='images/image21.png' width='30%'>
+<img src='images/image21.png' width='35%'>
 
 8. Click the play button to start the debugging
 
@@ -100,37 +103,34 @@ The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY
 10. Now where to put a breakpoint?
 11. The report for JINGO breed was wrong, so let’s put a breakpoint where the value is updated. Let’s find the first place in the code by searching for JINGO with Ctrl+F (CMD+F on Mac).
 12. We can see that processing for JINGO breed is handled by these variables.
-13. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, selecting Peek> Peek references. Go through the referenced to find where the amount is updated. It will be here around line 238 in extended source:
+13. Let’s find all instances where JINGO-BREED-NAME by right-clicking on it, and selecting Peek → Peek references. Go through the references to find where the amount is updated. It will be here around line 238 in extended source:
 
 ![Peek](images/image11.png)
 
-14. Double click on the 238 line in the editor window to move there.
+14. Double-click on the 238 line in the editor window to move there.
 15. Now let’s add a breakpoint after this condition to see if we get there.
 Click on the left area on line 239. The red dot will appear
 
-![Breakpoint1](images/image12.png)
+<img src='images/image12.png' width='65%'>
 
 16. The value for OTHER breeds was wrong in the repo. Let’s put there a breakpoint as well
 That would be on line 245
 
-![Breakpoint2](images/image13.png)
+<img src='images/image13.png' width='65%'>
 
 17. We now have 2 breakpoints (you can see them in breakpoints section in the bottom left corner):
 
-<img src='images/image14.png' width='40%'>
+<img src='images/image14.png' width='30%'>
 
-18. Now let’s continue the execution by clicking the play button on the left of the debug toolbar:
+18. Now let’s continue the execution by clicking the play button on the left of the debug toolbar (or F5):
 
-<img src='images/endevor/end21.png' width='50%'>
+<img src='images/image23.png' width='30%'>
 
-19. We can see that while looping through the breeds the debugger has skipped the breakpoint on line 239 and stopped at line 245
+19. We can see that while looping through the breeds the debugger skipped the breakpoint on line 239 and stopped at line 245
 
-![Watch](images/image16.png)
+<img src='images/image16.png' width='65%'>
 
-20. Let’s check the variables. Click on the INP-ADOPTED-AMOUNT, right click and “Add to watch”
-
-<img src='images/endevor/end24.png' width='40%'>
-
+20. Let’s check the variables. Click on the INP-ADOPTED-AMOUNT variable, right-click, and “Add to watch”
 21. Do the same for the INP-DOG-BREED variable on line 216 to understand which breed we are analyzing
 22. You can see in your watch section the value of the variables (BTW, a quick way is just to hover over a variable name in your extended source and the value will pop up)
 
@@ -144,25 +144,25 @@ That would be on line 245
 
 # Side Scenarios
 
-## Build COBOL source on your PC with just 4 lines of code!!
+## Build a COBOL source on your PC with just 4 lines of code!!
 
 1. Navigate to the following folder: …………
-2. Expand the src/ folder and you will see two COBOL source files, which we will build as a part of this scenario
-3. Locate the BUILDZ.js file in the /root and double click to edit it
-4. Uncomment the first two lines, that initialize the compile and binder variables.
-5. Uncomment the third line to compile the source code in the /src folder which creates an object module (syncz.yml file automatically downloads the object modules to the /build-out folder
-6. Run the ```syncz -a “src::bldz``` command to run the compilation enabled by uncommenting the line in the previous step
-7. Uncomment the fourth line to bind the object modules created in the previous steps, which automatically creates a load module and downloads it to the /build-out folder
-8. Run the ```“syncz -a “src::bldz”``` command to run the bind enabled by uncommenting the line in the previous step
+1. Expand the src/ folder and you will see two COBOL source files, which we will build as a part of this scenario
+1. Locate the BUILDZ.js file in the /root and double-click to edit it
+1. Uncomment the first two lines, that initialize the compile and binder variables.
+1. Uncomment the third line to compile the source code in the /src folder which creates an object module (syncz.yml file automatically downloads the object modules to the /build-out folder
+1. Run the ```syncz -a “src::bldz``` command to run the compilation enabled by uncommenting the line in the previous step
+1. Uncomment the fourth line to bind the object modules created in the previous steps, which automatically creates a load module and downloads it to the /build-out folder
+1. Run the ```“syncz -a “src::bldz”``` command to run the bind enabled by uncommenting the line in the previous step
 
 ## Automation with Zowe
 
 ### GSE NodeJS
 
 This project demonstrates how to build and test a primitive Node.js server and then deploy and run it on the mainframe using Zowe CLI. 
-To use this scenario switch to ```gse-nodejs``` folder by clicking menu button in top left corner and picking “File” > “Open Folder…” > ```/home/developer/gse-nodejs``` You can continue with reading the same text in ```gse-nodejs/README.MD```
+To use this scenario switch to ```gse-nodejs``` folder by clicking menu button in top left corner and picking “File” → “Open Folder…” → ```/home/developer/gse-nodejs``` You can continue reading the same text in ```gse-nodejs/README.MD```
 
-To open the terminal window use the menu in the top left corner > “Terminal” > “New Terminal”
+To open the terminal window use the menu in the top left corner → “Terminal” → “New Terminal”
 
 #### Prerequisites
 
@@ -174,7 +174,7 @@ Before getting started, ensure you have the following prerequisites:
 
 #### Installation
 
-This demo describes the automation case, so all the tasks could be done by running one command:
+This demo describes the automation case, so all the tasks can be done by running one command:
 ```bash
 npm run start
 ```
@@ -221,7 +221,7 @@ After the server files are built locally the automation script packs server sour
 
 As a result ```/u/users/<user-id>/server``` folder is created in USS.
 
-Then we define a job to start the server, upload it to the dataset, submit, and wait for the output.
+Then we define a job to start the server, upload it to the dataset, submit it, and wait for the output.
 
 <details>
   <summary>Script</summary>
