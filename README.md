@@ -73,7 +73,7 @@ Add a new dog breed by following:
 3. Click on the CUST0xy.PUBLIC.INPUT data set  to edit it
 4. Add the following lines with the name of the dog breed you chose in the code change
    
-<img src='images/image006.png' width='55%'>
+![Change](images/image06.png)
 
 5. Use CTRL+S (or COMMAND+S) to save the changes
 6. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
