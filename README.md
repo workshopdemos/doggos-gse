@@ -40,7 +40,7 @@ Add a new dog breed by following:
 1. Copy block of code (lines 59-61) (You can use CTRL+G to jump into the given line number)
 2. Paste it after line 61
 
-<img src='images/image04.png' width='40%'>
+<img src='images/image04.png' width='65%'>
 
 3. Change JINGO to another dog breed name (e. g. HUSKY) in the whole pasted block of code
 4. For HUSKY-INDEX-VALUE change VALUE to 9
@@ -72,14 +72,14 @@ Add a new dog breed by following:
 2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon.
 3. Click on the CUST0xy.PUBLIC.INPUT data set  to edit it
 4. Add the following lines with the name of the dog breed you chose in the code change
+5. 
+<img src='images/image006.png' width='55%'>
 
-![Change](images/image06.png)
-
-5. Use CTRL+S (or COMMAND+S) to save the changes
-6. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
-7. Select the “Submit Job” menu item, then click "Submit" from the pop-up window
-8. Click on the JOB number in the pop-up message in the right bottom corner to see the JOB output (if the notification disappears, you can hit the bell icon from the bottom-right corner to see)
-9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat the 8th step if you cannot expand the job output)
+6. Use CTRL+S (or COMMAND+S) to save the changes
+7. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
+8. Select the “Submit Job” menu item, then click "Submit" from the pop-up window
+9. Click on the JOB number in the pop-up message in the right bottom corner to see the JOB output (if the notification disappears, you can hit the bell icon from the bottom-right corner to see)
+10. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat the 8th step if you cannot expand the job output)
 
 The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs.
 
@@ -90,13 +90,13 @@ The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY
 3. Rerun the application by repeating the steps in the previous section (from the 6th step) 
 4. Open the output file and see that the report is wrong, it now contains 0 for JINGO and 6 for the OTHER
 5. Let’s debug the program
-6. Go to debugger extension by clicking the play icon with a bug
+6. Go to debugger extension by clicking the play icon with a bug - CTRL+SHIFT+D (or COMMAND+SHIFT+D)
 
-<img src='images/endevor/end19.png' width='30%'>
+<img src='images/endevor/image22.png' width='30%'>
 
 7. We already have the debugging session preconfigured for DOGGOS app. Make sure you are using the first configuration (**non-endevor**)
 
-<img src='images/image21.png' width='30%'>
+<img src='images/image21.png' width='35%'>
 
 8. Click the play button to start the debugging
 
@@ -114,24 +114,24 @@ The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY
 15. Now let’s add a breakpoint after this condition to see if we get there.
 Click on the left area on line 239. The red dot will appear
 
-![Breakpoint1](images/image12.png)
+<img src='images/image12.png' width='65%'>
 
 16. The value for OTHER breeds was wrong in the repo. Let’s put there a breakpoint as well
 That would be on line 245
 
-![Breakpoint2](images/image13.png)
+<img src='images/image13.png' width='65%'>
 
 17. We now have 2 breakpoints (you can see them in breakpoints section in the bottom left corner):
 
-<img src='images/image14.png' width='40%'>
+<img src='images/image14.png' width='30%'>
 
-18. Now let’s continue the execution by clicking the play button on the left of the debug toolbar:
+18. Now let’s continue the execution by clicking the play button on the left of the debug toolbar (or F5):
 
-<img src='images/endevor/end21.png' width='50%'>
+<img src='images/endevor/image23.png' width='30%'>
 
 19. We can see that while looping through the breeds the debugger skipped the breakpoint on line 239 and stopped at line 245
 
-![Watch](images/image16.png)
+<img src='images/image16.png' width='65%'>
 
 20. Let’s check the variables. Click on the INP-ADOPTED-AMOUNT, right-click, and “Add to watch”
 
