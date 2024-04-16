@@ -149,10 +149,7 @@ That would be on line 245
 
 <img src='images/image16.png' width='65%'>
 
-20. Let’s check the variables. Click on the INP-ADOPTED-AMOUNT, right-click, and “Add to watch”
-
-<img src='images/endevor/end24.png' width='40%'>
-
+20. Let’s check the variables. Click on the INP-ADOPTED-AMOUNT variable, right-click, and “Add to watch”
 21. Do the same for the INP-DOG-BREED variable on line 216 to understand which breed we are analyzing
 22. You can see in your watch section the value of the variables (BTW, a quick way is just to hover over a variable name in your extended source and the value will pop up)
 
