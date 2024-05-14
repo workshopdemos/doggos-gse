@@ -83,7 +83,7 @@ Add a new dog breed by following:
 
 The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs.
 
-## Test
+## Test the DOGGOS application
  
 From the VS Code Explorer, Open the TestDrive Folder. Reference screenshots: 
 <img src='images/devx/devx1.png' width='65%'>
