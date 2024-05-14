@@ -1,4 +1,4 @@
-# Code/Build/Debug Challenge
+# DevX Challenge
 # Main Scenario
 ## Getting Started
 
@@ -82,6 +82,12 @@ Add a new dog breed by following:
 9. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat the 8th step if you cannot expand the job output)
 
 The new dog breed “HUSKY” is listed and the counter reports 11 adopted HUSKY dogs.
+
+## Test
+ 
+From the VS Code Explorer, Open the TestDrive Folder. Reference screenshots: 
+<img src='images/devx/devx1.png' width='65%'>
+<img src='images/devx/devx2.png' width='65%'>
 
 ## Debug
 
