@@ -60,8 +60,12 @@ Go to line 51 (Be under the PROCEDURE DIVISION section). Reference Screenshot:
 
 <img src='images/devx/devx11.png' width='65%'>
 
-Move the cursor to column 12. Type “t4z me”. Note: It will start filling out the intellisense. 
-Select “t4z Message write”. Reference Screenshots: 
+Move the cursor to column 12.       
+Type “t4z me”.      
+Note: It will start filling out the intellisense.      
+Select “t4z Message write”.     
+
+Reference Screenshots: 
 
 <img src='images/devx/devx12.png' width='65%'>
 
