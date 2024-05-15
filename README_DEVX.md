@@ -61,7 +61,7 @@ Go to line 51 (Be under the PROCEDURE DIVISION section). Reference Screenshot:
 <img src='images/devx/devx11.png' width='65%'>
 
 Move the cursor to column 12.       
-Type “t4z me”.      
+Type "t4z me".      
 Note: It will start filling out the intellisense.      
 Select “t4z Message write”.     
 
@@ -77,7 +77,9 @@ Replace “Your Message” with “Hello Test4z” and save the file.
 
 <img src='images/devx/devx14.png' width='65%'>
 
-Go to line number 196. Change the value from 900 to 9. Reference screenshot: 
+Go to line number 196.      
+Change the value from 900 to 9.     
+Reference screenshot: 
 
 <img src='images/devx/devx15.png' width='65%'>
 
