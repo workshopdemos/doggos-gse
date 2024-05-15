@@ -14,7 +14,7 @@
 ## Test the DOGGOS application
  
 From the VS Code Explorer, Open the TestDrive Folder. Reference screenshots: 
-<img src='images/devx/devx1.png' width='65%'>
+<img src='images/devx/devx1.png' width='65%'>        
 
 <img src='images/devx/devx2.png' width='65%'>
 
@@ -42,11 +42,14 @@ Open the ZTTDOGWS.cbl file under test → data folder
 
 <img src='images/devx/devx7.png' width='65%'>
 
-Go to line number 196. Change the value from 9 to 900. Reference screenshot: 
+Go to line number 196.      
+Change the value from 9 to 900.      
+Reference screenshot: 
 
 <img src='images/devx/devx8.png' width='65%'>
 
-From the command line, run the “t4z” command. Reference screenshot: 
+From the command line, run the “t4z” command.     
+Reference screenshot: 
 
 <img src='images/devx/devx9.png' width='65%'>
 
