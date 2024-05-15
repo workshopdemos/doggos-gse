@@ -30,7 +30,9 @@ This will generate the report.
 
 <img src='images/devx/devx5.png' width='65%'>
 
-Open the source code file “ZTPDOGOS.cbl'' under the src → cpy folder. You will observe the Gutters. 
+Under the src → cpy folder.       
+Open the source code file "ZTPDOGOS.cbl".            
+VSCode Coverage Gutters in the source code file are observed. 
 
 <img src='images/devx/devx6.png' width='65%'>
 
@@ -90,11 +92,4 @@ From the command line, Run “t4z”. Reference screenshot of command line outpu
 Select “ZLMSG.txt” file from the “test-out” folder. This file contains the statements that are added to the test files. You will see the “Hello Test4z” statement that was added.
 
 <img src='images/devx/devx17.png' width='65%'>
-
-
-#### Conclusion
-
-This demo scenario shows how to use a combination of NodeJS, bash, and Zowe CLI commands to provision the lifecycle of a simple Node JS server and can be used as a startup or reference point for creating a development pipeline. 
-
-For more information on Zowe CLI and its capabilities, refer to the official Zowe documentation: [Zowe CLI Documentation](https://docs.zowe.org/stable/user-guide/cli-using-usingcli)
 
