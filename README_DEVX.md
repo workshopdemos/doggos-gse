@@ -13,15 +13,6 @@
 ## Get familiar with the VSCode Activity Bar
 <img src='images/activityBar.png' width='50%'>
 
-## Build the DOGGOS application
-
-1. Click on the hamburger menu (three lines) icon at the top of the sidebar
-2. Select Terminal → Run Build Task 
-
-<img src='images/image19.png' width='35%'>
-
-3. After starting the build task, the terminal window will open, after the synchronisation and building of the application on the mainframe, you will get a success message (**exit code:0**)
-4. Close the terminal from it's right top corner
 
 ## Run the DOGGOS application
 1. Go to Zowe Explorer (Z icon in the VS Code Activity Bar)
