@@ -94,5 +94,11 @@ From the command line, Run “t4z”. Reference screenshot of command line outpu
 
 Select “ZLMSG.txt” file from the “test-out” folder. This file contains the statements that are added to the test files. You will see the “Hello Test4z” statement that was added.
 
-<img src='images/devx/devx17.png' width='65%'>
+<img src='images/devx/devx17.png' width='65%'>         
+
+
+#### Conclusion
+
+This demo scenario shows how to generate a test coverate report, edit a test case and add statements to a test file. 
+
 
