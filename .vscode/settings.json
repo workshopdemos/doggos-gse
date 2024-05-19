@@ -12,4 +12,6 @@
   },
   "files.autoSave": "off",
   "zowe.security.secureCredentialsEnabled": false,
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false
 }
