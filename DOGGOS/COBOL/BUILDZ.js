@@ -1,5 +1,5 @@
 // requires for the stdlib - path prefix is "bldz/std/exp"
-// using new stdlib - version >= 1.42.3
+// using new stdlib - bldz version >= 1.42.3
 var cobol = require("bldz/std/exp/rules/cobol")
 var files = require("bldz/std/exp/rules/files");
 var intertest = require("bldz/std/exp/rules/intertest")
@@ -26,7 +26,7 @@ var dataset_rules = files.ds.alloc([
     }
 ]);
 
-// compile and bind cobol files into executable object, named as "DOGGOS"
+// compile and bind cobol files into an executable object, named as "DOGGOS"
 var cobol_binary = cobol.compileAndBind({
     name: "DOGGOS",
     srcs: "*.CBL",
@@ -45,14 +45,14 @@ var initProtsym = intertest.initProtsym({
     protsym_dsn: PROTSYMDSN
 })
 
-// execute IN25COB2 loads listing into PROTSYM
+// execute IN25COB2 which loads listing into PROTSYM
 var loadCoblist = intertest.cobol({
-    deps: protsym,
+    deps: initProtsym,
     srcDeps: ["DOGGOS"],
     srcDepsProp: "compile_listing",
 })
 
-// execute IN25UTIL creates report for PROTSYM
+// execute IN25UTIL which creates report for PROTSYM
 intertest.reportProtsym({
     name: "reportPROTSYM",
     deps: [
@@ -61,7 +61,7 @@ intertest.reportProtsym({
     ]
 })
 
-// copy executable object into load library
+// copy the executable object into a load library
 files.ds.copy({
     name: "copyLoad",
     dsn: loadlibDSN,
