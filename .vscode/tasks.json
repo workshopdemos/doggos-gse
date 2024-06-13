@@ -97,7 +97,7 @@
     {
       "label": "DOGGOS: Sync and Build",
       "type": "process",
-      "command": "/home/developer/sandbox-env/syncz_v1.11.0/bin/linux_amd64/syncz",
+      "command": "/home/developer/sandbox-env/syncz_v1.19.1/bin/linux_amd64/syncz",
       "args": ["-c", "bldz"],
       "problemMatcher": [],
       "group": {
