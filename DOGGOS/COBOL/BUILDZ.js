@@ -1,16 +1,14 @@
-//
 // requires for the stdlib - path prefix is "bldz/std/exp"
-var compile = require("bldz/std/exp/rules/compile");
-var binder = require("bldz/std/exp/rules/binder");
-var group = require("bldz/std/exp/rules/group");
+// using new stdlib - bldz version >= 1.42.3
+var cobol = require("bldz/std/exp/rules/cobol")
 var files = require("bldz/std/exp/rules/files");
-
+var intertest = require("bldz/std/exp/rules/intertest")
 var os = require("bldz/os");
-// build-in bldz modules requires
+
 var loadlibDSN = `${os.user()}.PUBLIC.LOADLIB`;
+var PROTSYMDSN = `${os.user()}.PUBLIC.PROTSYM`;
 
-
-
+// alloc loadlib
 var dataset_rules = files.ds.alloc([
     {
         attributes: {
@@ -28,60 +26,45 @@ var dataset_rules = files.ds.alloc([
     }
 ]);
 
-// general COBOL compile rules - create a compile rule per *.cbl file found
-var generated = compile.cobol({
+// compile and bind cobol files into an executable object, named as "DOGGOS"
+var cobol_binary = cobol.compileAndBind({
+    name: "DOGGOS",
     srcs: "*.CBL",
-    copyPaths: [`//'${os.user()}.DOGGOS.COPYBOOK'`],
-    opts : [
-        "APOST",
-        "LIST",
-        "RENT",
-        "MAP",
-        "NONUMBER",
-        "XREF",
-        "NOSTGOPT",
-        "OPT(0)",
-        "LINECOUNT(60)"
+    syslibs: [`//'${os.user()}.DOGGOS.COPYBOOK'`],
+    opts: intertest.options.cobol,
+    syslibs_binder: [
+        "//CEE.SCEELKED",
+    ],
+
+})
+
+// initialize PROTSYM
+// step1 - IDCAMS creates VSAM PROTSYM
+// step2 - IN25UTIL defines report
+var initProtsym = intertest.initProtsym({
+    protsym_dsn: PROTSYMDSN
+})
+
+// execute IN25COB2 which loads listing into PROTSYM
+var loadCoblist = intertest.cobol({
+    deps: initProtsym,
+    srcDeps: ["DOGGOS"],
+    srcDepsProp: "compile_listing",
+})
+
+// execute IN25UTIL which creates report for PROTSYM
+intertest.reportProtsym({
+    name: "reportPROTSYM",
+    deps: [
+        ...initProtsym,
+        ...loadCoblist
     ]
-        
-    
-});
+})
 
-// Bind the objects into an executable
-
-var binderGenerated = binder.bind({
-    outs: "doggos",
-    syslibs: ["//CEE.SCEELKED"],
-    deps: generated.rules
-});
-
-// preprare PROTSYM
-var symbol = genrule_script({
-    name: "in25cob2",
-    script_file: "../scripts/in25cob2.js",
-    deps: generated.rules
-    // deps: [
-    //     "cobcompile"
-    // ]
-});
-
-// group.outputs({
-//     name: "all",
-//     depsOutPropPrefix: "binary",
-//     deps: binderGenerated.rules
-// });
-
+// copy the executable object into a load library
 files.ds.copy({
     name: "copyLoad",
     dsn: loadlibDSN,
-    deps: dataset_rules.rules.concat(binderGenerated.rules),
-    // [
-    //     dataset_rules.rules,
-    //     binderGenerated.rules
-    // ],
-    // binary: false,
+    deps: dataset_rules.rules.concat(cobol_binary),
     executable: true,
-    
-    // files: "../build-out/COBOL/doggos",
-    // files: binderGenerated.rules.
 });
