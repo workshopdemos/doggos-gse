@@ -4,6 +4,7 @@ var fs = require("bldz/fs");
 
 var properties = JSON.parse(fs.read("properties.json"));
 var copybookDSN = `${os.user()}.DOGGOS.COPYBOOK`;
+var profileDSN = `${os.user()}.PUBLIC.PROFLIB`;
 
 // create data set rules (for copybooks)
 var dataset_rules = files.ds.alloc([
@@ -30,3 +31,25 @@ files.ds.copy({
     binary: false,
     files: "COPY/*.CPY"
 });
+
+
+// create PROFLIB for Intertest debug session
+files.ds.alloc([
+    {
+        attributes : {
+            space_units: "CYL",
+            dsn: profileDSN,
+            lrecl: 6144,
+            recfm: "F",
+            dsorg: "PO",
+            blksize: 6144,
+            space: [6, 2],
+            dir: 3
+
+        },
+        opts: {
+            delete: true
+        }
+    }
+]);
+
