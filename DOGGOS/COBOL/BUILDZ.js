@@ -1,5 +1,5 @@
 // requires for the stdlib - path prefix is "bldz/std/exp"
-// using new stdlib - bldz version >= 1.42.3
+// using new stdlib - bldz version >= 1.43.5
 var cobol = require("bldz/std/exp/rules/cobol")
 var files = require("bldz/std/exp/rules/files");
 var intertest = require("bldz/std/exp/rules/intertest")
@@ -29,9 +29,10 @@ var dataset_rules = files.ds.alloc([
 // compile and bind cobol files into an executable object, named as "DOGGOS"
 var cobol_binary = cobol.compileAndBind({
     name: "DOGGOS",
-    srcs: "*.CBL",
+    srcs: "*.cbl",
     syslibs: [`//'${os.user()}.DOGGOS.COPYBOOK'`],
-    opts: intertest.options.cobol,
+    opts: [...intertest.options.cobol, "TEST"],
+    opts_binder: ["RENT"],
     syslibs_binder: [
         "//CEE.SCEELKED",
     ],

@@ -1,0 +1,17 @@
+{
+  "appLoadLibraries": [],
+  "bindSyslibs": [
+    "CEE.SCEELKED"
+  ],
+  "copyPaths": [
+    "DOGGOS/COPY/*.CPY"
+  ],
+  "cobolTestGlobs": [
+    "DOGGOS/COBTEST/*.cbl"
+  ],
+  "cobolBuild": false,
+  "cobolSourceGlobs": [
+    "DOGGOS/COBOL/*.cbl"
+  ],
+  "syncMode": "testOnly"
+}

@@ -1,5 +1,9 @@
 {
-  "cobol-lsp.cpy-manager.paths-local": ["DOGGOS/COPY"],
+  "cobol-lsp.cpy-manager.paths-local": [
+    "DOGGOS/COPY",
+    "/usr/lib/node_modules/@broadcom/test4z-framework/cobol_api/cpy",
+    "src/cpy"
+  ],
   "terminal.integrated.profiles.windows": {
     "Git Bash": {
       "source": "Git Bash"
@@ -11,5 +15,13 @@
     "editor.formatOnSave": true
   },
   "files.autoSave": "off",
-  "zowe.security.secureCredentialsEnabled": false
+  "zowe.security.secureCredentialsEnabled": false,
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "test4z.*.config.json"
+      ],
+      "url": "file:///usr/lib/node_modules/@broadcom/test4z-framework/schema/test4z.config.json"
+    }
+  ]
 }

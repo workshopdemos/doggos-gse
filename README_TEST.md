@@ -1,5 +1,11 @@
 # Test Challenge
 
+The activities in this test challenge are:
+
+1. *Generate Test Coverage Report:* Running tests and generating a report to visualize code coverage.
+2. *Edit a Test Case:* Modifying a specific test case to change expected outcomes and observing the results.
+3. *Add a Test4z Statement to a Test File:* Inserting a Test4z statement into the test code to demonstrate how to use Test4z snippets.
+
 ## Getting Started
 
 1. Login to the workshop system using the given URL, username, and password, and follow the steps your instructor provides
@@ -10,95 +16,122 @@
 3. Make sure the initial build process has been completed successfully (**exit code: 0** message in the active terminal)
 4. Close the terminal from it's right top corner
 
+## Generate Test Coverage Report
 
-## Test the DOGGOS application
- 
-From the VS Code Explorer, Open the TestDrive Folder. Reference screenshots: 
-<img src='images/devx/devx1.png' width='65%'>        
+Press `cmd+shift+P` (MacOS) / `ctrl+shift+L` (Windows). Enter “Test4z Run All Tests with Coverage” like on the following screenshot:
 
-<img src='images/devx/devx2.png' width='65%'>
+<img src='images/test4z/image_command_palette_run_all_tests_cov.png' width='65%'>
 
-## Generate Test coverage report 
+This will run the tests and generate the report.
 
-Right click on the Test Folder and select “Test4z Run All Tests with Coverage”. Reference screenshot: 
+<img src='images/test4z/image_coverage_report.png' width='85%'>
 
-<img src='images/devx/devx3.png' width='65%'>
+The Code Coverage dashboard will be opened automatically:
 
-This will generate the report.
+<img src='images/test4z/image_report_all_files.png' width='85%'>
 
-<img src='images/devx/devx4.png' width='65%'>
+To see the statement-level code coverage, click on the `DOGGOS.cbl` file in the report:
 
-<img src='images/devx/devx5.png' width='65%'>
+<img src='images/test4z/image_statement_level_coverage.png' width='85%'>
 
-Under the src → cpy folder.       
-Open the source code file "ZTPDOGOS.cbl".            
-VSCode Coverage Gutters in the source code file are observed. 
+## Edit a Test Case
 
-<img src='images/devx/devx6.png' width='65%'>
+Open the [`TDOGGOS.cbl`](DOGGOS/COBTEST/TDOGGOS.cbl#L266) file under `DOGGOS`/`COBTEST` folder and edit the test case.
 
-## Edit a Test case 
+Find `MOVE 008 TO EXPECTED_ADOPTIONS(1).` and change it to `MOVE 009 TO EXPECTED_ADOPTIONS(1).`.
 
-Open the ZTTDOGWS.cbl file under test → data folder
+Code after change:
 
-<img src='images/devx/devx7.png' width='65%'>
+<pre>
+       DEFINE_EXPECTED_DATA.
+           MOVE <b>009</b> TO EXPECTED_ADOPTIONS(1).
+           MOVE 000 TO EXPECTED_ADOPTIONS(2).
+</pre>
 
-Go to line number 196.      
-Change the value from 9 to 900.      
-Reference screenshot: 
+From the command line, run the `t4z` command.
 
-<img src='images/devx/devx8.png' width='65%'>
+Expected output:
 
-From the command line, run the “t4z” command.     
-Reference screenshot: 
+```
+ FAIL  DOGGOS/COBTEST/TDOGGOS.cbl
+  ✓ DOGGOS simple run (123 ms)
+  ✕ DOGGOS validate accumulator (436 ms)
+      Assertion error: Invalid accumulator value
+      SYSOUT:
+      THIS PROGRAM WILL CALCULATE AMOUNT OF ADOPTED DOGGOS PER SOME PERIODS OF TIME
+      TODAY IS :2024
+      Mismatch for index 0000000001
+      Actual 008
+      Expected 009
+  ✓ DOGGOS force open error (141 ms)
+  ✓ DOGGOS force read error (570 ms)
 
-<img src='images/devx/devx9.png' width='65%'>
+Tests Suites: 1 failed, 1 total
+Tests:        1 failed, 3 passed, 4 total
+Time:         1 s
+```
 
-<img src='images/devx/devx10.png' width='65%'>
+You will observe that the test run is a failure. The actual value is `008` but we have the expected value to be `009`.
 
-You will observe that the test run is a failure. Expected Record count is 9 whereas we edited the value to be 900.
+Before continuing, revert the change back to:
+<pre>
+           MOVE <b>009</b> TO EXPECTED_ADOPTIONS(1).
+</pre>
 
-## Add statements to Test File
+## Add a Test4z Statement to the Test File
 
-Open the ZTTDOGWS.cbl file under test → data folder
+Open the [`TDOGGOS.cbl`](DOGGOS/COBTEST/TDOGGOS.cbl#L136) file under `DOGGOS`/`COBTEST` folder and edit the test case.
 
-Go to line 51 (Be under the PROCEDURE DIVISION section). Reference Screenshot: 
+Find `Implementation for TEST1`. That will get you to this code:
 
-<img src='images/devx/devx11.png' width='65%'>
+<pre>
+      ********************************************************
+      * Implementation for TEST1
+      ********************************************************
+           ENTRY 'TEST1'
+           <small><i>(Place your cursor here)</i></small>
+      *    Mock all external resources
+           PERFORM MOCK_ADOPTS_FILE
+</pre>
 
-Move the cursor to column 12.       
-Type "t4z me".      
-Note: It will start filling out the intellisense.      
-Select “t4z Message write”.     
+Add a new line after `ENTRY 'TEST1'`.
+Move the cursor the start of Area B (column 12) and type `t4z me`.
+The IntelliSense will offer you possible code completions using the Test4z snippets as you can see in the screenshot:
 
-Reference Screenshots: 
+<img src='images/test4z/image_test1.png' width='65%'>
 
-<img src='images/devx/devx12.png' width='65%'>
+Select “t4z Message write”.
 
-This will fill in the code for the user. 
+This will fill in the code for you:
 
-<img src='images/devx/devx13.png' width='65%'>
+<img src='images/test4z/image_code_snippet.png' width='65%'>
 
-Replace “Your Message” with “Hello Test4z” and save the file. 
+Replace `'Your Message'` with `'Hello Test4z!'` and save the file with code like that:
 
-<img src='images/devx/devx14.png' width='65%'>
+<pre>
+           ENTRY 'TEST1'
+           move low-values to I_Message in ZWS_Message
+           move '<b>Hello Test4z!</b>' to messageText in ZWS_Message
+           call ZTESTUT using ZWS_Message
+</pre>
 
-Go to line number 196.      
-Change the value from 900 to 9.     
-Reference screenshot: 
+From the command line, run `t4z`. The expected output is:
 
-<img src='images/devx/devx15.png' width='65%'>
+<pre>
+❯ t4z
 
-From the command line, Run “t4z”. Reference screenshot of command line output.
+ PASS  DOGGOS/COBTEST/TDOGGOS.cbl
+  ✓ DOGGOS simple run (110 ms)
+      <b>Hello Test4z!</b>
+  ✓ DOGGOS validate accumulator (500 ms)
+  ✓ DOGGOS force open error (410 ms)
+  ✓ DOGGOS force read error (680 ms)
 
-<img src='images/devx/devx16.png' width='65%'>
+Tests Suites: 1 passed, 1 total
+Tests:        4 passed, 4 total
+Time:         2 s
+</pre>
 
-Select “ZLMSG.txt” file from the “test-out” folder. This file contains the statements that are added to the test files. You will see the “Hello Test4z” statement that was added.
+## Summary
 
-<img src='images/devx/devx17.png' width='65%'>         
-
-
-#### Conclusion
-
-This demo scenario shows how to generate a test coverate report, edit a test case and add statements to a test file. 
-
-
+This demo scenario demonstrates how to generate a test coverage report, edit a test case, and add Test4z statements to a test file.
