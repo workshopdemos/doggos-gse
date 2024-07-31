@@ -31,7 +31,12 @@ var cobol_binary = cobol.compileAndBind({
     name: "DOGGOS",
     srcs: "*.CBL",
     syslibs: [`//'${os.user()}.DOGGOS.COPYBOOK'`],
-    opts: intertest.options.cobol,
+    opts: [
+        ...intertest.options.cobol,
+        "APOST",
+        "RENT",
+        "LINECOUNT(60)"
+    ],
     syslibs_binder: [
         "//CEE.SCEELKED",
     ],
