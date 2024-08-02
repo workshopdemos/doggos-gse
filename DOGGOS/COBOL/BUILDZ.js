@@ -5,14 +5,15 @@ var files = require("bldz/std/exp/rules/files");
 var intertest = require("bldz/std/exp/rules/intertest")
 var os = require("bldz/os");
 
-var loadlibDSN = `${os.user()}.PUBLIC.LOADLIB`;
+var copyLibDSN = `${os.user()}.PUBLIC.COPY`;
+var loadLibDSN = `${os.user()}.PUBLIC.LOADLIB`;
 var PROTSYMDSN = `${os.user()}.PUBLIC.PROTSYM`;
 
 // alloc loadlib
 var dataset_rules = files.ds.alloc([
     {
         attributes: {
-            dsn: loadlibDSN,
+            dsn: loadLibDSN,
             lrecl: 0,
             recfm: "U",
             dsorg: "PO",
@@ -30,7 +31,7 @@ var dataset_rules = files.ds.alloc([
 var cobol_binary = cobol.compileAndBind({
     name: "DOGGOS",
     srcs: "*.CBL",
-    syslibs: [`//'${os.user()}.DOGGOS.COPYBOOK'`],
+    syslibs: [`//'${copyLibDSN}'`],
     opts: [
         ...intertest.options.cobol,
         "APOST",
@@ -69,7 +70,7 @@ intertest.reportProtsym({
 // copy the executable object into a load library
 files.ds.copy({
     name: "copyLoad",
-    dsn: loadlibDSN,
+    dsn: loadLibDSN,
     deps: dataset_rules.rules.concat(cobol_binary),
     executable: true,
 });

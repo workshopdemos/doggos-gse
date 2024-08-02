@@ -3,14 +3,14 @@ var os = require("bldz/os");
 var fs = require("bldz/fs");
 
 var properties = JSON.parse(fs.read("properties.json"));
-var copybookDSN = `${os.user()}.DOGGOS.COPYBOOK`;
+var copyLibDSN = `${os.user()}.DOGGOS.COPY`;
 var profileDSN = `${os.user()}.PUBLIC.PROFLIB`;
 
 // create data set rules (for copybooks)
 var dataset_rules = files.ds.alloc([
     {
         attributes: {
-            dsn: copybookDSN,
+            dsn: copyLibDSN,
             lrecl: 80,
             recfm: "F,B",
             dsorg: "PO",
@@ -26,7 +26,7 @@ var dataset_rules = files.ds.alloc([
 
 // create rule to copy copybooks to data set
 files.ds.copy({
-    dsn: copybookDSN,
+    dsn: copyLibDSN,
     deps: dataset_rules.rules,
     binary: false,
     files: "COPY/*.CPY"
