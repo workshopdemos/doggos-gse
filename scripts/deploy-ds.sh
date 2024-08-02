@@ -36,7 +36,7 @@ zowe files delete data-set "$USERN.PUBLIC.INPUT" -f
 
 # # Remove artifacts
 zowe uss iss ssh "rm -r /u/users/$USERL/doggos"
-zowe files delete data-set "$USERN.DOGGOS.COPY" -f
+zowe files delete data-set "$USERN.PUBLIC.COPY" -f
 zowe files delete data-set "$USERN.PUBLIC.LOADLIB" -f
 zowe files delete data-set "$USERN.PUBLIC.PROFLIB" -f
 
