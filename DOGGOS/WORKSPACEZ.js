@@ -3,7 +3,7 @@ var os = require("bldz/os");
 var fs = require("bldz/fs");
 
 var properties = JSON.parse(fs.read("properties.json"));
-var copyLibDSN = `${os.user()}.DOGGOS.COPY`;
+var copyLibDSN = `${os.user()}.PUBLIC.COPY`;
 var profileDSN = `${os.user()}.PUBLIC.PROFLIB`;
 
 // create data set rules (for copybooks)
