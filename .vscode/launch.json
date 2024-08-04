@@ -6,12 +6,24 @@
         "type": "intertest-batch",
         "request": "launch",
         "programName": ["DOGGOS"],
-        "protsym": ["CUST###.PUBLIC.PROTSYM"],
+        "protsym": ["cust004.PUBLIC.PROTSYM"],
         "interTestHost": "10.1.2.73",
         "interTestPort": 6023,
-        "interTestUserName": "CUST###",
+        "interTestUserName": "cust004",
         "interTestSecure": false,
-        "convertedJCL": "CUST###.PUBLIC.JCL(DBGDOG)",
+        "convertedJCL": "cust004.PUBLIC.JCL(DBGDOG)",
+        "variableOrder": "alphabetical"
+      },
+      {
+        "name": "DOGGOS BATCH Attach",
+        "type": "intertest-batch",
+        "request": "attach",
+        "programName": ["DOGGOS"],
+        "protsym": ["cust004.PUBLIC.PROTSYM"],
+        "interTestHost": "10.1.2.73",
+        "interTestPort": 6023,
+        "interTestUserName": "cust004",
+        "interTestSecure": false,
         "variableOrder": "alphabetical"
       },
       {
@@ -19,12 +31,12 @@
         "type": "intertest-batch",
         "request": "launch",
         "programName": ["DOGGOS###"],
-        "protsym": ["CUST###.PUBLIC.PROTSYM"],
+        "protsym": ["cust004.PUBLIC.PROTSYM"],
         "interTestHost": "10.1.2.73",
         "interTestPort": 6023,
-        "interTestUserName": "CUST###",
+        "interTestUserName": "cust004",
         "interTestSecure": false,
-        "convertedJCL": "CUST###.PUBLIC.JCL(NDDBGDOG)",
+        "convertedJCL": "cust004.PUBLIC.JCL(NDDBGDOG)",
         "variableOrder": "alphabetical"
       }
     ]

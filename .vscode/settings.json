@@ -11,5 +11,9 @@
     "editor.formatOnSave": true
   },
   "files.autoSave": "off",
-  "zowe.security.secureCredentialsEnabled": false
+  "zowe.security.secureCredentialsEnabled": false,
+  "files.readonlyInclude": {
+    "{**/.c4z/.extsrcs/*.PROTSYM.cbl,**/.c4z/.extsrcs/*.PROTSYM.listing}": true
+  },
+  "data-editor-mainframe.serverURL": "http://10.1.2.73:9001"
 }
