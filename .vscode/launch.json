@@ -7,12 +7,13 @@
         "request": "launch",
         "programName": ["DOGGOS"],
         "protsym": ["cust004.PUBLIC.PROTSYM"],
-        "interTestHost": "10.1.2.73",
-        "interTestPort": 6023,
+        "host": "10.1.2.73",
+        "port": 6023,
         "interTestUserName": "cust004",
         "interTestSecure": false,
         "convertedJCL": "cust004.PUBLIC.JCL(DBGDOG)",
-        "variableOrder": "alphabetical"
+        "variableOrder": "alphabetical",
+        "executionCounts": true
       },
       {
         "name": "DOGGOS BATCH Attach",
