@@ -1,9 +1,9 @@
 {
   "sdkHome": "/usr/lib/node_modules/@broadcom/test4z-framework",
-  "hostname": "10.1.2.55",
+  "hostname": "10.1.2.73",
   "sshPort": 2022,
   "user": "cust###",
-  "sshKeyFile": "/home/developer/.ssh/id_test4z",
+  "sshKeyFile": "/home/developer/.ssh/id_rsa",
   "zosWorkspacePath": "/u/users/cust###/test4z",
   "createZfs": false,
   "testHlq": "CUST###.WORKSHOP",
