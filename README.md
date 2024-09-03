@@ -152,7 +152,9 @@ The activities in this test challenge are:
 
 ## Generate Test Coverage Report
 
-Press `cmd+shift+P` (MacOS) / `ctrl+shift+L` (Windows). Enter “Test4z Run All Tests with Coverage” like on the following screenshot:
+Select the HamBurger icon on the top left (three horizontal lines), Select View and Command Palette. Sharing reference screenshots: 
+
+<img src='images/test4z/image_command_palette.png' width='65%'>
 
 <img src='images/test4z/image_command_palette_run_all_tests_cov.png' width='65%'>
 
