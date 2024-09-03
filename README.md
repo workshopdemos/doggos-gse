@@ -142,112 +142,140 @@ That would be on line 245
 
 ![Value](images/image20.png)
 
-# Side Scenarios
+# Test Challenge
 
-## Build a COBOL source on your PC with just 4 lines of code!!
+The activities in this test challenge are:
 
-1. Navigate to the following folder: …………
-1. Expand the src/ folder and you will see two COBOL source files, which we will build as a part of this scenario
-1. Locate the BUILDZ.js file in the /root and double-click to edit it
-1. Uncomment the first two lines, that initialize the compile and binder variables.
-1. Uncomment the third line to compile the source code in the /src folder which creates an object module (syncz.yml file automatically downloads the object modules to the /build-out folder
-1. Run the ```syncz -a “src::bldz``` command to run the compilation enabled by uncommenting the line in the previous step
-1. Uncomment the fourth line to bind the object modules created in the previous steps, which automatically creates a load module and downloads it to the /build-out folder
-1. Run the ```“syncz -a “src::bldz”``` command to run the bind enabled by uncommenting the line in the previous step
+1. *Generate Test Coverage Report:* Running tests and generating a report to visualize code coverage.
+2. *Edit a Test Case:* Modifying a specific test case to change expected outcomes and observing the results.
+3. *Add a Test4z Statement to a Test File:* Inserting a Test4z statement into the test code to demonstrate how to use Test4z snippets.
 
-## Automation with Zowe
+## Getting Started
 
-### GSE NodeJS
+1. Login to the workshop system using the given URL, username, and password, and follow the steps your instructor provides
 
-This project demonstrates how to build and test a primitive Node.js server and then deploy and run it on the mainframe using Zowe CLI. 
-To use this scenario switch to ```gse-nodejs``` folder by clicking menu button in top left corner and picking “File” → “Open Folder…” → ```/home/developer/gse-nodejs``` You can continue reading the same text in ```gse-nodejs/README.MD```
+<img src='images/cloudAccess.png' width='15%'> → <img src='images/workshopStage.png' width='50%'> → <img src='images/workspaceStart.png' width='25%'>
 
-To open the terminal window use the menu in the top left corner → “Terminal” → “New Terminal”
+2. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
+3. Make sure the initial build process has been completed successfully (**exit code: 0** message in the active terminal)
+4. Close the terminal from it's right top corner
 
-#### Prerequisites
+## Generate Test Coverage Report
 
-Before getting started, ensure you have the following prerequisites:
+Press `cmd+shift+P` (MacOS) / `ctrl+shift+L` (Windows). Enter “Test4z Run All Tests with Coverage” like on the following screenshot:
 
-- Zowe CLI is installed and the profile is configured. This part should be done already, if not, we will need to manually [install Zowe CLI](https://docs.zowe.org/stable/user-guide/cli-installcli) and run ```scripts/configure-zowe-cli.sh <user-id>``` to configure the local profile.
+<img src='images/test4z/image_command_palette_run_all_tests_cov.png' width='65%'>
 
-- Node.js is installed on zDNT and is accessible in PATH, at the moment it is not included in the PATH, so we should create a basic ```.profile``` for the user by running ```scripts/configure-remote-profile.sh <your-user-id>```
+This will run the tests and generate the report.
 
-#### Installation
+<img src='images/test4z/image_coverage_report.png' width='85%'>
 
-This demo describes the automation case, so all the tasks can be done by running one command:
-```bash
-npm run start
+The Code Coverage dashboard will be opened automatically:
+
+<img src='images/test4z/image_report_all_files.png' width='85%'>
+
+To see the statement-level code coverage, click on the `DOGGOS.cbl` file in the report:
+
+<img src='images/test4z/image_statement_level_coverage.png' width='85%'>
+
+## Edit a Test Case
+
+Open the [`TDOGGOS.cbl`](DOGGOS/COBTEST/TDOGGOS.cbl#L266) file under `DOGGOS`/`COBTEST` folder and edit the test case.
+
+Find `MOVE 008 TO EXPECTED_ADOPTIONS(1).` and change it to `MOVE 009 TO EXPECTED_ADOPTIONS(1).`.
+
+Code after change:
+
+<pre>
+       DEFINE_EXPECTED_DATA.
+           MOVE <b>009</b> TO EXPECTED_ADOPTIONS(1).
+           MOVE 000 TO EXPECTED_ADOPTIONS(2).
+</pre>
+
+From the command line, run the `t4z` command.
+
+Expected output:
+
 ```
-Automation in detail is represented by a set of scripts under ```scripts/*```
+ FAIL  DOGGOS/COBTEST/TDOGGOS.cbl
+  ✓ DOGGOS simple run (123 ms)
+  ✕ DOGGOS validate accumulator (436 ms)
+      Assertion error: Invalid accumulator value
+      SYSOUT:
+      THIS PROGRAM WILL CALCULATE AMOUNT OF ADOPTED DOGGOS PER SOME PERIODS OF TIME
+      TODAY IS :2024
+      Mismatch for index 0000000001
+      Actual 008
+      Expected 009
+  ✓ DOGGOS force open error (141 ms)
+  ✓ DOGGOS force read error (570 ms)
 
-For testing purposes or to try the Node JS server locally, use these commands:
-```bash
-npm install
-npm run test
-npm run start-dev
+Tests Suites: 1 failed, 1 total
+Tests:        1 failed, 3 passed, 4 total
+Time:         1 s
 ```
 
+You will observe that the test run is a failure. The actual value is `008` but we have the expected value to be `009`.
 
-#### Deployment and Execution on Mainframe
+Before continuing, revert the change back to:
+<pre>
+           MOVE <b>009</b> TO EXPECTED_ADOPTIONS(1).
+</pre>
 
-After the server files are built locally the automation script packs server source code with dependencies to the server.tar and then sends it to the user's home directory on the mainframe using Zowe CLI. 
+## Add a Test4z Statement to the Test File
 
-<details>
-  <summary>Script</summary>
+Open the [`TDOGGOS.cbl`](DOGGOS/COBTEST/TDOGGOS.cbl#L136) file under `DOGGOS`/`COBTEST` folder and edit the test case.
 
-    #!/bin/bash
+Find `Implementation for TEST1`. That will get you to this code:
 
-    echo ">>>>>> upload.sh: update server location in run script"
-    sed "s|TARGET_DIR|$TARGET_DIR|g" "$LOCAL_DIR/scripts/templates/run-template.sh" > "$LOCAL_DIR/src/run.sh"
+<pre>
+      ********************************************************
+      * Implementation for TEST1
+      ********************************************************
+           ENTRY 'TEST1'
+           <small><i>(Place your cursor here)</i></small>
+      *    Mock all external resources
+           PERFORM MOCK_ADOPTS_FILE
+</pre>
 
-    echo ">>>>>> upload.sh: create a tar archive"
-    tar -cf server.tar src node_modules public package.json package-lock.json
+Add a new line after `ENTRY 'TEST1'`.
+Move the cursor the start of Area B (column 12) and type `t4z me`.
+The IntelliSense will offer you possible code completions using the Test4z snippets as you can see in the screenshot:
 
-    echo ">>>>>> upload.sh: upload the archive to ${TARGET_DIR}/server.tar"
-    zowe uss iss ssh "rm -r ${TARGET_DIR} 2>/dev/null"
-    zowe uss iss ssh "mkdir ${TARGET_DIR}" 
-    zowe files ul ftu -b "server.tar" "${TARGET_DIR}/server.tar"
+<img src='images/test4z/image_test1.png' width='65%'>
 
-    echo ">>>>>> upload.sh: extract and remove ${TARGET_DIR}/server.tar"
-    zowe uss iss ssh "tar -xf server.tar 2>/dev/null" --cwd $TARGET_DIR
-    zowe uss iss ssh "rm server.tar 2>/dev/null" --cwd $TARGET_DIR
+Select “t4z Message write”.
 
-    echo ">>>>>> upload.sh: update files permissions"
-    zowe uss iss ssh "chown -R $USER_ID ./ 2>/dev/null" --cwd $TARGET_DIR
-    zowe uss iss ssh "chtag -tRc ISO8859-1 ./ 2>/dev/null" --cwd $TARGET_DIR
-    zowe uss iss ssh "chmod +x ./src/run.sh 2>/dev/null" --cwd $TARGET_DIR
+This will fill in the code for you:
 
-</details><br>
+<img src='images/test4z/image_code_snippet.png' width='65%'>
 
-As a result ```/u/users/<user-id>/server``` folder is created in USS.
+Replace `'Your Message'` with `'Hello Test4z!'` and save the file with code like that:
 
-Then we define a job to start the server, upload it to the dataset, submit it, and wait for the output.
+<pre>
+           ENTRY 'TEST1'
+           move low-values to I_Message in ZWS_Message
+           move '<b>Hello Test4z!</b>' to messageText in ZWS_Message
+           call ZTESTUT using ZWS_Message
+</pre>
 
-<details>
-  <summary>Script</summary>
+From the command line, run `t4z`. The expected output is:
 
-    echo ">>>>>> start-server.sh: create sequential data set for job"
-    zowe zos-files create data-set-sequential $HLQ.NJSERVER
-    sed "s|TARGET_DIR|$TARGET_DIR|g" "$LOCAL_DIR/scripts/templates/job-template.txt" > "$LOCAL_DIR/scripts/job.txt"
+<pre>
+❯ t4z
 
-    echo ">>>>>> start-server.sh: upload job to the data set"
-    zowe files upload file-to-data-set "$LOCAL_DIR/scripts/job.txt" "$HLQ.NJSERVER" 
+ PASS  DOGGOS/COBTEST/TDOGGOS.cbl
+  ✓ DOGGOS simple run (110 ms)
+      <b>Hello Test4z!</b>
+  ✓ DOGGOS validate accumulator (500 ms)
+  ✓ DOGGOS force open error (410 ms)
+  ✓ DOGGOS force read error (680 ms)
 
-    echo ">>>>>> start-server.sh: submit job to run the server"
-    zowe jobs submit data-set "$HLQ.NJSERVER" --vasc > ./output.txt
-    zowe files delete data-set "$HLQ.NJSERVER" -f
+Tests Suites: 1 passed, 1 total
+Tests:        4 passed, 4 total
+Time:         2 s
+</pre>
 
-</details><br>
+## Summary
 
-In this step, we create ```<user-id>.NJSERVER``` data set containing job to start the server and submit it. 
-For the demo purposes server will run for 60 seconds and stop automatically, then delete the dataset.
-While the server is running, we can check it is up by running the cURL command 
-```curl --head 10.1.2.73:60111```
-
-
-#### Conclusion
-
-This demo scenario shows how to use a combination of NodeJS, bash, and Zowe CLI commands to provision the lifecycle of a simple Node JS server and can be used as a startup or reference point for creating a development pipeline. 
-
-For more information on Zowe CLI and its capabilities, refer to the official Zowe documentation: [Zowe CLI Documentation](https://docs.zowe.org/stable/user-guide/cli-using-usingcli)
-
+This demo scenario demonstrates how to generate a test coverage report, edit a test case, and add Test4z statements to a test file.
