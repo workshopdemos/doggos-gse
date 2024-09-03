@@ -150,16 +150,6 @@ The activities in this test challenge are:
 2. *Edit a Test Case:* Modifying a specific test case to change expected outcomes and observing the results.
 3. *Add a Test4z Statement to a Test File:* Inserting a Test4z statement into the test code to demonstrate how to use Test4z snippets.
 
-## Getting Started
-
-1. Login to the workshop system using the given URL, username, and password, and follow the steps your instructor provides
-
-<img src='images/cloudAccess.png' width='15%'> → <img src='images/workshopStage.png' width='50%'> → <img src='images/workspaceStart.png' width='25%'>
-
-2. You are in the secure cloud environment which runs VS Code and is connected to the Mainframe
-3. Make sure the initial build process has been completed successfully (**exit code: 0** message in the active terminal)
-4. Close the terminal from it's right top corner
-
 ## Generate Test Coverage Report
 
 Press `cmd+shift+P` (MacOS) / `ctrl+shift+L` (Windows). Enter “Test4z Run All Tests with Coverage” like on the following screenshot:
