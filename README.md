@@ -152,9 +152,11 @@ The activities in this test challenge are:
 
 ## Generate Test Coverage Report
 
-Select the HamBurger icon on the top left (three horizontal lines), Select View and Command Palette. Sharing reference screenshots: 
+From the Cloude IDE Windoe, Select the HamBurger icon on the top left (three horizontal lines), Select View and Command Palette. Reference screenshot: 
 
 <img src='images/test4z/image_command_palette.png' width='65%'>
+
+Enter “Test4z Run All Tests with Coverage” like on the following screenshot:
 
 <img src='images/test4z/image_command_palette_run_all_tests_cov.png' width='65%'>
 
