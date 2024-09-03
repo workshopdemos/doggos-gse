@@ -152,7 +152,8 @@ The activities in this test challenge are:
 
 ## Generate Test Coverage Report
 
-From the Cloude IDE Windoe, Select the HamBurger icon on the top left (three horizontal lines), Select View and Command Palette. Reference screenshot: 
+From the Cloude IDE Window, Select the HamBurger icon on the top left (three horizontal lines) and then 
+Select View and Command Palette. Reference screenshot: 
 
 <img src='images/test4z/image_command_palette.png' width='65%'>
 
