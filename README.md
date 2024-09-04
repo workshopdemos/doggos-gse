@@ -214,7 +214,7 @@ You will observe that the test run is a failure. The actual value is `008` but w
 
 Before continuing, revert the change back to:
 <pre>
-           MOVE <b>009</b> TO EXPECTED_ADOPTIONS(1).
+           MOVE <b>008</b> TO EXPECTED_ADOPTIONS(1).
 </pre>
 
 ## Add a Test4z Statement to the Test File
