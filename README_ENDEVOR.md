@@ -29,13 +29,17 @@
 2. Wait for the initializing process to be completed
 3. Expand **endevor** and **endevor-location** wait for fetching the elements (connection and location settings have already been pre-configured prior the workshop)
 4. Fetching the elements will result in a warning due to your empty dev sandbox
-5. Map the changes from the prod environment using the up-arrow
+5. Enable elements from the prod environment by using Element Search Mode Selector (components icon)
 
-![Paste](images/endevor/end10.png)
+![Search Mode Selector Icon](images/endevor/end10a.png)
 
-6. Now you have all of the DOGGOS applications in your cloud VSCode IDE.
-7. Find the COBOL code associated with your user under the [MAP] folder by expanding as shown below
-8. Right-click, select edit, and start coding to add a new dog breed.
+6. Select **Only First Found Elements** mode to make the prod environment elements from up the map to appear in the view
+
+![First Found Search Mode](images/endevor/end10b.png)
+
+7. Now you have all of the DOGGOS applications in your cloud VSCode IDE
+8. Find the COBOL code associated with your user under the [MAP] folder by expanding as shown below
+9. Right-click, select edit, and start coding to add a new dog breed
 
 ![Edit](images/endevor/end11.png)
 
