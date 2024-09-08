@@ -15,13 +15,13 @@
 
 ## Run the DOGGOS application
 1. Go to Zowe Explorer (Z icon in the VSCode Activity Bar)
-1. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon
-1. Fill in the data set: CUST0xy.PUBLIC to add all data sets with this prefix to Zowe Explorer (Use your userID number instead of CUST0xy) 
-1. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
-1. Select “Submit Job” menu item, then click "Submit" from the pop-up window 
-1. Click on the JOB number in the pop-up message in the right bottom corner to see the JOB output (if the notification disappears, you can hit the bell icon from the bottom-right corner to see)
-1. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat the 6th step if you cannot expand the job output)
-1. Breeds not specified in the COBOL code, fall into the OTHER section in the execution report. Now, your task is to add one more breed to the program to result in printing it in this report
+2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon. Enter CUST0xy in the search field and hit enter. Note that CUST0xy is the mainframe user id that is shared by your instructor
+3. Fill in the data set: CUST0xy.PUBLIC to add all data sets with this prefix to Zowe Explorer (Use your userID number instead of CUST0xy) 
+4. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
+5. Select “Submit Job” menu item, then click "Submit" from the pop-up window 
+6. Click on the JOB number in the pop-up message in the right bottom corner to see the JOB output (if the notification disappears, you can hit the bell icon from the bottom-right corner to see)
+7. Expand the “RUNDOG(JOBxxxxx)” and click on the RUN:OUTREP item to browse the program output (Repeat the 6th step if you cannot expand the job output)
+8. Breeds not specified in the COBOL code, fall into the OTHER section in the execution report. Now, your task is to add one more breed to the program to result in printing it in this report
 
 ## Get DOGGOS application from the PROD environment
 
@@ -92,7 +92,7 @@
 ## Run the DOGGOS application AFTER the change is made
 
 1. Go to Zowe Explorer (Z icon in the VSCode Activity Bar)
-2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon. Enter CUST0xy and hit enter. Note that CUST0xy is the mainframe user id that is shared by your instructor. 
+2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon. Enter CUST0xy in the search field and hit enter. Note that CUST0xy is the mainframe user id that is shared by your instructor. 
 3. Click on the CUST0xy.PUBLIC.INPUT data set  to edit it
 4. Add the following line with the name of the dog breed you chose in the code change (**HUSKY**)
 
