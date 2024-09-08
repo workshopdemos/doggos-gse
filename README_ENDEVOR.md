@@ -92,7 +92,7 @@
 ## Run the DOGGOS application AFTER the change is made
 
 1. Go to Zowe Explorer (Z icon in the VSCode Activity Bar)
-2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon.
+2. Hover the “zosmf” item in the DATA SET section in the sidebar and click on the magnifier icon. Enter CUST0xy and hit enter. Note that CUST0xy is the mainframe user id that is shared by your instructor. 
 3. Click on the CUST0xy.PUBLIC.INPUT data set  to edit it
 4. Add the following line with the name of the dog breed you chose in the code change (**HUSKY**)
 
