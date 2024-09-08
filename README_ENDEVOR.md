@@ -98,7 +98,7 @@
 
 ![Change](images/image06.png)
 
-Please note to enter two records for HUSKY as listed in above screenshot. 
+   Please note to enter two records for HUSKY as listed in above screenshot. 
 
 5. Use CTRL+S (or COMMAND+S) to save the change
 6. Expand the CUST0xy.PUBLIC.JCL data set and right click on the **NDRUNDOG**
