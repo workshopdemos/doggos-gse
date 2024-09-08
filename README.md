@@ -75,7 +75,7 @@ Add a new dog breed by following:
    
 <img src='images/image06.png' width='50%'>
 
-    Please note to enter two records for HUSKY as listed in above screenshot. 
+   Please note to enter two records for HUSKY as listed in above screenshot. 
 
 5. Use CTRL+S (or COMMAND+S) to save the changes
 6. Expand the CUST0xy.PUBLIC.JCL data set and right-click on the RUNDOG
