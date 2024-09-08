@@ -73,7 +73,7 @@ Add a new dog breed by following:
 3. Click on the CUST0xy.PUBLIC.INPUT data set  to edit it
 4. Add the following lines with the name of the dog breed you chose in the code change
    
-![Change](images/image06.png)
+<img src='images/image06.png' width='50%'>
 
    Please note to enter two records for HUSKY as listed in above screenshot. 
 
