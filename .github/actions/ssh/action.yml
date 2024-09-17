@@ -1,0 +1,96 @@
+name: 'ssh setup'
+description: 'Start ssh agent with keys for accessing a ZD&T in DMZ. After this action completes you can use `ssh zdnt <command>` to issue commands agains the ZD&T.'
+inputs:
+  bastion-hostname:
+    description: 'Hostname of the DMZ bastion proxy'
+    type: string
+    required: true
+  bastion-user:
+    description: 'Username for DMZ bastion proxy'
+    type: string
+    required: true
+  bastion-ssh-key:
+    description: 'SSH key to the DMZ bastion proxy'
+    type: string
+    required: true
+  zdnt-hostname:
+    description: 'Hostname of the ZD&T machine from the DMZ proxy point of view'
+    type: string
+    required: true
+  zdnt-user:
+    description: 'Username for the ZD&T'
+    type: string
+    required: true
+  zdnt-port:
+    description: 'z/OS UNIX SSH Server Port on the ZD&T'
+    type: string
+    required: true
+  zdnt-ssh-key:
+    description: 'SSH key to the ZD&T in DMZ.'
+    type: string
+    required: true
+  known-hosts:
+    description: 'SSH fingerprints of the bastion proxy and ZD&T itself'
+    type: string
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Validate inputs
+      shell: bash
+      run: |
+        [ -n "${{ inputs.bastion-hostname }}" ] || { echo "ERROR bastion-hostname input is empty" ; exit 1; }
+        [ -n "${{ inputs.bastion-user }}" ] || { echo "ERROR bastion-user input is empty" ; exit 1; }
+        [ -n "${{ inputs.bastion-ssh-key }}" ] || { echo "ERROR bastion-ssh-key input is empty" ; exit 1; }
+        [ -n "${{ inputs.zdnt-hostname }}" ] || { echo "ERROR zdnt-hostname input is empty" ; exit 1; }
+        [ -n "${{ inputs.zdnt-user }}" ] || { echo "ERROR zdnt-user input is empty" ; exit 1; }
+        [ -n "${{ inputs.zdnt-port }}" ] || { echo "ERROR zdnt-port input is empty" ; exit 1; }
+        [ -n "${{ inputs.zdnt-ssh-key }}" ] || { echo "ERROR zdnt-ssh-key input is empty" ; exit 1; }
+        [ -n "${{ inputs.known-hosts }}" ] || { echo "ERROR known-hosts input is empty" ; exit 1; }
+
+    - name: Create .ssh folder
+      shell: bash
+      run: |
+          mkdir -p $HOME/.ssh
+    - name: Add ssh config
+      shell: bash
+      run: |
+          cat > $HOME/.ssh/config << EOF
+          Host bast
+              HostName  ${{ inputs.bastion-hostname }}
+              User ${{ inputs.bastion-user }}
+              ControlMaster auto
+              ControlPath ~/.ssh/control_socket_bast_%C
+              ControlPersist 5m
+          Host zdnt
+              HostName  ${{ inputs.zdnt-hostname }}
+              Port ${{ inputs.zdnt-port }}
+              User ${{ inputs.zdnt-user }}
+              ProxyCommand ssh -q -W %h:%p bast
+              ControlMaster auto
+              ControlPath ~/.ssh/control_socket_pzdt_%C
+              ControlPersist 5m
+          EOF
+    - name: Add ssh fingerprints
+      shell: bash
+      run: |
+          echo "${{ inputs.known-hosts }}" > $HOME/.ssh/known_hosts
+    - name: Set file permissions
+      shell: bash
+      run: |
+          chmod 700 $HOME/.ssh
+          chmod 600 $HOME/.ssh/*
+
+    - name: Start ssh agent
+      shell: bash
+      run: |
+          eval $(ssh-agent -s)
+          echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $GITHUB_ENV
+          echo "SSH_AGENT_PID=$SSH_AGENT_PID" >> $GITHUB_ENV
+
+    - name: Add keys to ssh-agent
+      shell: bash
+      run: |
+          ssh-add <(echo "${{ inputs.bastion-ssh-key }}")
+          ssh-add <(echo "${{ inputs.zdnt-ssh-key }}")
+
